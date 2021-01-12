@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blog of Nicolás Kennedy">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    
+    <link rel="stylesheet" href="/css/style.min.css">
+
+    <title>IPFS Day Two</title>
+</head>
+<body><header id="banner">
+    <h2><a href="/">Nicolás Kennedy</a></h2>
+    <nav>
+        <ul>
+            <li>
+                <a href="/" title="posts">posts</a>
+            </li><li>
+                <a href="/about/" title="about">about</a>
+            </li><li>
+                <a href="/projects/" title="projects">projects</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main id="content">
+<article>
+    <header id="post-header">
+        <h1>IPFS Day Two</h1><time>December 2, 2020</time></header><p>See the <a href="/ipfs-hosting">previous blog post</a> for how I put this site on IPFS
+(InterPlanetary File System).</p>
+<h1 id="latency-of-ipfs">Latency of IPFS</h1>
+<p>Accessing <code>xrop.me</code> with Cloudflare had relatively high latency, with page
+loads lasting a few seconds.
+Instead of using IPNS (InterPlanetary Name System) names, I tested accessing the
+site directly through its CID (content identifier).
+The difference was quite significant.
+Loading times went from multiple seconds to a maximum of hundreds of
+milliseconds.</p>
+<p>This is not suprising, as the <a href="https://web.archive.org/web/20201117234738/https://docs.ipfs.io/concepts/ipns/">IPFS documentation</a> mentions this exact scenario:</p>
+<blockquote>
+<p>&ldquo;You can also use DNSLink, which is currently much faster than IPNS and also
+uses human-readable names.&rdquo;</p>
+</blockquote>
+<p>I had previously been attempting to use IPNS in conjunction with DNSLink.
+The resulting setup is not much different as compared to the prior one.
+In the Cloudflare DNS settings, I set the TXT DNSLink record to point to an
+IPFS content identifier, as can be seen here.</p>
+<p><img src="/posts/2020/12/02/ipfs-day-two/dns.png" alt="dns"></p>
+<h1 id="sustainability-of-ipfs-on-a-home-network">Sustainability of IPFS on a Home Network</h1>
+<p>As I mentioned in the previous blog post, I tried to run an IPFS node on a
+Raspberry Pi 4.
+However, the daemon consumed two gigabytes of bandwidth over the span of fifteen
+hours, with an equal ratio of ingress to egress.
+Assuming that this rate of consumption stays constant, this would result in
+around 96 gigabytes of bandwidth being consumed in a month.</p>
+<p>This isn&rsquo;t quite as bad as when I tried to download close to 300 gigabytes of
+the full Bitcoin blockchain over the span of a few days (The ISP didn&rsquo;t quite
+like that).
+Though, for now this resource consumption is not sustainable on my home
+broadband link.
+It seems that settings for resource constraints that can be built into the daemon
+<a href="https://github.com/ipfs/go-ipfs/issues/1482">have been discussed</a> over the past
+few years, however such functionality is not present in the official IPFS
+daemon written in Go, as of the writing of this article.</p>
+<p>For now, I have the site pinned to <a href="https://pinata.cloud">Pinata</a>.
+However, I will probably look into other methods of contraining bandwidth.</p>
+<p><br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br></p>
+</article>
+
+        </main><footer>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</footer>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blog of Nicolás Kennedy">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    
+    <link rel="stylesheet" href="/css/style.min.css">
+
+    <title>Rengo</title>
+</head>
+<body><header id="banner">
+    <h2><a href="/">Nicolás Kennedy</a></h2>
+    <nav>
+        <ul>
+            <li>
+                <a href="/" title="posts">posts</a>
+            </li><li>
+                <a href="/about/" title="about">about</a>
+            </li><li>
+                <a href="/projects/" title="projects">projects</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main id="content">
+<article>
+    <header id="post-header">
+        <h1>Rengo</h1><time>July 13, 2020</time></header><p>I recently learned of the Go board game.
+In case you are not familiar with the game, you have probably heard of it before
+<a href="https://en.wikipedia.org/wiki/AlphaGo_versus_Lee_Sedol">when AlphaGo beat its best
+player</a>.
+I desired a four player implementation that was playable from a web browser.</p>
+<p>Around the same time, I came across
+<a href="https://news.ycombinator.com/item?id=23649369" title="Pont">Pont</a>, an implementation of another board game that used Rust for both the
+server and client.
+The server is multithreaded with an asynchronous runtime, and exposes a
+WebSocket API that a client can interface with.
+The client was written with <a href="https://crates.io/crates/wasm-bindgen">a Rust to JavaScript transpiler / Rust to
+WebAssembly compiler</a>.
+I decided to wrte my Go stack in Rust, similar to what was done with <a href="https://news.ycombinator.com/item?id=23649369" title="Pont">Pont</a>.</p>
+<p>Rengo is a four player implementation of Go that does not alter the game logic.
+Rather, two people on a single team take turns playing against another team of
+two.
+This preserves the two team, turn based gameplay.
+<a href="https://gitlab.com/xrop/rengo.git" title="Rengo GitLab">This</a> is the game that I implemented.
+I spent some time familiarizing myself with the crates that were used in
+<a href="https://news.ycombinator.com/item?id=23649369" title="Pont">Pont</a>.</p>
+<p>For the frontend, I used
+<a href="https://crates.io/crates/wasm-bindgen">wasm-bindgen</a>,
+<a href="https://crates.io/crates/js-sys">js-sys</a>, and
+<a href="https://crates.io/crates/web_sys" title="Rust crate web_sys">web_sys</a>.
+I wrote a substantial amount of code that used functionality from <a href="https://crates.io/crates/web_sys" title="Rust crate web_sys">web_sys</a>.
+It provides a Rust interface to many of the common JavaScript functions that are
+necessary to create an interactive WebSocket game.
+For example, the crate enables the rendering of a canvas element, and dynamic
+resizing of site elements and fonts.
+I used <a href="https://getbootstrap.com/docs/4.5/getting-started/introduction/">Bootstrap
+4.5</a> to style
+the page.
+One problem I had when utilizing Bootstrap modals to notify the user
+was that I had to call a function through JQuery to show the modal.
+<a href="https://crates.io/crate/js-sys">js-sys</a> allowed me to define a function
+prototype to call the JQuery function.</p>
+<p>For the backend, I used the same crates that <a href="https://news.ycombinator.com/item?id=23649369" title="Pont">Pont</a> used.
+Namely, I used <a href="https://crates.io/crate/smol">smol</a> as the asynchronous runtime,
+<a href="https://crates.io/crates/async_tungstenite">async-tungstenite</a> as an
+asynchronous WebSocket listener, and <a href="https://crates.io/crates/bincode">bincode</a>
+for binary data serialization to transmit Rust enums across WebSocket.
+The server was generally straightforward.
+The server allows for creation of rooms, where a player capacity can be
+specified.
+Rooms follow an actor model, where the connection handler messages a room to
+request an action.</p>
+<p>A good amount of boilerplate code was written.
+<a href="https://crates.io/crates/actix" title="Actix lib">Actix</a> could be used to elegantly setup an
+actor based concurrency model.
+The client code contains some weird code, such as
+this line</p>
+<div class="highlight"><pre class="chroma"><code class="language-rust" data-lang="rust"><span class="n">ctx</span><span class="p">.</span><span class="n">fill_text</span><span class="p">(</span><span class="o">&amp;</span><span class="n">format</span><span class="o">!</span><span class="p">(</span><span class="s">&#34;{}&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="kt">u32</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="n">inner_begin</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">inner_size</span><span class="w">
+</span><span class="w"></span><span class="o">+</span><span class="w"> </span><span class="mi">5_</span><span class="k">f64</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">inner_begin</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">9_</span><span class="k">f64</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">font_size</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="kt">f64</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">3_</span><span class="k">f64</span><span class="p">,</span><span class="w"> </span><span class="n">inner_begin</span><span class="w"> </span><span class="o">+</span><span class="w">
+</span><span class="w"></span><span class="n">line_space</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="kt">f64</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">8_</span><span class="k">f64</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">font_size</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="kt">f64</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">20_</span><span class="k">f64</span><span class="p">)</span><span class="o">?</span><span class="p">;</span><span class="w">
+</span></code></pre></div><p>which is needed to properly align letters on the game board.
+After writing <a href="https://gitlab.com/xrop/rengo.git" title="Rengo GitLab">Rengo</a>, I discovered <a href="https://crates.io/crates/yew" title="yew lib">yew</a>,
+which is a framework for writing interactive web applications in Rust.
+It uses some macro generated syntax that functions similarly to
+<a href="https://reactjs.org/docs/introducing-jsx.html">JSX</a>.</p>
+<p>I am enjoying both Rust and Go quite a bit.
+An idea that I have had is to write a more general and polished Go platform that
+takes advantage of existing frameworks such as <a href="https://crates.io/crates/actix" title="Actix lib">Actix</a> and <a href="https://crates.io/crates/yew" title="yew lib">yew</a>.
+If you are interested in Go, make sure to try <a href="https://online-go.com">OGS</a>,
+which is a great Go web service for playing games against player and bots, with
+built in game analysis.</p>
+<p><br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br></p>
+</article>
+
+        </main><footer>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</footer>
+</body>
+</html>

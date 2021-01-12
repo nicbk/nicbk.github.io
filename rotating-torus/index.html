@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blog of Nicolás Kennedy">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    
+    <link rel="stylesheet" href="/css/style.min.css">
+
+    <title>Rotating Torus</title>
+</head>
+<body><header id="banner">
+    <h2><a href="/">Nicolás Kennedy</a></h2>
+    <nav>
+        <ul>
+            <li>
+                <a href="/" title="posts">posts</a>
+            </li><li>
+                <a href="/about/" title="about">about</a>
+            </li><li>
+                <a href="/projects/" title="projects">projects</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main id="content">
+<article>
+    <header id="post-header">
+        <h1>Rotating Torus</h1><time>November 27, 2020</time></header><p><strong>UPDATE</strong>: An browser based rotating torus which uses similar source code can be viewed <a href="/projects/ascii-donut">here!</a></p>
+<p>I recently read about a <a href="https://www.a1k0n.net/2011/07/20/donut-math.html">spinning
+donut</a>, and decided to render
+one for myself. My donut is <a href="https://gitlab.com/xrop/donut-embedded">here</a>. I
+commented it out quite a bit and used relatively lengthy variable names, so
+hopefully it is easy to understand.</p>
+<p>This project is an application of mathematical concepts I had recently learned
+in school. Namely, I wanted to reimplement all of the necessary math functions
+needed for rendering a parameterized torus without using any libraries,
+instead relying on basic floating point arithmetic.</p>
+<p>My parameterized torus uses three parameters: one for rotation of the torus
+about the X and Z axis, one for rotating the circular cross section of the torus
+about its current axis of revolution, and another for rotating a point around
+that circle.</p>
+<p>The sine function is approximated using a Maclaurin series with eight terms on
+the interval \( [-\pi/2, \pi/2] \), which is then extended to approximate the
+function on the domain of all real numbers through modular arithmetic. In order
+to compute this power series, I need exponentiation and the factorial function.
+Neither of these are primitive arithmetic operators in the C programming
+language. For exponentiation of floats to non-negative integers, I used an
+iterative function which performs a simple repeated multiplication. However,
+this is a rudimentary exponentiation which ignores edge cases such as
+indeterminate forms. For the purposes of the Maclaurin series, \( 0^0 \) is
+assumed to be 1. The square root function is approximated using Newton&rsquo;s method,
+which is executed recursively.</p>
+<p>The motion of the entire animation is periodic, so the sine (and cosine)
+functions are memoized such that approximately 1000 values of those functions on
+the interval \( [0, 2\pi] \) are stored in an array. When rendering each point
+on the torus, these tables are looked up, instead of recalculating the function
+on each iteration.</p>
+<p>Lighting is done through a single directional light positioned in front of the
+torus. Rays of light and the normals to the surface of the torus are multiplied
+as a dot product to determined luminosity. A Z buffer is used to prevent
+clipping, as often the ray will encounter multiple surfaces of the
+torus as it passes through.</p>
+<p>Next up will be placing this example into the <code>Projects</code> section of this
+website.</p>
+<p><br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br></p>
+</article>
+
+        </main><footer>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</footer>
+</body>
+</html>

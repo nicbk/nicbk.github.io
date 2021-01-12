@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Projects on Nicolás Kennedy</title>
+    <link>/projects/</link>
+    <description>Recent content in Projects on Nicolás Kennedy</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="/projects/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+    <item>
+      <title>Regular Hosting</title>
+      <link>/regular-hosting/</link>
+      <pubDate>Wed, 02 Dec 2020 00:00:01 +0000</pubDate>
+      
+      <guid>/regular-hosting/</guid>
+      <description>Simplicity of Regular Hosting For now, the complexity of having a site on IPFS and its interface to the regular web takes too much time for me to configure and maintain. Therefore, I will be reverting this site back to GitLab Pages.</description>
+    </item>
+    
+    
+    
+    <item>
+      <title>IPFS Day Two</title>
+      <link>/ipfs-day-two/</link>
+      <pubDate>Wed, 02 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/ipfs-day-two/</guid>
+      <description>See the previous blog post for how I put this site on IPFS (InterPlanetary File System).
+Latency of IPFS Accessing xrop.me with Cloudflare had relatively high latency, with page loads lasting a few seconds. Instead of using IPNS (InterPlanetary Name System) names, I tested accessing the site directly through its CID (content identifier). The difference was quite significant. Loading times went from multiple seconds to a maximum of hundreds of milliseconds.</description>
+    </item>
+    
+    
+    
+    <item>
+      <title>IPFS Hosting</title>
+      <link>/ipfs-hosting/</link>
+      <pubDate>Tue, 01 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/ipfs-hosting/</guid>
+      <description>IPFS Today I read about IPFS (InterPlanetary File System). It is a decentralized file storage protocol which utilizes a distributed hash table. This means that a block of data is referred to by its hash, and these hashes are distributed to nodes in the network. Nodes in the network can request such data by broadcasting that hash (known as a &amp;ldquo;content identifier&amp;rdquo;). Any node that has the data (or part of it) can then send the data back.</description>
+    </item>
+    
+    
+    
+    <item>
+      <title>Rotating Torus</title>
+      <link>/rotating-torus/</link>
+      <pubDate>Fri, 27 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/rotating-torus/</guid>
+      <description>UPDATE: An browser based rotating torus which uses similar source code can be viewed here!
+I recently read about a spinning donut, and decided to render one for myself. My donut is here. I commented it out quite a bit and used relatively lengthy variable names, so hopefully it is easy to understand.
+This project is an application of mathematical concepts I had recently learned in school. Namely, I wanted to reimplement all of the necessary math functions needed for rendering a parameterized torus without using any libraries, instead relying on basic floating point arithmetic.</description>
+    </item>
+    
+    
+    
+    <item>
+      <title>Rengo</title>
+      <link>/rengo/</link>
+      <pubDate>Mon, 13 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/rengo/</guid>
+      <description>I recently learned of the Go board game. In case you are not familiar with the game, you have probably heard of it before when AlphaGo beat its best player. I desired a four player implementation that was playable from a web browser.
+Around the same time, I came across Pont, an implementation of another board game that used Rust for both the server and client. The server is multithreaded with an asynchronous runtime, and exposes a WebSocket API that a client can interface with.</description>
+    </item>
+    
+    
+    
+    <item>
+      <title>Other Hashing Functions</title>
+      <link>/other-hashing-functions/</link>
+      <pubDate>Mon, 29 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/other-hashing-functions/</guid>
+      <description>SHA-256 was quite similar to SHA-1 in many ways, and much of the code used to implement SHA-1 was borrowed. The project is hosted here. I also implemented SHA-512, which is hosted here.
+Blockchains have always been on my mind, so perhaps I will implement a little blockchain next. My purpose in doing these little projects have been to understand how these ubiquitous yet esoteric technologies work under the hood. I never feel satisifed solely using a library; I feel like I know what I am doing if I can recreate a library.</description>
+    </item>
+    
+    
+    
+    <item>
+      <title>Hashing Functions</title>
+      <link>/hashing-functions/</link>
+      <pubDate>Thu, 25 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/hashing-functions/</guid>
+      <description>I recently read The Rust Programming Language. I have found it a joy to program using Rust. The whole language feels very cohesive. It has an official package repository located at crates.io. Although I am not a fan of centralized packaging solutions, the clear benefit of this system is its ease of use. Libraries can be added to a project by simply adding the name of that library in the project configuration file.</description>
+    </item>
+    
+    
+    
+    
+    
+    
+    
+    
+  </channel>
+</rss>
