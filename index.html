@@ -27,7 +27,15 @@
     </nav>
 </header>
 <main id="content">
-<p>$$\mathrm{F}(x) = \int_{0}^{\infty} f(t){e}^{-xt} dt$$</p>
+<div id="equation"></div>
+<script>
+const day = new Date().getDay();
+if (day % 2 == 0) {
+  document.write('$$\\mathrm{F}(x) = \\int_{-\\infty}^{\\infty} f(t){e}^{-i2{\\pi}xt} dt$$')
+} else {
+  document.write('$$\\Gamma(z) = \\int_{0}^{\\infty} x^{z-1}e^{-x}dx$$')
+}
+</script>
 <h3>Posts</h3>
 <ul id="posts">
     <li>
