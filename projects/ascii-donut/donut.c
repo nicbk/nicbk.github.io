@@ -31,7 +31,7 @@ double torx = 0; // Translation of torus on the X axis
 double tory = 0; // Translation of torus on the Y axis
 double torz = 7; // Translation of torus on the Z axis
 
-double drot = 0.03; // Step at which torus is rotated
+double drot = 0.5; // Step at which torus is rotated
 double dtor = 0.01; // Step at which the renderer rotates circular cross sections about the axis of revolution
 double dcir = 0.01; // Step at which the renderer samples the circular cross sections of the torus
 

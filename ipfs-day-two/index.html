@@ -27,7 +27,7 @@
 <main id="content">
 <article>
     <header id="post-header">
-        <h1>IPFS Day Two</h1><time>December 2, 2020</time></header><p>See the <a href="/ipfs-hosting">previous blog post</a> for how I put this site on IPFS
+        <h1>IPFS Day Two</h1><time>December 2, 2020</time></header><p>See the <a href="/ipfs-hosting">previous blog post</a> about how I put this site on IPFS
 (InterPlanetary File System).</p>
 <h1 id="latency-of-ipfs">Latency of IPFS</h1>
 <p>Accessing <code>xrop.me</code> with Cloudflare had relatively high latency, with page
@@ -43,7 +43,7 @@ milliseconds.</p>
 uses human-readable names.&rdquo;</p>
 </blockquote>
 <p>I had previously been attempting to use IPNS in conjunction with DNSLink.
-The resulting setup is not much different as compared to the prior one.
+The resulting setup is not that different as compared to the prior one.
 In the Cloudflare DNS settings, I set the TXT DNSLink record to point to an
 IPFS content identifier, as can be seen here.</p>
 <p><img src="/posts/2020/12/02/ipfs-day-two/dns.png" alt="dns"></p>
@@ -61,8 +61,8 @@ Though, for now this resource consumption is not sustainable on my home
 broadband link.
 It seems that settings for resource constraints that can be built into the daemon
 <a href="https://github.com/ipfs/go-ipfs/issues/1482">have been discussed</a> over the past
-few years, however such functionality is not present in the official IPFS
-daemon written in Go, as of the writing of this article.</p>
+few years; however, such functionality is not present in the official IPFS
+daemon written in Go as of the writing of this article.</p>
 <p>For now, I have the site pinned to <a href="https://pinata.cloud">Pinata</a>.
 However, I will probably look into other methods of contraining bandwidth.</p>
 <p><br><br><br><br>

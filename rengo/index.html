@@ -28,7 +28,7 @@
 <article>
     <header id="post-header">
         <h1>Rengo</h1><time>July 13, 2020</time></header><p>I recently learned of the Go board game.
-In case you are not familiar with the game, you have probably heard of it before
+If you are not familiar with the game, you have probably heard of it before
 <a href="https://en.wikipedia.org/wiki/AlphaGo_versus_Lee_Sedol">when AlphaGo beat its best
 player</a>.
 I desired a four player implementation that was playable from a web browser.</p>
@@ -39,7 +39,7 @@ The server is multithreaded with an asynchronous runtime, and exposes a
 WebSocket API that a client can interface with.
 The client was written with <a href="https://crates.io/crates/wasm-bindgen">a Rust to JavaScript transpiler / Rust to
 WebAssembly compiler</a>.
-I decided to wrte my Go stack in Rust, similar to what was done with <a href="https://news.ycombinator.com/item?id=23649369" title="Pont">Pont</a>.</p>
+I decided to write my Go stack in Rust, similar to what was done with <a href="https://news.ycombinator.com/item?id=23649369" title="Pont">Pont</a>.</p>
 <p>Rengo is a four player implementation of Go that does not alter the game logic.
 Rather, two people on a single team take turns playing against another team of
 two.
@@ -54,8 +54,8 @@ I spent some time familiarizing myself with the crates that were used in
 I wrote a substantial amount of code that used functionality from <a href="https://crates.io/crates/web_sys" title="Rust crate web_sys">web_sys</a>.
 It provides a Rust interface to many of the common JavaScript functions that are
 necessary to create an interactive WebSocket game.
-For example, the crate enables the rendering of a canvas element, and dynamic
-resizing of site elements and fonts.
+For example, the crate enables dynamic resizing of site elements and fonts and
+rendering of a canvas element.
 I used <a href="https://getbootstrap.com/docs/4.5/getting-started/introduction/">Bootstrap
 4.5</a> to style
 the page.
@@ -74,7 +74,7 @@ specified.
 Rooms follow an actor model, where the connection handler messages a room to
 request an action.</p>
 <p>A good amount of boilerplate code was written.
-<a href="https://crates.io/crates/actix" title="Actix lib">Actix</a> could be used to elegantly setup an
+<a href="https://crates.io/crates/actix" title="Actix lib">Actix</a> could be used to elegantly write an
 actor based concurrency model.
 The client code contains some weird code, such as
 this line</p>

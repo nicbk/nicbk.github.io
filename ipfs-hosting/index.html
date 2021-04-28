@@ -51,8 +51,8 @@ Data which has been cached by the node is frequently garbage collected.</p>
 <p>IPFS aligned with my desire for distributed storage of my site.
 I decided to transfer this site over to IPFS.
 However, there were a few hurdles.</p>
-<p>Web browsers by default use DNS and Internet Protocol for resolving addresses and
-finding servers.
+<p>Web browsers by default use DNS and the Internet Protocol for resolving addresses
+and finding servers.
 Therefore, I needed to use some kind of proxy to forward requests from a
 traditional server into the IPFS network.
 The IPFS daemon already has this functionality built in, where a HTTP server is
@@ -87,15 +87,14 @@ such as <code>Bootstrap</code> and <code>MathJax</code>.
 However, I downloaded the libraries and uploaded them alongside the website
 source code.
 This means that anybody else hosting a website on IPFS using the same libraries
-will be sharing the same content identifiers as me.
+will be sharing the same content identifiers as are used on my site.
 People accessing my website or other websites don&rsquo;t necessarily need to access my
 website (or nodes who have cached it) to retrieve those libraries on IPFS.
 Rather, another node could have the same resource pinned.</p>
 <p>I currently have this website pinned on an IPFS instance running on a Raspberry
 Pi 4 with NixOS.</p>
 <h1 id="applications-for-ipfs">Applications for IPFS</h1>
-<p>I quickly connected the dots.
-I use NixOS, which allows for reproducible builds through functional package
+<p>I use NixOS, which allows for reproducible builds through functional package
 management.
 It, too, uses a filesystem of immutable data blocks referred to by hashes.
 It seems only natural that perhaps NixOS could use IPFS for both storing package
