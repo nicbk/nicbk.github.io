@@ -39,14 +39,12 @@ The server is multithreaded with an asynchronous runtime, and exposes a
 WebSocket API that a client can interface with.
 The client was written with <a href="https://crates.io/crates/wasm-bindgen">a Rust to JavaScript transpiler / Rust to
 WebAssembly compiler</a>.
-I decided to write my Go stack in Rust, similar to what was done with <a href="https://news.ycombinator.com/item?id=23649369" title="Pont">Pont</a>.</p>
+I decided to write a Go stack in Rust, similar to what was done with <a href="https://news.ycombinator.com/item?id=23649369" title="Pont">Pont</a>.</p>
 <p>Rengo is a four player implementation of Go that does not alter the game logic.
 Rather, two people on a single team take turns playing against another team of
 two.
 This preserves the two team, turn based gameplay.
-<a href="https://github.com/nicbk/rengo.git" title="Rengo GitLab">This</a> is the game that I implemented.
-I spent some time familiarizing myself with the crates that were used in
-<a href="https://news.ycombinator.com/item?id=23649369" title="Pont">Pont</a>.</p>
+<a href="https://github.com/nicbk/rengo.git" title="Rengo GitLab">This</a> is the game that I implemented.</p>
 <p>For the frontend, I used
 <a href="https://crates.io/crates/wasm-bindgen">wasm-bindgen</a>,
 <a href="https://crates.io/crates/js-sys">js-sys</a>, and
@@ -69,11 +67,11 @@ Namely, I used <a href="https://crates.io/crate/smol">smol</a> as the asynchrono
 asynchronous WebSocket listener, and <a href="https://crates.io/crates/bincode">bincode</a>
 for binary data serialization to transmit Rust enums across WebSocket.
 The server was generally straightforward.
-The server allows for creation of rooms, where a player capacity can be
+My implementation allows for the creation of rooms, where player capacity can be
 specified.
 Rooms follow an actor model, where the connection handler messages a room to
-request an action.</p>
-<p>A good amount of boilerplate code was written.
+request that an action be completed.</p>
+<p>A substantial amount of boilerplate code was written.
 <a href="https://crates.io/crates/actix" title="Actix lib">Actix</a> could be used to elegantly write an
 actor based concurrency model.
 The client code contains some weird code, such as
@@ -90,7 +88,7 @@ It uses some macro generated syntax that functions similarly to
 An idea that I have had is to write a more general and polished Go platform that
 takes advantage of existing frameworks such as <a href="https://crates.io/crates/actix" title="Actix lib">Actix</a> and <a href="https://crates.io/crates/yew" title="yew lib">yew</a>.
 If you are interested in Go, make sure to try <a href="https://online-go.com">OGS</a>,
-which is a great Go web service for playing games against player and bots, with
+which is a great Go platform for playing games against players and AI, with
 built in game analysis.</p>
 <p><br><br><br><br>
 <br><br><br><br>

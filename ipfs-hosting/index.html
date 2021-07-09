@@ -36,17 +36,16 @@ distributed to nodes in the network.
 Nodes in the network can request such data by broadcasting that hash (known as a
 &ldquo;content identifier&rdquo;).
 Any node that has the data (or part of it) can then send the data back.
-This functions similarly to BitTorrent, where bits of data can come from
-different nodes simultaneously.
-The transfer of data can be much more efficient than a traditional star topology
-network (including CDNs), because data can be retrieved in smaller parts from many
-nodes, instead of a full large blob coming from a single server, and from
-potentially further away.
-My first concern was scalability; however, the compromise looks quite
-reasonable.
+This partial satisfaction of a data request is similar to BitTorrent, where portions
+of data can come from different nodes simultaneously.
+This distributed transfer of data can be beneficial in a number of circumstances;
+though, benefits and tradeoffs would most likely fall in accordance with the
+<a href="https://en.wikipedia.org/wiki/CAP_theorem">CAP theorem</a>.
+My first concern with this particular distributed system was scalability; however,
+the compromise looks quite reasonable.
 Nodes can decide whether they wish to retain blocks of data by &ldquo;pinning&rdquo; the
 data; in other words, telling the daemon that the data should never be deleted.
-Data which has been cached by the node is frequently garbage collected.</p>
+Otherwise, data that has been cached by the node is frequently garbage collected.</p>
 <h1 id="ifps-for-static-web-hosting-of-xropme">IFPS for Static Web Hosting of <code>xrop.me</code></h1>
 <p>IPFS aligned with my desire for distributed storage of my site.
 I decided to transfer this site over to IPFS.

@@ -52,7 +52,7 @@ Latency of IPFS Accessing xrop.me with Cloudflare had relatively high latency, w
       
       <guid>/rotating-torus/</guid>
       <description>UPDATE: An browser based rotating torus which uses similar source code can be viewed here!
-I recently read about a spinning donut, and decided to render one for myself. My donut is here. I commented out the source code quite a bit and used relatively lengthy variable names in order to make the source code easier to understand.
+I recently read about a spinning donut, and decided to render one for myself. My donut is here. I commented out the source code quite a bit and used lengthy variable names in order to make the source code easier to understand.
 This project is an application of mathematical concepts I had recently learned in school.</description>
     </item>
     
@@ -77,7 +77,7 @@ Around the same time, I came across Pont, an implementation of another board gam
       
       <guid>/other-hashing-functions/</guid>
       <description>SHA-256 was quite similar to SHA-1 in many ways, and much of the code used to implement SHA-1 was borrowed. The project is hosted here. I also implemented SHA-512, which is hosted here.
-Blockchains have always been on my mind, so perhaps I will implement a little blockchain next. My purpose in doing these little projects has been to understand how these ubiquitous yet esoteric technologies work under the hood. I never feel satisifed solely using a library; I feel like I know what I am doing if I can recreate that library.</description>
+Blockchains have always been on my mind, so perhaps I will implement a little blockchain next. My purpose in doing these little projects has been to understand how these ubiquitous yet esoteric technologies work under the hood. I never feel satisifed solely using a library; I feel like I know what I am doing if I can reproduce functionality with my own reasoning.</description>
     </item>
     
     
@@ -88,7 +88,8 @@ Blockchains have always been on my mind, so perhaps I will implement a little bl
       <pubDate>Thu, 25 Jun 2020 00:00:00 +0000</pubDate>
       
       <guid>/hashing-functions/</guid>
-      <description>I recently read The Rust Programming Language. I have found it a joy to program with Rust. The whole language feels very cohesive. It has an official package repository located at crates.io. Although I am not a fan of centralized packaging solutions, the clear benefit of this system is its ease of use. Libraries can be added to a project by simply adding the name of that library to the project configuration file.</description>
+      <description>I recently read The Rust Programming Language. The whole language feels very cohesive. It has an official package repository located at crates.io. Although I am not a fan of centralized packaging solutions, the clear benefit of this system is its ease of use. Libraries can be added to a project by simply adding the name of that library to the project configuration file.
+I thought that a great first project would be to implement the Secure Hash Standard (NIST FIPS 180-4), which includes the SHA-1 and SHA-2 (SHA-256, SHA-512, &amp;hellip;).</description>
     </item>
     
     
