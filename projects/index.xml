@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Projects on Nicolás Kennedy</title>
+    <link>/projects/</link>
+    <description>Recent content in Projects on Nicolás Kennedy</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="/projects/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ASCII Donut</title>
+      <link>/projects/ascii-donut/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/projects/ascii-donut/</guid>
+      <description>The Rotating Torus See the original blog post for more information.
+This program was originally written in C, and then compiled to WebAssembly using Emscripten.
+This program projects a parameterized 3D torus onto a 2D screen. Furthermore, all mathematical functions needed to render the torus are numerically appromixated with custom functions. This program was primarily written to utilize mathematical concepts learned from school.</description>
+    </item>
+    
+    <item>
+      <title>Rengo</title>
+      <link>/projects/rengo/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/projects/rengo/</guid>
+      <description>Also available at nicbk.com/rengo-client-web
+See the original blog post.
+Go for more than two players Rengo is a version of Go that can be played with four players. In this rendition of Rengo, any number of players can join a room to play together.
+Rules The rules are the same as in regular Go. There are two teams: white and black. Players will be alternately assigned to teams as they join.</description>
+    </item>
+    
+  </channel>
+</rss>

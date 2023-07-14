@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  
+  
+  <title>Nicolás Kennedy | IPFS Hosting</title>
+</head>
+<body>
+    <div id="content_wrapper"><nav>
+  <a class="navbar-title" href="/">
+    Nicolás Kennedy
+  </a>
+  
+  
+  <a class="navbar-link" href="/">
+    posts
+  </a>
+  
+  
+  <a class="navbar-link" href="/about">
+    about
+  </a>
+  
+  
+  <a class="navbar-link" href="/projects">
+    projects
+  </a>
+  
+</nav>
+<div id="content">
+  <h1 class="post-header-title">IPFS Hosting</h1>
+  
+    <small><time class="post-header-date">Dec 1, 2020</small></time>
+  
+  <h2 id="ipfs">IPFS</h2>
+<p>Today I read about IPFS (InterPlanetary File System).
+It is a decentralized file storage protocol which utilizes a
+distributed hash table.
+This means that a block of data is referred to by its hash, and these hashes are
+distributed to nodes in the network.
+Nodes in the network can request such data by broadcasting that hash (known as a
+&ldquo;content identifier&rdquo;).
+Any node that has the data (or part of it) can then send the data back.
+This partial satisfaction of a data request is similar to BitTorrent, where portions
+of data can come from different nodes simultaneously.
+This distributed transfer of data can be beneficial in a number of circumstances;
+though, benefits and tradeoffs would most likely fall in accordance with the
+<a href="https://en.wikipedia.org/wiki/CAP_theorem">CAP theorem</a>.
+My first concern with this particular distributed system was scalability; however,
+the compromise looks quite reasonable.
+Nodes can decide whether they wish to retain blocks of data by &ldquo;pinning&rdquo; the
+data; in other words, telling the daemon that the data should never be deleted.
+Otherwise, data that has been cached by the node is frequently garbage collected.</p>
+<h2 id="ifps-for-static-web-hosting-of-xropme">IFPS for Static Web Hosting of <code>xrop.me</code></h2>
+<p>IPFS aligned with my desire for distributed storage of my site.
+I decided to transfer this site over to IPFS.
+However, there were a few hurdles.</p>
+<p>Web browsers by default use DNS and the Internet Protocol for resolving addresses
+and finding servers.
+Therefore, I needed to use some kind of proxy to forward requests from a
+traditional server into the IPFS network.
+The IPFS daemon already has this functionality built in, where a HTTP server is
+spun up on port 8080 and can send data from IPFS to the web browser.
+Furthermore, there are numerous cloud services which provide this functionality.
+I went with Cloudflare.
+They provide this gateway functionality, and also they allow for SSL certificates
+on domains aliased via a CNAME record.</p>
+<p>The second large hurdle was mutating the website.
+Each content identifier on IPFS points to a unique piece of data.
+As a consequence, the content identifier will change everytime I update the
+website.
+Fortunately, the IPFS protocol provides a &ldquo;pointer&rdquo; addressing system of sorts,
+where addresses can be pointed to different content identifiers over time.
+This is known as IPNS (InterPlanetary Name System).
+I pointed <code>xrop.me</code> to
+<code>https://cloudflare-ipfs.com/ipns/k2k4r8pqfxsg6svf4g9mc18f65ev0hdxqk44wpif5hihpt7bsv44sw3y</code>
+via a CNAME record.
+<code>https://cloudflare-ipfs.com</code> is Cloudflare&rsquo;s IPFS gateway, and the path <code>ipns</code>
+specifies that the request is for an IPNS name, which points to a content
+identifier.
+As of the writing of this article, the name
+<code>k2k4r8pqfxsg6svf4g9mc18f65ev0hdxqk44wpif5hihpt7bsv44sw3y</code>
+points to the content identifier
+<code>QmP8pko8Ko7eb4YHV8bYV2nGo6vTpXcfr21Sy8ZiJGoaAq</code>. This content identifier can
+then be accessed on Cloudflare&rsquo;s gateway by accessing
+<code>https://cloudflare-ipfs.com/ipfs/QmP8pko8Ko7eb4YHV8bYV2nGo6vTpXcfr21Sy8ZiJGoaAq</code>
+(The link will probably not work as old versions of the website will be
+unpinned).</p>
+<p>I also slightly modified the website source code. I originally used CDNs for imports
+such as <code>Bootstrap</code> and <code>MathJax</code>.
+However, I downloaded the libraries and uploaded them alongside the website
+source code.
+This means that anybody else hosting a website on IPFS using the same libraries
+will be sharing the same content identifiers as are used on my site.
+People accessing my website or other websites don&rsquo;t necessarily need to access my
+website (or nodes who have cached it) to retrieve those libraries on IPFS.
+Rather, another node could have the same resource pinned.</p>
+<p>I currently have this website pinned on an IPFS instance running on a Raspberry
+Pi 4 with NixOS.</p>
+<h2 id="applications-for-ipfs">Applications for IPFS</h2>
+<p>I use NixOS, which allows for reproducible builds through functional package
+management.
+It, too, uses a filesystem of immutable data blocks referred to by hashes.
+It seems only natural that perhaps NixOS could use IPFS for both storing package
+source code, and the resulting builds.
+And as I found out, <a href="https://blog.ipfs.io/2020-09-08-nix-ipfs-milestone-1/">this is already being done.</a></p>
+<p>A natural extension of IPFS in the age of blockchain would be to construct a
+marketplace around IPFS.
+Filecoin is a cryptocurrency built ontop of IPFS which allows nodes with surplus
+disk space to rent out storage to other nodes. As of the writing of this
+article, the price of storage on Filecoin is fairly good as well, at twice the
+price of Amazon S3.</p>
+<p>I have also seen further attempts to distribute the hosting of web content
+using IPFS and other technologies as well.
+One solution that is attractive is using IPFS for static web hosting,
+and then using the Ethereum Name Service, which is a marketplace dapp for
+registering domain names ending in <code>.eth</code>. When combined with browser extensions
+which allow for Ethereum Name Service domains to be resolved and for IPFS data
+to be retrieved through a local node instead of through a centralized gateway,
+it seems that one can achieve a fairly high level of decentralization.</p>
+
+
+      </div>
+    </div><footer>
+  <p>Copyright (c) 2023 Nicolás Kennedy</p>
+</footer>
+</body>
+</html>

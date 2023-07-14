@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  
+  
+  <title>Nicolás Kennedy | Hashing Functions</title>
+</head>
+<body>
+    <div id="content_wrapper"><nav>
+  <a class="navbar-title" href="/">
+    Nicolás Kennedy
+  </a>
+  
+  
+  <a class="navbar-link" href="/">
+    posts
+  </a>
+  
+  
+  <a class="navbar-link" href="/about">
+    about
+  </a>
+  
+  
+  <a class="navbar-link" href="/projects">
+    projects
+  </a>
+  
+</nav>
+<div id="content">
+  <h1 class="post-header-title">Hashing Functions</h1>
+  
+    <small><time class="post-header-date">Jun 25, 2020</small></time>
+  
+  <p>I recently read <a href="https://doc.rust-lang.org/stable/book/">The Rust Programming
+Language</a>.
+The whole language feels very cohesive. It has an official package repository
+located at <a href="https://crates.io">crates.io</a>.
+Although I am not a fan of centralized packaging solutions, the clear benefit
+of this system is its ease of use.
+Libraries can be added to a project by simply adding the name of that library
+to the project configuration file.</p>
+<p>I thought that a great first project would be to implement the <a href="https://doi.org/10.6028/NIST.FIPS.180-4">Secure Hash
+Standard (NIST FIPS 180-4)</a>, which
+includes the SHA-1 and SHA-2 (SHA-256, SHA-512, &hellip;).
+Yesterday I implemented SHA-1, and its repository is located
+<a href="https://github.com/nicbk/sha-one">here</a>.
+I have not optimized it.
+This is quite obvious as hashing GNU Make, which is about a megabyte large, took
+multiple seconds.
+However, before I return to SHA-1, I might as well implement SHA-256 and
+SHA-512.</p>
+
+
+      </div>
+    </div><footer>
+  <p>Copyright (c) 2023 Nicolás Kennedy</p>
+</footer>
+</body>
+</html>

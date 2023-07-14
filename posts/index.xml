@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Nicolás Kennedy</title>
+    <link>/posts/</link>
+    <description>Recent content in Posts on Nicolás Kennedy</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 09 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Social Media</title>
+      <link>/posts/2021/07/09/social-media/</link>
+      <pubDate>Fri, 09 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/2021/07/09/social-media/</guid>
+      <description>We, as a society, have decided to cede our data to robots implemented with dangerous algorithms. This is not necessarily done with malicious intent. However, when the decision is made to allow these algorithms to dictate the flow of information among humans, then we will inevitably be misled in ways that are much more difficult to address. The sad reality is that we, on average, have been subliminally influenced by modern information in negative ways - by its source, its presentation, and its content.</description>
+    </item>
+    
+    <item>
+      <title>Regular Hosting</title>
+      <link>/posts/2020/12/02/regular-hosting/</link>
+      <pubDate>Wed, 02 Dec 2020 00:00:01 +0000</pubDate>
+      
+      <guid>/posts/2020/12/02/regular-hosting/</guid>
+      <description>Simplicity of Regular Hosting For now, the complexity of having a site on IPFS and its interface to the regular web takes too much time for me to configure and maintain. Therefore, I will be reverting this site back to GitLab Pages.</description>
+    </item>
+    
+    <item>
+      <title>IPFS Day Two</title>
+      <link>/posts/2020/12/02/ipfs-day-two/ipfs-day-two/</link>
+      <pubDate>Wed, 02 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/2020/12/02/ipfs-day-two/ipfs-day-two/</guid>
+      <description>See the previous blog post about how I put this site on IPFS (InterPlanetary File System).
+Latency of IPFS Accessing xrop.me with Cloudflare had relatively high latency, with page loads lasting a few seconds. Instead of using IPNS (InterPlanetary Name System) names, I tested accessing the site directly through its CID (content identifier). The difference was quite significant. Loading times went from multiple seconds to a maximum of hundreds of milliseconds.</description>
+    </item>
+    
+    <item>
+      <title>IPFS Hosting</title>
+      <link>/posts/2020/12/01/ipfs-hosting/</link>
+      <pubDate>Tue, 01 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/2020/12/01/ipfs-hosting/</guid>
+      <description>IPFS Today I read about IPFS (InterPlanetary File System). It is a decentralized file storage protocol which utilizes a distributed hash table. This means that a block of data is referred to by its hash, and these hashes are distributed to nodes in the network. Nodes in the network can request such data by broadcasting that hash (known as a &amp;ldquo;content identifier&amp;rdquo;). Any node that has the data (or part of it) can then send the data back.</description>
+    </item>
+    
+    <item>
+      <title>Rotating Torus</title>
+      <link>/posts/2020/11/27/rotating-torus/</link>
+      <pubDate>Fri, 27 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/2020/11/27/rotating-torus/</guid>
+      <description>UPDATE: An browser based rotating torus which uses similar source code can be viewed here!
+I recently read about a spinning donut, and decided to render one for myself. My donut is here. I commented out the source code quite a bit and used lengthy variable names in order to make the source code easier to understand.
+This project is an application of mathematical concepts I had recently learned in school.</description>
+    </item>
+    
+    <item>
+      <title>Rengo</title>
+      <link>/posts/2020/07/13/rengo/</link>
+      <pubDate>Mon, 13 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/2020/07/13/rengo/</guid>
+      <description>I recently learned of the Go board game. If you are not familiar with the game, you have probably heard of it before when AlphaGo beat its best player. I desired a four player implementation that was playable from a web browser.
+Around the same time, I came across Pont, an implementation of another board game that used Rust for both the server and client. The server is multithreaded with an asynchronous runtime, and exposes a WebSocket API that a client can interface with.</description>
+    </item>
+    
+    <item>
+      <title>Other Hashing Functions</title>
+      <link>/posts/2020/06/29/other-hashing-functions/</link>
+      <pubDate>Mon, 29 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/2020/06/29/other-hashing-functions/</guid>
+      <description>SHA-256 was quite similar to SHA-1 in many ways, and much of the code used to implement SHA-1 was borrowed. The project is hosted here. I also implemented SHA-512, which is hosted here.
+Blockchains have always been on my mind, so perhaps I will implement a little blockchain next. My purpose in doing these little projects has been to understand how these ubiquitous yet esoteric technologies work under the hood. I never feel satisifed solely using a library; I feel like I know what I am doing if I can reproduce functionality with my own reasoning.</description>
+    </item>
+    
+    <item>
+      <title>Hashing Functions</title>
+      <link>/posts/2020/06/25/hashing-functions/</link>
+      <pubDate>Thu, 25 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/2020/06/25/hashing-functions/</guid>
+      <description>I recently read The Rust Programming Language. The whole language feels very cohesive. It has an official package repository located at crates.io. Although I am not a fan of centralized packaging solutions, the clear benefit of this system is its ease of use. Libraries can be added to a project by simply adding the name of that library to the project configuration file.
+I thought that a great first project would be to implement the Secure Hash Standard (NIST FIPS 180-4), which includes the SHA-1 and SHA-2 (SHA-256, SHA-512, &amp;hellip;).</description>
+    </item>
+    
+  </channel>
+</rss>
