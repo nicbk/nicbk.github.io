@@ -2,47 +2,46 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/</loc>
-    <lastmod>2022-09-06T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url><url>
-    <loc>/posts/</loc>
+    <loc>//localhost:1313/</loc>
     <lastmod>2022-09-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2021/07/09/social-media/</loc>
+    <loc>//localhost:1313/posts/</loc>
     <lastmod>2022-09-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2020/12/02/regular-hosting/</loc>
+    <loc>//localhost:1313/posts/2021/07/09/social-media/</loc>
+    <lastmod>2022-09-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/posts/2020/12/02/regular-hosting/</loc>
     <lastmod>2020-12-02T00:00:01+00:00</lastmod>
   </url><url>
-    <loc>/posts/2020/12/02/ipfs-day-two/ipfs-day-two/</loc>
+    <loc>//localhost:1313/posts/2020/12/02/ipfs-day-two/ipfs-day-two/</loc>
     <lastmod>2020-12-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2020/12/01/ipfs-hosting/</loc>
+    <loc>//localhost:1313/posts/2020/12/01/ipfs-hosting/</loc>
     <lastmod>2020-12-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2020/11/27/rotating-torus/</loc>
+    <loc>//localhost:1313/posts/2020/11/27/rotating-torus/</loc>
     <lastmod>2020-11-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2020/07/13/rengo/</loc>
+    <loc>//localhost:1313/posts/2020/07/13/rengo/</loc>
     <lastmod>2020-07-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2020/06/29/other-hashing-functions/</loc>
+    <loc>//localhost:1313/posts/2020/06/29/other-hashing-functions/</loc>
     <lastmod>2020-06-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2020/06/25/hashing-functions/</loc>
+    <loc>//localhost:1313/posts/2020/06/25/hashing-functions/</loc>
     <lastmod>2020-06-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/about/</loc>
+    <loc>//localhost:1313/about/</loc>
   </url><url>
-    <loc>/projects/ascii-donut/</loc>
+    <loc>//localhost:1313/projects/ascii-donut/</loc>
   </url><url>
-    <loc>/categories/</loc>
+    <loc>//localhost:1313/categories/</loc>
   </url><url>
-    <loc>/projects/</loc>
+    <loc>//localhost:1313/projects/</loc>
   </url><url>
-    <loc>/projects/rengo/</loc>
+    <loc>//localhost:1313/projects/rengo/</loc>
   </url><url>
-    <loc>/tags/</loc>
+    <loc>//localhost:1313/tags/</loc>
   </url>
 </urlset>

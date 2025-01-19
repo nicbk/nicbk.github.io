@@ -2,125 +2,88 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Nicolás Kennedy</title>
-    <link>/</link>
+    <link>//localhost:1313/</link>
     <description>Recent content on Nicolás Kennedy</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 09 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 06 Sep 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Social Media</title>
-      <link>/posts/2021/07/09/social-media/</link>
+      <link>//localhost:1313/posts/2021/07/09/social-media/</link>
       <pubDate>Fri, 09 Jul 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/posts/2021/07/09/social-media/</guid>
-      <description>We, as a society, have decided to cede our data to robots implemented with dangerous algorithms. This is not necessarily done with malicious intent. However, when the decision is made to allow these algorithms to dictate the flow of information among humans, then we will inevitably be misled in ways that are much more difficult to address. The sad reality is that we, on average, have been subliminally influenced by modern information in negative ways - by its source, its presentation, and its content.</description>
+      <guid>//localhost:1313/posts/2021/07/09/social-media/</guid>
+      <description>&lt;p&gt;We, as a society, have decided to cede our data to robots implemented with dangerous algorithms.&#xA;This is not necessarily done with malicious intent.&#xA;However, when the decision is made to allow these algorithms to dictate the flow of information among humans, then we will inevitably be misled in ways that are much more difficult to address.&#xA;The sad reality is that we, on average, have been subliminally influenced by modern information in negative ways - by its source, its presentation, and its content.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Regular Hosting</title>
-      <link>/posts/2020/12/02/regular-hosting/</link>
+      <link>//localhost:1313/posts/2020/12/02/regular-hosting/</link>
       <pubDate>Wed, 02 Dec 2020 00:00:01 +0000</pubDate>
-      
-      <guid>/posts/2020/12/02/regular-hosting/</guid>
-      <description>Simplicity of Regular Hosting For now, the complexity of having a site on IPFS and its interface to the regular web takes too much time for me to configure and maintain. Therefore, I will be reverting this site back to GitLab Pages.</description>
+      <guid>//localhost:1313/posts/2020/12/02/regular-hosting/</guid>
+      <description>&lt;h2 id=&#34;simplicity-of-regular-hosting&#34;&gt;Simplicity of Regular Hosting&lt;/h2&gt;&#xA;&lt;p&gt;For now, the complexity of having a site on IPFS and its interface to&#xA;the regular web takes too much time for me to configure and maintain.&#xA;Therefore, I will be reverting this site back to GitLab Pages.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>IPFS Day Two</title>
-      <link>/posts/2020/12/02/ipfs-day-two/ipfs-day-two/</link>
+      <link>//localhost:1313/posts/2020/12/02/ipfs-day-two/ipfs-day-two/</link>
       <pubDate>Wed, 02 Dec 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/posts/2020/12/02/ipfs-day-two/ipfs-day-two/</guid>
-      <description>See the previous blog post about how I put this site on IPFS (InterPlanetary File System).
-Latency of IPFS Accessing xrop.me with Cloudflare had relatively high latency, with page loads lasting a few seconds. Instead of using IPNS (InterPlanetary Name System) names, I tested accessing the site directly through its CID (content identifier). The difference was quite significant. Loading times went from multiple seconds to a maximum of hundreds of milliseconds.</description>
+      <guid>//localhost:1313/posts/2020/12/02/ipfs-day-two/ipfs-day-two/</guid>
+      <description>&lt;p&gt;See the &lt;a href=&#34;//localhost:1313/posts/2020/12/01/ipfs-hosting&#34;&gt;previous blog post&lt;/a&gt; about how I put this site on IPFS&#xA;(InterPlanetary File System).&lt;/p&gt;&#xA;&lt;h2 id=&#34;latency-of-ipfs&#34;&gt;Latency of IPFS&lt;/h2&gt;&#xA;&lt;p&gt;Accessing &lt;code&gt;xrop.me&lt;/code&gt; with Cloudflare had relatively high latency, with page&#xA;loads lasting a few seconds.&#xA;Instead of using IPNS (InterPlanetary Name System) names, I tested accessing the&#xA;site directly through its CID (content identifier).&#xA;The difference was quite significant.&#xA;Loading times went from multiple seconds to a maximum of hundreds of&#xA;milliseconds.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>IPFS Hosting</title>
-      <link>/posts/2020/12/01/ipfs-hosting/</link>
+      <link>//localhost:1313/posts/2020/12/01/ipfs-hosting/</link>
       <pubDate>Tue, 01 Dec 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/posts/2020/12/01/ipfs-hosting/</guid>
-      <description>IPFS Today I read about IPFS (InterPlanetary File System). It is a decentralized file storage protocol which utilizes a distributed hash table. This means that a block of data is referred to by its hash, and these hashes are distributed to nodes in the network. Nodes in the network can request such data by broadcasting that hash (known as a &amp;ldquo;content identifier&amp;rdquo;). Any node that has the data (or part of it) can then send the data back.</description>
+      <guid>//localhost:1313/posts/2020/12/01/ipfs-hosting/</guid>
+      <description>&lt;h2 id=&#34;ipfs&#34;&gt;IPFS&lt;/h2&gt;&#xA;&lt;p&gt;Today I read about IPFS (InterPlanetary File System).&#xA;It is a decentralized file storage protocol which utilizes a&#xA;distributed hash table.&#xA;This means that a block of data is referred to by its hash, and these hashes are&#xA;distributed to nodes in the network.&#xA;Nodes in the network can request such data by broadcasting that hash (known as a&#xA;&amp;ldquo;content identifier&amp;rdquo;).&#xA;Any node that has the data (or part of it) can then send the data back.&#xA;This partial satisfaction of a data request is similar to BitTorrent, where portions&#xA;of data can come from different nodes simultaneously.&#xA;This distributed transfer of data can be beneficial in a number of circumstances;&#xA;though, benefits and tradeoffs would most likely fall in accordance with the&#xA;&lt;a href=&#34;https://en.wikipedia.org/wiki/CAP_theorem&#34;&gt;CAP theorem&lt;/a&gt;.&#xA;My first concern with this particular distributed system was scalability; however,&#xA;the compromise looks quite reasonable.&#xA;Nodes can decide whether they wish to retain blocks of data by &amp;ldquo;pinning&amp;rdquo; the&#xA;data; in other words, telling the daemon that the data should never be deleted.&#xA;Otherwise, data that has been cached by the node is frequently garbage collected.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Rotating Torus</title>
-      <link>/posts/2020/11/27/rotating-torus/</link>
+      <link>//localhost:1313/posts/2020/11/27/rotating-torus/</link>
       <pubDate>Fri, 27 Nov 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/posts/2020/11/27/rotating-torus/</guid>
-      <description>UPDATE: An browser based rotating torus which uses similar source code can be viewed here!
-I recently read about a spinning donut, and decided to render one for myself. My donut is here. I commented out the source code quite a bit and used lengthy variable names in order to make the source code easier to understand.
-This project is an application of mathematical concepts I had recently learned in school.</description>
+      <guid>//localhost:1313/posts/2020/11/27/rotating-torus/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;UPDATE&lt;/strong&gt;: An browser based rotating torus which uses similar source code can be viewed &lt;a href=&#34;//localhost:1313/projects/ascii-donut&#34;&gt;here!&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;I recently read about a &lt;a href=&#34;https://www.a1k0n.net/2011/07/20/donut-math.html&#34;&gt;spinning&#xA;donut&lt;/a&gt;, and decided to render&#xA;one for myself. My donut is &lt;a href=&#34;https://github.com/nicbk/donut-embedded&#34;&gt;here&lt;/a&gt;. I&#xA;commented out the source code quite a bit and used lengthy variable&#xA;names in order to make the source code easier to understand.&lt;/p&gt;&#xA;&lt;p&gt;This project is an application of mathematical concepts I had recently learned&#xA;in school. Specifically, I wanted to reimplement all of the necessary math&#xA;functions needed for rendering a parameterized torus without using any&#xA;libraries. Instead, I would rely on basic floating point arithmetic to derive&#xA;numerical approximations for more complicated functions.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Rengo</title>
-      <link>/posts/2020/07/13/rengo/</link>
+      <link>//localhost:1313/posts/2020/07/13/rengo/</link>
       <pubDate>Mon, 13 Jul 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/posts/2020/07/13/rengo/</guid>
-      <description>I recently learned of the Go board game. If you are not familiar with the game, you have probably heard of it before when AlphaGo beat its best player. I desired a four player implementation that was playable from a web browser.
-Around the same time, I came across Pont, an implementation of another board game that used Rust for both the server and client. The server is multithreaded with an asynchronous runtime, and exposes a WebSocket API that a client can interface with.</description>
+      <guid>//localhost:1313/posts/2020/07/13/rengo/</guid>
+      <description>&lt;p&gt;I recently learned of the Go board game.&#xA;If you are not familiar with the game, you have probably heard of it before&#xA;&lt;a href=&#34;https://en.wikipedia.org/wiki/AlphaGo_versus_Lee_Sedol&#34;&gt;when AlphaGo beat its best&#xA;player&lt;/a&gt;.&#xA;I desired a four player implementation that was playable from a web browser.&lt;/p&gt;&#xA;&lt;p&gt;Around the same time, I came across&#xA;&lt;a href=&#34;https://news.ycombinator.com/item?id=23649369&#34; title=&#34;Pont&#34;&gt;Pont&lt;/a&gt;, an implementation of another board game that used Rust for both the&#xA;server and client.&#xA;The server is multithreaded with an asynchronous runtime, and exposes a&#xA;WebSocket API that a client can interface with.&#xA;The client was written with &lt;a href=&#34;https://crates.io/crates/wasm-bindgen&#34;&gt;a Rust to JavaScript transpiler / Rust to&#xA;WebAssembly compiler&lt;/a&gt;.&#xA;I decided to write a Go stack in Rust, similar to what was done with &lt;a href=&#34;https://news.ycombinator.com/item?id=23649369&#34; title=&#34;Pont&#34;&gt;Pont&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Other Hashing Functions</title>
-      <link>/posts/2020/06/29/other-hashing-functions/</link>
+      <link>//localhost:1313/posts/2020/06/29/other-hashing-functions/</link>
       <pubDate>Mon, 29 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/posts/2020/06/29/other-hashing-functions/</guid>
-      <description>SHA-256 was quite similar to SHA-1 in many ways, and much of the code used to implement SHA-1 was borrowed. The project is hosted here. I also implemented SHA-512, which is hosted here.
-Blockchains have always been on my mind, so perhaps I will implement a little blockchain next. My purpose in doing these little projects has been to understand how these ubiquitous yet esoteric technologies work under the hood. I never feel satisifed solely using a library; I feel like I know what I am doing if I can reproduce functionality with my own reasoning.</description>
+      <guid>//localhost:1313/posts/2020/06/29/other-hashing-functions/</guid>
+      <description>&lt;p&gt;SHA-256 was quite similar to SHA-1 in many ways, and much of the code used to&#xA;implement SHA-1 was borrowed.&#xA;The project is hosted &lt;a href=&#34;https://github.com/nicbk/sha-256&#34;&gt;here&lt;/a&gt;.&#xA;I also implemented SHA-512, which is hosted&#xA;&lt;a href=&#34;https://github.com/nicbk/sha-512&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Blockchains have always been on my mind, so perhaps I will implement a little&#xA;blockchain next.&#xA;My purpose in doing these little projects has been to understand how these&#xA;ubiquitous yet esoteric technologies work under the hood.&#xA;I never feel satisifed solely using a library; I feel like I know what I am&#xA;doing if I can reproduce functionality with my own reasoning.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Hashing Functions</title>
-      <link>/posts/2020/06/25/hashing-functions/</link>
+      <link>//localhost:1313/posts/2020/06/25/hashing-functions/</link>
       <pubDate>Thu, 25 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/posts/2020/06/25/hashing-functions/</guid>
-      <description>I recently read The Rust Programming Language. The whole language feels very cohesive. It has an official package repository located at crates.io. Although I am not a fan of centralized packaging solutions, the clear benefit of this system is its ease of use. Libraries can be added to a project by simply adding the name of that library to the project configuration file.
-I thought that a great first project would be to implement the Secure Hash Standard (NIST FIPS 180-4), which includes the SHA-1 and SHA-2 (SHA-256, SHA-512, &amp;hellip;).</description>
+      <guid>//localhost:1313/posts/2020/06/25/hashing-functions/</guid>
+      <description>&lt;p&gt;I recently read &lt;a href=&#34;https://doc.rust-lang.org/stable/book/&#34;&gt;The Rust Programming&#xA;Language&lt;/a&gt;.&#xA;The whole language feels very cohesive. It has an official package repository&#xA;located at &lt;a href=&#34;https://crates.io&#34;&gt;crates.io&lt;/a&gt;.&#xA;Although I am not a fan of centralized packaging solutions, the clear benefit&#xA;of this system is its ease of use.&#xA;Libraries can be added to a project by simply adding the name of that library&#xA;to the project configuration file.&lt;/p&gt;&#xA;&lt;p&gt;I thought that a great first project would be to implement the &lt;a href=&#34;https://doi.org/10.6028/NIST.FIPS.180-4&#34;&gt;Secure Hash&#xA;Standard (NIST FIPS 180-4)&lt;/a&gt;, which&#xA;includes the SHA-1 and SHA-2 (SHA-256, SHA-512, &amp;hellip;).&#xA;Yesterday I implemented SHA-1, and its repository is located&#xA;&lt;a href=&#34;https://github.com/nicbk/sha-one&#34;&gt;here&lt;/a&gt;.&#xA;I have not optimized it.&#xA;This is quite obvious as hashing GNU Make, which is about a megabyte large, took&#xA;multiple seconds.&#xA;However, before I return to SHA-1, I might as well implement SHA-256 and&#xA;SHA-512.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>About</title>
-      <link>/about/</link>
+      <link>//localhost:1313/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/about/</guid>
-      <description>Résumé/CV
-LinkedIn
-Communication Mail nicolas at nicbk dot com Academic Mail nbkennedy at ucdavis dot edu Please encrypt or at least sign email messages.
-My currently active GnuPG key is listed below. The key changes periodically.
-Fingerprint: F835BB53D8D44AAC92F5C1F6B7BB84802180025E Public Key Nicolás Kennedy &amp;lt;nicolas at nicbk dot com&amp;gt; Version Control GitHub nicbk GitLab nicbk I usually host projects on GitHub.
-I am an undergraduate student at the University of California, Davis. My career goals are broadly as follows: to contribute to the fields of mathematics and physics with a focus on artificial intelligence, and to engineer ethical and impactful creations that are preferably free and open source.</description>
+      <guid>//localhost:1313/about/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;//localhost:1313/about/cv.pdf&#34;&gt;&lt;strong&gt;Résumé/CV&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.linkedin.com/in/nicbk/&#34;&gt;LinkedIn&lt;/a&gt;&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;communication&#34;&gt;Communication&lt;/h2&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th style=&#34;text-align: left&#34;&gt;&lt;/th&gt;&#xA;          &lt;th&gt;&lt;/th&gt;&#xA;          &lt;th&gt;&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Mail&lt;/strong&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;/td&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;&lt;a href=&#34;mailto:nicolas@nicbk.com&#34;&gt;nicolas at nicbk dot com&lt;/a&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Academic Mail&lt;/strong&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;/td&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;&lt;a href=&#34;mailto:nbkennedy@ucdavis.edu&#34;&gt;nbkennedy at ucdavis dot edu&lt;/a&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;p&gt;Please encrypt or at least sign email messages.&lt;br&gt;&#xA;My currently active GnuPG key is listed below.&#xA;The key changes periodically.&lt;/p&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th style=&#34;text-align: left&#34;&gt;&lt;/th&gt;&#xA;          &lt;th&gt;&lt;/th&gt;&#xA;          &lt;th&gt;&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Fingerprint&lt;/strong&gt;:&lt;/td&gt;&#xA;          &lt;td&gt;&lt;/td&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;F835BB53D8D44AAC92F5C1F6B7BB84802180025E&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Public Key&lt;/strong&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;/td&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;&lt;a href=&#34;//localhost:1313/about/nicbk.asc&#34;&gt;Nicolás Kennedy &amp;lt;nicolas at nicbk dot com&amp;gt;&lt;/a&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;version-control&#34;&gt;Version Control&lt;/h2&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th style=&#34;text-align: left&#34;&gt;&lt;/th&gt;&#xA;          &lt;th&gt;&lt;/th&gt;&#xA;          &lt;th&gt;&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;GitHub&lt;/strong&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;/td&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;&lt;a href=&#34;https://github.com/nicbk&#34;&gt;nicbk&lt;/a&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;GitLab&lt;/strong&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;/td&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;&lt;a href=&#34;https://gitlab.com/nicbk&#34;&gt;nicbk&lt;/a&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;p&gt;I usually host projects on GitHub.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>ASCII Donut</title>
-      <link>/projects/ascii-donut/</link>
+      <link>//localhost:1313/projects/ascii-donut/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/projects/ascii-donut/</guid>
-      <description>The Rotating Torus See the original blog post for more information.
-This program was originally written in C, and then compiled to WebAssembly using Emscripten.
-This program projects a parameterized 3D torus onto a 2D screen. Furthermore, all mathematical functions needed to render the torus are numerically appromixated with custom functions. This program was primarily written to utilize mathematical concepts learned from school.</description>
+      <guid>//localhost:1313/projects/ascii-donut/</guid>
+      <description>&lt;div id=&#34;console&#34;&gt;&lt;/div&gt;&#xA;&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;the-rotating-torus&#34;&gt;The Rotating Torus&lt;/h2&gt;&#xA;&lt;p&gt;See the &lt;a href=&#34;//localhost:1313/rotating-torus&#34;&gt;original blog post&lt;/a&gt; for more information.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://github.com/nicbk/donut-html&#34;&gt;This&lt;/a&gt; program was originally written in C,&#xA;and then compiled to WebAssembly using Emscripten.&lt;/p&gt;&#xA;&lt;p&gt;This program projects a parameterized 3D torus onto a 2D screen.&#xA;Furthermore, all mathematical functions needed to render the torus are numerically appromixated&#xA;with custom functions.&#xA;This program was primarily written to utilize mathematical concepts learned from school.&lt;/p&gt;&#xA;&lt;script type=&#34;text/javascript&#34;&gt;&#xA;var Module = {&#xA;preRun: [],&#xA;postRun: [],&#xA;print: (function() {&#xA;  var element = document.getElementById(&#39;console&#39;);&#xA;  if (element) element.innerHTML = &#39;&#39;; // clear browser cache&#xA;  return function(text) {&#xA;    //if (arguments.length &gt; 1) text = Array.prototype.slice.call(arguments).join(&#39; &#39;);&#xA;    // These replacements are necessary if you render to raw HTML&#xA;    text = text.replace(/&amp;/g, &#34;&amp;amp;&#34;);&#xA;    text = text.replace(/&lt;/g, &#34;&amp;lt;&#34;);&#xA;    text = text.replace(/&gt;/g, &#34;&amp;gt;&#34;);&#xA;    text = text.replace(&#39;\n&#39;, &#39;&lt;br&gt;&#39;, &#39;g&#39;);&#xA;    text = text.replace(/\s/g, &#39;&amp;nbsp;&#39;);&#xA;    if (element) {&#xA;      if (text.includes(&#34;reset&#34;)) {&#xA;        element.innerHTML = &#34;&#34;;&#xA;      } else&#xA;        {&#xA;            element.innerHTML += text;&#xA;            element.innerHTML += &#34;&lt;br&gt;&#34;;&#xA;        }&#xA;      //element.scrollTop = element.scrollHeight; // focus on bottom&#xA;    }&#xA;  };&#xA;})(),&#xA;printErr: function(text) {&#xA;  if (arguments.length &gt; 1) text = Array.prototype.slice.call(arguments).join(&#39; &#39;);&#xA;  console.error(text);&#xA;},&#xA;canvas: (function() {&#xA;})(),&#xA;setStatus: function(text) {&#xA;  if (!Module.setStatus.last) Module.setStatus.last = { time: Date.now(), text: &#39;&#39; };&#xA;  if (text === Module.setStatus.last.text) return;&#xA;  var m = text.match(/([^(]+)\((\d+(\.\d+)?)\/(\d+)\)/);&#xA;  var now = Date.now();&#xA;  if (m &amp;&amp; now - Module.setStatus.last.time &lt; 30) return; // if this is a progress update, skip it if too soon&#xA;  Module.setStatus.last.time = now;&#xA;  Module.setStatus.last.text = text;&#xA;},&#xA;totalDependencies: 0,&#xA;monitorRunDependencies: function(left) {&#xA;  this.totalDependencies = Math.max(this.totalDependencies, left);&#xA;  Module.setStatus(left ? &#39;Preparing... (&#39; + (this.totalDependencies-left) + &#39;/&#39; + this.totalDependencies + &#39;)&#39; : &#39;All downloads complete.&#39;);&#xA;}&#xA;};&#xA;Module.setStatus(&#39;Downloading...&#39;);&#xA;window.onerror = function(event) {&#xA;// TODO: do not warn on ok events like simulating an infinite loop or exitStatus&#xA;Module.setStatus(&#39;Exception thrown, see JavaScript console&#39;);&#xA;Module.setStatus = function(text) {&#xA;  if (text) Module.printErr(&#39;[post-exception status] &#39; + text);&#xA;};&#xA;};&#xA;&lt;/script&gt;&#xA;&lt;script async type=&#34;text/javascript&#34; src=&#34;donut.js&#34;&gt;&lt;/script&gt;&#xA;&lt;style&gt;&#xA;#console {&#xA;    white-space: nowrap;&#xA;    width: 55em;&#xA;    height: 47em;&#xA;    margin: auto;&#xA;    margin-top: 3%;&#xA;    margin-bottom: 1%;&#xA;    display: block;&#xA;    background-color: black;&#xA;    color: white;&#xA;    font-family: &#39;Lucida Console&#39;, Monaco, monospace;&#xA;    outline: none;&#xA;}&#xA;&lt;/style&gt;</description>
     </item>
-    
     <item>
       <title>Rengo</title>
-      <link>/projects/rengo/</link>
+      <link>//localhost:1313/projects/rengo/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/projects/rengo/</guid>
-      <description>Also available at nicbk.com/rengo-client-web
-See the original blog post.
-Go for more than two players Rengo is a version of Go that can be played with four players. In this rendition of Rengo, any number of players can join a room to play together.
-Rules The rules are the same as in regular Go. There are two teams: white and black. Players will be alternately assigned to teams as they join.</description>
+      <guid>//localhost:1313/projects/rengo/</guid>
+      <description>&lt;p&gt;Also available at &lt;a href=&#34;https://nicbk.com/rengo-client-web&#34;&gt;nicbk.com/rengo-client-web&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p align=&#34;center&#34;&gt;&#xA;  &lt;iframe src=&#34;https://nicbk.com/rengo-client-web&#34; title=&#34;RENGO&#34;&gt;&lt;/iframe&gt;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;See the &lt;a href=&#34;//localhost:1313/rengo&#34;&gt;original blog post.&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;go-for-more-than-two-players&#34;&gt;Go for more than two players&lt;/h1&gt;&#xA;&lt;p&gt;Rengo is a version of Go that can be played with four players.&#xA;In this rendition of Rengo, any number of players can join a room&#xA;to play together.&lt;/p&gt;&#xA;&lt;h1 id=&#34;rules&#34;&gt;Rules&lt;/h1&gt;&#xA;&lt;p&gt;The rules are the same as in regular Go.&#xA;There are two teams: white and black.&#xA;Players will be alternately assigned to teams as they join.&#xA;A player can quit the game at any time.&#xA;However, there is also a &lt;code&gt;pass&lt;/code&gt; button to simulate passing in other&#xA;Go variations, whereby a player can skip their turn.&#xA;If all players skip their turn in order, then the game ends.&#xA;A player who has just passed is denoted with their row filled red.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

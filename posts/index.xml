@@ -2,88 +2,67 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Nicolás Kennedy</title>
-    <link>/posts/</link>
+    <link>//localhost:1313/posts/</link>
     <description>Recent content in Posts on Nicolás Kennedy</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 09 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 06 Sep 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Social Media</title>
-      <link>/posts/2021/07/09/social-media/</link>
+      <link>//localhost:1313/posts/2021/07/09/social-media/</link>
       <pubDate>Fri, 09 Jul 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/posts/2021/07/09/social-media/</guid>
-      <description>We, as a society, have decided to cede our data to robots implemented with dangerous algorithms. This is not necessarily done with malicious intent. However, when the decision is made to allow these algorithms to dictate the flow of information among humans, then we will inevitably be misled in ways that are much more difficult to address. The sad reality is that we, on average, have been subliminally influenced by modern information in negative ways - by its source, its presentation, and its content.</description>
+      <guid>//localhost:1313/posts/2021/07/09/social-media/</guid>
+      <description>&lt;p&gt;We, as a society, have decided to cede our data to robots implemented with dangerous algorithms.&#xA;This is not necessarily done with malicious intent.&#xA;However, when the decision is made to allow these algorithms to dictate the flow of information among humans, then we will inevitably be misled in ways that are much more difficult to address.&#xA;The sad reality is that we, on average, have been subliminally influenced by modern information in negative ways - by its source, its presentation, and its content.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Regular Hosting</title>
-      <link>/posts/2020/12/02/regular-hosting/</link>
+      <link>//localhost:1313/posts/2020/12/02/regular-hosting/</link>
       <pubDate>Wed, 02 Dec 2020 00:00:01 +0000</pubDate>
-      
-      <guid>/posts/2020/12/02/regular-hosting/</guid>
-      <description>Simplicity of Regular Hosting For now, the complexity of having a site on IPFS and its interface to the regular web takes too much time for me to configure and maintain. Therefore, I will be reverting this site back to GitLab Pages.</description>
+      <guid>//localhost:1313/posts/2020/12/02/regular-hosting/</guid>
+      <description>&lt;h2 id=&#34;simplicity-of-regular-hosting&#34;&gt;Simplicity of Regular Hosting&lt;/h2&gt;&#xA;&lt;p&gt;For now, the complexity of having a site on IPFS and its interface to&#xA;the regular web takes too much time for me to configure and maintain.&#xA;Therefore, I will be reverting this site back to GitLab Pages.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>IPFS Day Two</title>
-      <link>/posts/2020/12/02/ipfs-day-two/ipfs-day-two/</link>
+      <link>//localhost:1313/posts/2020/12/02/ipfs-day-two/ipfs-day-two/</link>
       <pubDate>Wed, 02 Dec 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/posts/2020/12/02/ipfs-day-two/ipfs-day-two/</guid>
-      <description>See the previous blog post about how I put this site on IPFS (InterPlanetary File System).
-Latency of IPFS Accessing xrop.me with Cloudflare had relatively high latency, with page loads lasting a few seconds. Instead of using IPNS (InterPlanetary Name System) names, I tested accessing the site directly through its CID (content identifier). The difference was quite significant. Loading times went from multiple seconds to a maximum of hundreds of milliseconds.</description>
+      <guid>//localhost:1313/posts/2020/12/02/ipfs-day-two/ipfs-day-two/</guid>
+      <description>&lt;p&gt;See the &lt;a href=&#34;//localhost:1313/posts/2020/12/01/ipfs-hosting&#34;&gt;previous blog post&lt;/a&gt; about how I put this site on IPFS&#xA;(InterPlanetary File System).&lt;/p&gt;&#xA;&lt;h2 id=&#34;latency-of-ipfs&#34;&gt;Latency of IPFS&lt;/h2&gt;&#xA;&lt;p&gt;Accessing &lt;code&gt;xrop.me&lt;/code&gt; with Cloudflare had relatively high latency, with page&#xA;loads lasting a few seconds.&#xA;Instead of using IPNS (InterPlanetary Name System) names, I tested accessing the&#xA;site directly through its CID (content identifier).&#xA;The difference was quite significant.&#xA;Loading times went from multiple seconds to a maximum of hundreds of&#xA;milliseconds.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>IPFS Hosting</title>
-      <link>/posts/2020/12/01/ipfs-hosting/</link>
+      <link>//localhost:1313/posts/2020/12/01/ipfs-hosting/</link>
       <pubDate>Tue, 01 Dec 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/posts/2020/12/01/ipfs-hosting/</guid>
-      <description>IPFS Today I read about IPFS (InterPlanetary File System). It is a decentralized file storage protocol which utilizes a distributed hash table. This means that a block of data is referred to by its hash, and these hashes are distributed to nodes in the network. Nodes in the network can request such data by broadcasting that hash (known as a &amp;ldquo;content identifier&amp;rdquo;). Any node that has the data (or part of it) can then send the data back.</description>
+      <guid>//localhost:1313/posts/2020/12/01/ipfs-hosting/</guid>
+      <description>&lt;h2 id=&#34;ipfs&#34;&gt;IPFS&lt;/h2&gt;&#xA;&lt;p&gt;Today I read about IPFS (InterPlanetary File System).&#xA;It is a decentralized file storage protocol which utilizes a&#xA;distributed hash table.&#xA;This means that a block of data is referred to by its hash, and these hashes are&#xA;distributed to nodes in the network.&#xA;Nodes in the network can request such data by broadcasting that hash (known as a&#xA;&amp;ldquo;content identifier&amp;rdquo;).&#xA;Any node that has the data (or part of it) can then send the data back.&#xA;This partial satisfaction of a data request is similar to BitTorrent, where portions&#xA;of data can come from different nodes simultaneously.&#xA;This distributed transfer of data can be beneficial in a number of circumstances;&#xA;though, benefits and tradeoffs would most likely fall in accordance with the&#xA;&lt;a href=&#34;https://en.wikipedia.org/wiki/CAP_theorem&#34;&gt;CAP theorem&lt;/a&gt;.&#xA;My first concern with this particular distributed system was scalability; however,&#xA;the compromise looks quite reasonable.&#xA;Nodes can decide whether they wish to retain blocks of data by &amp;ldquo;pinning&amp;rdquo; the&#xA;data; in other words, telling the daemon that the data should never be deleted.&#xA;Otherwise, data that has been cached by the node is frequently garbage collected.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Rotating Torus</title>
-      <link>/posts/2020/11/27/rotating-torus/</link>
+      <link>//localhost:1313/posts/2020/11/27/rotating-torus/</link>
       <pubDate>Fri, 27 Nov 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/posts/2020/11/27/rotating-torus/</guid>
-      <description>UPDATE: An browser based rotating torus which uses similar source code can be viewed here!
-I recently read about a spinning donut, and decided to render one for myself. My donut is here. I commented out the source code quite a bit and used lengthy variable names in order to make the source code easier to understand.
-This project is an application of mathematical concepts I had recently learned in school.</description>
+      <guid>//localhost:1313/posts/2020/11/27/rotating-torus/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;UPDATE&lt;/strong&gt;: An browser based rotating torus which uses similar source code can be viewed &lt;a href=&#34;//localhost:1313/projects/ascii-donut&#34;&gt;here!&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;I recently read about a &lt;a href=&#34;https://www.a1k0n.net/2011/07/20/donut-math.html&#34;&gt;spinning&#xA;donut&lt;/a&gt;, and decided to render&#xA;one for myself. My donut is &lt;a href=&#34;https://github.com/nicbk/donut-embedded&#34;&gt;here&lt;/a&gt;. I&#xA;commented out the source code quite a bit and used lengthy variable&#xA;names in order to make the source code easier to understand.&lt;/p&gt;&#xA;&lt;p&gt;This project is an application of mathematical concepts I had recently learned&#xA;in school. Specifically, I wanted to reimplement all of the necessary math&#xA;functions needed for rendering a parameterized torus without using any&#xA;libraries. Instead, I would rely on basic floating point arithmetic to derive&#xA;numerical approximations for more complicated functions.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Rengo</title>
-      <link>/posts/2020/07/13/rengo/</link>
+      <link>//localhost:1313/posts/2020/07/13/rengo/</link>
       <pubDate>Mon, 13 Jul 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/posts/2020/07/13/rengo/</guid>
-      <description>I recently learned of the Go board game. If you are not familiar with the game, you have probably heard of it before when AlphaGo beat its best player. I desired a four player implementation that was playable from a web browser.
-Around the same time, I came across Pont, an implementation of another board game that used Rust for both the server and client. The server is multithreaded with an asynchronous runtime, and exposes a WebSocket API that a client can interface with.</description>
+      <guid>//localhost:1313/posts/2020/07/13/rengo/</guid>
+      <description>&lt;p&gt;I recently learned of the Go board game.&#xA;If you are not familiar with the game, you have probably heard of it before&#xA;&lt;a href=&#34;https://en.wikipedia.org/wiki/AlphaGo_versus_Lee_Sedol&#34;&gt;when AlphaGo beat its best&#xA;player&lt;/a&gt;.&#xA;I desired a four player implementation that was playable from a web browser.&lt;/p&gt;&#xA;&lt;p&gt;Around the same time, I came across&#xA;&lt;a href=&#34;https://news.ycombinator.com/item?id=23649369&#34; title=&#34;Pont&#34;&gt;Pont&lt;/a&gt;, an implementation of another board game that used Rust for both the&#xA;server and client.&#xA;The server is multithreaded with an asynchronous runtime, and exposes a&#xA;WebSocket API that a client can interface with.&#xA;The client was written with &lt;a href=&#34;https://crates.io/crates/wasm-bindgen&#34;&gt;a Rust to JavaScript transpiler / Rust to&#xA;WebAssembly compiler&lt;/a&gt;.&#xA;I decided to write a Go stack in Rust, similar to what was done with &lt;a href=&#34;https://news.ycombinator.com/item?id=23649369&#34; title=&#34;Pont&#34;&gt;Pont&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Other Hashing Functions</title>
-      <link>/posts/2020/06/29/other-hashing-functions/</link>
+      <link>//localhost:1313/posts/2020/06/29/other-hashing-functions/</link>
       <pubDate>Mon, 29 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/posts/2020/06/29/other-hashing-functions/</guid>
-      <description>SHA-256 was quite similar to SHA-1 in many ways, and much of the code used to implement SHA-1 was borrowed. The project is hosted here. I also implemented SHA-512, which is hosted here.
-Blockchains have always been on my mind, so perhaps I will implement a little blockchain next. My purpose in doing these little projects has been to understand how these ubiquitous yet esoteric technologies work under the hood. I never feel satisifed solely using a library; I feel like I know what I am doing if I can reproduce functionality with my own reasoning.</description>
+      <guid>//localhost:1313/posts/2020/06/29/other-hashing-functions/</guid>
+      <description>&lt;p&gt;SHA-256 was quite similar to SHA-1 in many ways, and much of the code used to&#xA;implement SHA-1 was borrowed.&#xA;The project is hosted &lt;a href=&#34;https://github.com/nicbk/sha-256&#34;&gt;here&lt;/a&gt;.&#xA;I also implemented SHA-512, which is hosted&#xA;&lt;a href=&#34;https://github.com/nicbk/sha-512&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Blockchains have always been on my mind, so perhaps I will implement a little&#xA;blockchain next.&#xA;My purpose in doing these little projects has been to understand how these&#xA;ubiquitous yet esoteric technologies work under the hood.&#xA;I never feel satisifed solely using a library; I feel like I know what I am&#xA;doing if I can reproduce functionality with my own reasoning.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Hashing Functions</title>
-      <link>/posts/2020/06/25/hashing-functions/</link>
+      <link>//localhost:1313/posts/2020/06/25/hashing-functions/</link>
       <pubDate>Thu, 25 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/posts/2020/06/25/hashing-functions/</guid>
-      <description>I recently read The Rust Programming Language. The whole language feels very cohesive. It has an official package repository located at crates.io. Although I am not a fan of centralized packaging solutions, the clear benefit of this system is its ease of use. Libraries can be added to a project by simply adding the name of that library to the project configuration file.
-I thought that a great first project would be to implement the Secure Hash Standard (NIST FIPS 180-4), which includes the SHA-1 and SHA-2 (SHA-256, SHA-512, &amp;hellip;).</description>
+      <guid>//localhost:1313/posts/2020/06/25/hashing-functions/</guid>
+      <description>&lt;p&gt;I recently read &lt;a href=&#34;https://doc.rust-lang.org/stable/book/&#34;&gt;The Rust Programming&#xA;Language&lt;/a&gt;.&#xA;The whole language feels very cohesive. It has an official package repository&#xA;located at &lt;a href=&#34;https://crates.io&#34;&gt;crates.io&lt;/a&gt;.&#xA;Although I am not a fan of centralized packaging solutions, the clear benefit&#xA;of this system is its ease of use.&#xA;Libraries can be added to a project by simply adding the name of that library&#xA;to the project configuration file.&lt;/p&gt;&#xA;&lt;p&gt;I thought that a great first project would be to implement the &lt;a href=&#34;https://doi.org/10.6028/NIST.FIPS.180-4&#34;&gt;Secure Hash&#xA;Standard (NIST FIPS 180-4)&lt;/a&gt;, which&#xA;includes the SHA-1 and SHA-2 (SHA-256, SHA-512, &amp;hellip;).&#xA;Yesterday I implemented SHA-1, and its repository is located&#xA;&lt;a href=&#34;https://github.com/nicbk/sha-one&#34;&gt;here&lt;/a&gt;.&#xA;I have not optimized it.&#xA;This is quite obvious as hashing GNU Make, which is about a megabyte large, took&#xA;multiple seconds.&#xA;However, before I return to SHA-1, I might as well implement SHA-256 and&#xA;SHA-512.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

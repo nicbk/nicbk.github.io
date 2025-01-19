@@ -2,32 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Projects on Nicolás Kennedy</title>
-    <link>/projects/</link>
+    <link>//localhost:1313/projects/</link>
     <description>Recent content in Projects on Nicolás Kennedy</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="/projects/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="//localhost:1313/projects/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ASCII Donut</title>
-      <link>/projects/ascii-donut/</link>
+      <link>//localhost:1313/projects/ascii-donut/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/projects/ascii-donut/</guid>
-      <description>The Rotating Torus See the original blog post for more information.
-This program was originally written in C, and then compiled to WebAssembly using Emscripten.
-This program projects a parameterized 3D torus onto a 2D screen. Furthermore, all mathematical functions needed to render the torus are numerically appromixated with custom functions. This program was primarily written to utilize mathematical concepts learned from school.</description>
+      <guid>//localhost:1313/projects/ascii-donut/</guid>
+      <description>&lt;div id=&#34;console&#34;&gt;&lt;/div&gt;&#xA;&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;the-rotating-torus&#34;&gt;The Rotating Torus&lt;/h2&gt;&#xA;&lt;p&gt;See the &lt;a href=&#34;//localhost:1313/rotating-torus&#34;&gt;original blog post&lt;/a&gt; for more information.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://github.com/nicbk/donut-html&#34;&gt;This&lt;/a&gt; program was originally written in C,&#xA;and then compiled to WebAssembly using Emscripten.&lt;/p&gt;&#xA;&lt;p&gt;This program projects a parameterized 3D torus onto a 2D screen.&#xA;Furthermore, all mathematical functions needed to render the torus are numerically appromixated&#xA;with custom functions.&#xA;This program was primarily written to utilize mathematical concepts learned from school.&lt;/p&gt;&#xA;&lt;script type=&#34;text/javascript&#34;&gt;&#xA;var Module = {&#xA;preRun: [],&#xA;postRun: [],&#xA;print: (function() {&#xA;  var element = document.getElementById(&#39;console&#39;);&#xA;  if (element) element.innerHTML = &#39;&#39;; // clear browser cache&#xA;  return function(text) {&#xA;    //if (arguments.length &gt; 1) text = Array.prototype.slice.call(arguments).join(&#39; &#39;);&#xA;    // These replacements are necessary if you render to raw HTML&#xA;    text = text.replace(/&amp;/g, &#34;&amp;amp;&#34;);&#xA;    text = text.replace(/&lt;/g, &#34;&amp;lt;&#34;);&#xA;    text = text.replace(/&gt;/g, &#34;&amp;gt;&#34;);&#xA;    text = text.replace(&#39;\n&#39;, &#39;&lt;br&gt;&#39;, &#39;g&#39;);&#xA;    text = text.replace(/\s/g, &#39;&amp;nbsp;&#39;);&#xA;    if (element) {&#xA;      if (text.includes(&#34;reset&#34;)) {&#xA;        element.innerHTML = &#34;&#34;;&#xA;      } else&#xA;        {&#xA;            element.innerHTML += text;&#xA;            element.innerHTML += &#34;&lt;br&gt;&#34;;&#xA;        }&#xA;      //element.scrollTop = element.scrollHeight; // focus on bottom&#xA;    }&#xA;  };&#xA;})(),&#xA;printErr: function(text) {&#xA;  if (arguments.length &gt; 1) text = Array.prototype.slice.call(arguments).join(&#39; &#39;);&#xA;  console.error(text);&#xA;},&#xA;canvas: (function() {&#xA;})(),&#xA;setStatus: function(text) {&#xA;  if (!Module.setStatus.last) Module.setStatus.last = { time: Date.now(), text: &#39;&#39; };&#xA;  if (text === Module.setStatus.last.text) return;&#xA;  var m = text.match(/([^(]+)\((\d+(\.\d+)?)\/(\d+)\)/);&#xA;  var now = Date.now();&#xA;  if (m &amp;&amp; now - Module.setStatus.last.time &lt; 30) return; // if this is a progress update, skip it if too soon&#xA;  Module.setStatus.last.time = now;&#xA;  Module.setStatus.last.text = text;&#xA;},&#xA;totalDependencies: 0,&#xA;monitorRunDependencies: function(left) {&#xA;  this.totalDependencies = Math.max(this.totalDependencies, left);&#xA;  Module.setStatus(left ? &#39;Preparing... (&#39; + (this.totalDependencies-left) + &#39;/&#39; + this.totalDependencies + &#39;)&#39; : &#39;All downloads complete.&#39;);&#xA;}&#xA;};&#xA;Module.setStatus(&#39;Downloading...&#39;);&#xA;window.onerror = function(event) {&#xA;// TODO: do not warn on ok events like simulating an infinite loop or exitStatus&#xA;Module.setStatus(&#39;Exception thrown, see JavaScript console&#39;);&#xA;Module.setStatus = function(text) {&#xA;  if (text) Module.printErr(&#39;[post-exception status] &#39; + text);&#xA;};&#xA;};&#xA;&lt;/script&gt;&#xA;&lt;script async type=&#34;text/javascript&#34; src=&#34;donut.js&#34;&gt;&lt;/script&gt;&#xA;&lt;style&gt;&#xA;#console {&#xA;    white-space: nowrap;&#xA;    width: 55em;&#xA;    height: 47em;&#xA;    margin: auto;&#xA;    margin-top: 3%;&#xA;    margin-bottom: 1%;&#xA;    display: block;&#xA;    background-color: black;&#xA;    color: white;&#xA;    font-family: &#39;Lucida Console&#39;, Monaco, monospace;&#xA;    outline: none;&#xA;}&#xA;&lt;/style&gt;</description>
     </item>
-    
     <item>
       <title>Rengo</title>
-      <link>/projects/rengo/</link>
+      <link>//localhost:1313/projects/rengo/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/projects/rengo/</guid>
-      <description>Also available at nicbk.com/rengo-client-web
-See the original blog post.
-Go for more than two players Rengo is a version of Go that can be played with four players. In this rendition of Rengo, any number of players can join a room to play together.
-Rules The rules are the same as in regular Go. There are two teams: white and black. Players will be alternately assigned to teams as they join.</description>
+      <guid>//localhost:1313/projects/rengo/</guid>
+      <description>&lt;p&gt;Also available at &lt;a href=&#34;https://nicbk.com/rengo-client-web&#34;&gt;nicbk.com/rengo-client-web&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p align=&#34;center&#34;&gt;&#xA;  &lt;iframe src=&#34;https://nicbk.com/rengo-client-web&#34; title=&#34;RENGO&#34;&gt;&lt;/iframe&gt;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;See the &lt;a href=&#34;//localhost:1313/rengo&#34;&gt;original blog post.&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;go-for-more-than-two-players&#34;&gt;Go for more than two players&lt;/h1&gt;&#xA;&lt;p&gt;Rengo is a version of Go that can be played with four players.&#xA;In this rendition of Rengo, any number of players can join a room&#xA;to play together.&lt;/p&gt;&#xA;&lt;h1 id=&#34;rules&#34;&gt;Rules&lt;/h1&gt;&#xA;&lt;p&gt;The rules are the same as in regular Go.&#xA;There are two teams: white and black.&#xA;Players will be alternately assigned to teams as they join.&#xA;A player can quit the game at any time.&#xA;However, there is also a &lt;code&gt;pass&lt;/code&gt; button to simulate passing in other&#xA;Go variations, whereby a player can skip their turn.&#xA;If all players skip their turn in order, then the game ends.&#xA;A player who has just passed is denoted with their row filled red.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>
