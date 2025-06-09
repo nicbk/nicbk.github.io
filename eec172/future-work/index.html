@@ -411,8 +411,8 @@
 
 <h1 id="future-work">Future Work<a class="headerlink" href="#future-work" title="Permanent link">&para;</a></h1>
 <h2 id="create-a-json-parser">Create a JSON parser<a class="headerlink" href="#create-a-json-parser" title="Permanent link">&para;</a></h2>
-<p>When the Launchpad makes an HTTP GET request for user data or the nearest
-Pokemon, the API handlers in our Express.JS server return a newline separated
+<p>When the LaunchPad makes an HTTP GET request for user data or the nearest
+Pokémon, the API handlers in our Express.JS server return a newline separated
 payload. Rather than listing key-value pairs in a JSON format, our response only
 returns the values with a newline delimiter. Although this makes it easier to
 parse in C, it is not a robust solution. There is a lack of clarity for the
@@ -433,12 +433,12 @@ parser so that we can return data in a stricter structure that can easily be
 extended and correctly read with lower chance of bugs.</p>
 <h2 id="integrate-compass-sensor">Integrate compass sensor<a class="headerlink" href="#integrate-compass-sensor" title="Permanent link">&para;</a></h2>
 <p>One of our stretch goals was to use a peripheral compass sensor that would send
-magnetic heading data to the Launchpad. We would then use this compass to
-determine the direction to the nearest Pokemon by calculating the vector from
-the user’s GPS coordinates to the nearest Pokemon’s GPS coordinates, and then
-calculating the angular offset from the direction that the Launchpad is
+magnetic heading data to the LaunchPad. We would then use this compass to
+determine the direction to the nearest Pokémon by calculating the vector from
+the user’s GPS coordinates to the nearest Pokémon’s GPS coordinates, and then
+calculating the angular offset from the direction that the LaunchPad is
 pointing. Then, we would render an arrow in a virtual compass on the landing
-page to direct the user in the direction toward the nearest Pokemon.</p>
+page to direct the user in the direction toward the nearest Pokémon.</p>
 <p>The day before our project verification day, we had finished all of our minimal
 and target goals and also numerous of our stretch goals, so we attempted to try
 implementing a Bosch BMM150 magnetometer to retrieve magnetic heading data.
@@ -456,7 +456,7 @@ magnetic field along any of the euclidean axes when rotating the magnetometer
 along any axis.</p>
 <p>These calibrations are complicated and are usually performed with existing
 calibration software, using better documented boards with existing libraries,
-such as an Arduino or a Raspberry Pi. On the Launchpad CC3200, we lacked any
+such as an Arduino or a Raspberry Pi. On the LaunchPad CC3200, we lacked any
 code to assist us in performing magnetometer calibration. Thus, after
 approximately four hours of attempting to perform temporary calibrations, we
 decided to move on to abandoning the compass approach and instead polishing the
@@ -465,8 +465,8 @@ widely varying values depending both on its absolute location and rotation even
 when moving the magnetometer around just inches at a time. Thus, the
 magnetometer was impossible to use in an uncalibrated form.</p>
 <p>It was after attempting the compass module that we then implemented one of our
-other stretch goals, which was to implement a real-time web map of the Pokemon.
-This provided similar functionality of guiding the user to the nearest Pokemon.</p>
+other stretch goals, which was to implement a real-time web map of the Pokémon.
+This provided similar functionality of guiding the user to the nearest Pokémon.</p>
 
 
 

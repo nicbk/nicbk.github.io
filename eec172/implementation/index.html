@@ -462,7 +462,7 @@
         <li class="md-nav__item">
   <a href="#fight-mini-game" class="md-nav__link">
     <span class="md-ellipsis">
-      Fight mini game
+      Fight mini-game
     </span>
   </a>
   
@@ -668,7 +668,7 @@ which specifies sending a UART message to the RX pin of the UBlox chip with
 header <code>$PUBX,41,1</code>. Then, as shown in the following screenshot from the
 documentation, we append the fields <code>,0007,0003</code> to update UART baudrate
 specifically. </p>
-<p><img alt="Set Baud Rate" src="../assets/set-baud-rate.png" /></p>
+<p><img alt="Documentation to set baud rate" src="../assets/set-baud-rate.png" /></p>
 <p>Then, we append <code>,57600</code> to specify the new baudrate. Next, we append <code>,0</code> as
 the default option for "autobauding," which we do not concern ourselves with.
 Finally, we must calculate and append a checksum value beginning with an
@@ -705,25 +705,25 @@ GPS module's onboard non-volatile memory.</p>
 <p>In particular, we reference the following <a href="https://content.u-blox.com/sites/default/files/products/documents/u-blox6_ReceiverDescrProtSpec_%28GPS.G6-SW-10018%29_Public.pdf">UBlox protocol section 31.2.1</a>
 which instructs transmitting a UART message to the UBlox chip RX pin with header
 bytes <code>0xB5 0x62 0x06 0x09</code>. </p>
-<p><img alt="UBLOX CFG CFG" src="../assets/ublox-cfg-cfg.png" /></p>
+<p><img alt="Documentation for UBlox CFG-CFG" src="../assets/ublox-cfg-cfg.png" /></p>
 <p>Then, we append the byte <code>13</code> in decimal to indicate a payload length of 13
 bytes. Finally, we append the payload of 32 <code>0</code> bits for the <code>clearMask</code> and
 <code>loadMask</code> values, and then bytes <code>0xFF 0xFF 0x00 0x00</code> for the <code>saveMask</code>.
 According to the following screenshot from section 31.2.1, setting the lower two
 bytes to all ones will cause all of the GPS module's current configuration to be
 saved: </p>
-<p><img alt="UBLOX CFG Save" src="../assets/ublox-cfg-save.png" /></p>
+<p><img alt="Documentation for UBlox CFG Save" src="../assets/ublox-cfg-save.png" /></p>
 <p>Then, according to the bottom of section 31.2.1, we set the 13th bit of the
 payload to <code>0xF</code> to flash the configuration to all the available memory sources,
 importantly including the non-volatile sources: </p>
-<p><img alt="UBLOX CFG Device" src="../assets/ublox-cfg-device.png" /></p>
+<p><img alt="Documentation for UBlox CFG Device" src="../assets/ublox-cfg-device.png" /></p>
 <p>Finally, this command takes two separate checksum values. The two checksums are
 likely because the command is critical to receive correctly; a corrupt saved
 configuration would essentially brick the GPS module unless the user is
 successfully able to reverse engineer and then communicate with the corrupted
 configuration.</p>
 <p>The two checksums <code>CK_A</code> and <code>CK_B</code> are computed as follows:</p>
-<p><img alt="UBLOX Checksum" src="../assets/ublox_cksum.png" /></p>
+<p><img alt="Documentation for UBlox checksum" src="../assets/ublox-cksum.png" /></p>
 <p>CK_A and CK_B are appended to the payload.</p>
 <p>Finally, this entire message is written at once to the UBlox chip over UART. We
 remove power from the GPS module for 10 seconds and then re-attach power to
@@ -754,7 +754,7 @@ S3 Universal Remote configured with TV code <code>1005</code>. This remote with 
 TV code generates binary pulse-width modulated signals that uniquely identify
 each button press. The duty cycle is near 100% as can be seen in the following
 example transmission: </p>
-<p><img alt="UBLOX CFG Device" src="../assets/example_button_6.png" /></p>
+<p><img alt="Encoding for IR button 6" src="../assets/encoding-button-6.png" /></p>
 <p>We use the CC3200 Timer API to implement an interrupt-based system for measuring
 the pulse-width of each transmitted symbol. In particular, we configure GPIO
 interrupts to run on both the rising and falling edges of GPIO pin 62. We
@@ -769,7 +769,7 @@ gets mapped to navigation into the landing page and to the fight button in the
 fight-or-flee page. Numeric button <code>2</code> corresponds to code <code>0x5DB5</code>, which gets
 mapped to navigation into the collection page and to the flee button in the
 fight-or-flee page.</p>
-<p><img alt="UBLOX CFG Device" src="../assets/page-numbers.png" /></p>
+<p><img alt="Code for IR button-page mappings" src="../assets/page-numbers.png" /></p>
 <p>Then, we define the <code>PRCM_TIMERA0</code> expiry interrupt at 20 milliseconds. We have
 the handler reset the read IR bits. This way, we can reset partially-completed
 transmissions or transmissions with errors after the completion of an IR remote
@@ -991,14 +991,14 @@ function is finished, control is returned back up to the <code>GameLoop()</code>
 function only enables the GPS UART data handler after 60,000 main loop
 iterations. What will happen is that <code>PollEnableGPS()</code> will immediately yield
 control back to <code>GameLoop()</code> unless the counter <code>gpg_read_timeout</code> reaches
-60,000. Then, when <code>gpg_read_timeout</code> reaches 60,000, then <code>PollEnableGPS()</code>
-will enable the UART1 GPS RX interrupt handler, allowing the LaunchPad to
-process an NMEA GNGGA sentence before then disabling the UART1 GPS RX interrupt
-handler again, and thus yielding time back to other interrupt handlers and other
+60,000. Then, when <code>gpg_read_timeout</code> reaches 60,000, <code>PollEnableGPS()</code> will
+enable the UART1 GPS RX interrupt handler, allowing the LaunchPad to process an
+NMEA GNGGA sentence before then disabling the UART1 GPS RX interrupt handler
+again, and thus yielding time back to other interrupt handlers and other
 synchronous logic.</p>
 <p>Then, the next function in the main loop is the call to
 <code>http_get_nearby_pokemon()</code>.</p>
-<p>This function is only called if the <code>SetupNetwork()</code> function is <code>setup.c</code> has
+<p>This function is only called if the <code>SetupNetwork()</code> function in <code>setup.c</code> has
 successfully executed, ensuring that we have a valid socket initialized. As is
 discussed earlier, we immediately yield control back to the game loop unless
 100,000 iterations of the game loop have passed. Then, we make an HTTP GET
@@ -1092,7 +1092,7 @@ using the MAC address as a path parameter to define the user ID. </p>
 address identifier. If there is not yet an existing user for that MAC address,
 we first create a new entry in <code>UserTable</code>, and their <code>userCollection</code> array is
 initialized to be empty. Then, we return the user document in the
-space-separated format as shown below:</p>
+new-line separated format.</p>
 <p>We include an example of the returning payload when we retrieve user data for ID
 "a810876e2c3f". This user has seven Pokémon in their collection. In addition to
 the user's ID, the UUID and type of each Pokémon in their collection are
@@ -1113,17 +1113,17 @@ eevee
 f430aa6b-3856-4573-bff4-698644a9efb8
 piplup
 </code></pre>
-<p>In the above example response, the initial line is the ID of the requesting
-user. Then, every Pokemon in the collection is 2 lines long, consisting of the
-Pokemon ID and the Pokemon type. Since we can easily detect end-of-buffer in
-the HTTP response handler, we don't need to explicitly specify the number of
-returned pokemon.</p>
+<p>In the above response, the initial line is the ID of the requesting user. Then,
+every Pokémon in the collection is 2 lines long, consisting of the Pokémon ID
+and the Pokémon type. Since we can easily detect end-of-buffer in the HTTP
+response handler, we don't need to explicitly specify the number of returned
+Pokémon.</p>
 <h3 id="get-nearby-pokemon">Get nearby Pokémon<a class="headerlink" href="#get-nearby-pokemon" title="Permanent link">&para;</a></h3>
 <p>While the user is on the landing page or collection page, we periodically make
 HTTP GET requests to retrieve the coordinates of the nearest Pokémon. If there
 are not enough Pokémon within a 100-meter radius of the user, the server adds
 more nearby Pokémon to the database. Furthermore, if the user is within a
-10-meter radius of the nearest Pokémon, a Fight-or-Flee page should be rendered.
+10-meter radius of the nearest Pokémon, a fight-or-flee page should be rendered.
 On our Express server, this resource is located at the following API route,
 where latitude and longitude are passed as query parameters. The API expects the
 latitude and longitude to be in the format of decimal degrees.</p>
@@ -1149,10 +1149,10 @@ dist &amp;= \sqrt{diff\_x^2 + diff\_y^2} \\
 count of nearby Pokémon. We require at least 6 Pokémon to be located within the
 user's 100-meter radius. Until the count reaches this threshold, we spawn more
 Pokémon within the user's radius. </p>
-<p>To add a nearby Pokémon, we spawn it is within a 100-meter radius to the user
-but outside an <code>ACTIVATION_RADIUS</code> of 10-meters. By spawning the Pokémon outside
+<p>To add a nearby Pokémon, we spawn it within a 100-meter radius to the user but
+outside an <code>ACTIVATION_RADIUS</code> of 10-meters. By spawning the Pokémon outside
 the <code>ACTIVATION_RADIUS</code>, we require the user to walk to the nearest Pokémon.
-Otherwise, the "fight or flee" page can trigger without physical movement from
+Otherwise, the fight-or-flee page can trigger without physical movement from
 the user. To account for GPS inaccuracies and prevent Pokémon from spawning
 right at the 10-meter activation boundary, we create another constant
 <code>ACTIVATE_RAD_WITH_MARGIN</code> and set it to 3 * <code>ACTIVATION_RADIUS</code>, which we use
@@ -1197,14 +1197,14 @@ calculate the Pokémon's distance from the user. As we scan through the Pokémon
 we keep track of the nearest Pokémon and construct an array of Pokémon that are
 within the user's 10-meter activation radius. Besides the nearest Pokémon, we
 delete all other Pokémon that are within the user's 10-meter activation radius.
-By doing so, we prevent multiple "fight or flee" pages from immediately
+By doing so, we prevent multiple fight-or-flee pages from immediately
 rendering one after another while the user remains stationary. The API handler
-returns a payload that contains the nearest Pokémon's data and whether a "fight
-or flight" page should activate.</p>
+returns a payload that contains the nearest Pokémon's data and whether a 
+fight-or-flight page should activate.</p>
 <p>When we request for the nearest Pokémon at latitude 38.537293 and longitude
 -121.754578, we get the following response. According to the payload, the
 <code>false</code> indicates that this Pokémon is not within the user's 10-meter radius, so
-the "fight or flee" page should <em>not</em> be triggered. The following lines include
+the fight-or-flee page should <em>not</em> be triggered. The following lines include
 the nearest Pokémon's UUID, type, latitude, and longitude.</p>
 <pre><code>false
 b5caa020-dd5f-432c-a8b4-cd9227c89e97
@@ -1214,24 +1214,24 @@ jigglypuff
 </code></pre>
 <h3 id="capture-pokemon">Capture Pokémon<a class="headerlink" href="#capture-pokemon" title="Permanent link">&para;</a></h3>
 <p>If the user has won the mini-game on the fight page, the Pokémon that had
-activated the "fight or flee" page is appended to the user's collection. As a
+activated the fight-or-flee page is appended to the user's collection. As a
 result, we make a HTTP POST request to the following route. The user's MAC
 address is passed as a path parameter for <code>:userId</code>. <code>state.enemy_uuid</code> – the
-UUID of the nearest Pokémon that had activated the "fight or flee" page – is
+UUID of the nearest Pokémon that had activated the fight-or-flee page – is
 used for <code>:pokemonId</code>.</p>
 <pre><code>/users/:userId/pokemon/:pokemonId
 </code></pre>
 <h3 id="delete-pokemon">Delete Pokémon<a class="headerlink" href="#delete-pokemon" title="Permanent link">&para;</a></h3>
 <p>In addition to capturing a Pokémon, there are two other cases where a Pokémon
-should be deleted: the user chose to flee on the "flight or flee" page, or the
+should be deleted: the user chose to flee on the fight-or-flee page, or the
 user has lost the fight mini-game. For both cases, we make a HTTP DELETE request
 to remove the Pokémon from the <code>PokemonTable</code> database. This resource is defined
 at the following route, where the Pokémon's UUID is used as a path parameter to
 define the Pokémon ID.</p>
 <pre><code>/pokemon/:pokemonId
 </code></pre>
-<p>This operation is performed on the nearest Pokémon that had activated the "fight
-or flee" page. We store this Pokémon's UUID in <code>state.enemy_uuid</code>.</p>
+<p>This operation is performed on the nearest Pokémon that had activated the 
+fight-or-flee page. We store this Pokémon's UUID in <code>state.enemy_uuid</code>.</p>
 <h2 id="fight-or-flee">Fight or flee<a class="headerlink" href="#fight-or-flee" title="Permanent link">&para;</a></h2>
 <p>When we make HTTP GET requests for the nearest Pokémon, the response includes a
 boolean that indicates whether that Pokémon is within the 10-meter activation
@@ -1239,16 +1239,16 @@ radius of the user. After parsing the response, the boolean is stored in
 <code>state.should_fight</code>. While the user is on the landing page or collection page,
 each iteration of our game loop checks whether this variable is set to true. If
 so, <code>state.state_type</code> is changed to <code>STATE_FIGHT_OR_FLEE_PAGE</code>. As a result,
-the next iteration of the game loop will render the "fight or flee" page, where
+the next iteration of the game loop will render the fight-or-flee page, where
 the user is informed that a nearby Pokémon has been detected. While the user is
 on this page, the program keeps looping until it gets valid user input from the
-IR remote. In particular, the user should select button 1 to fight or button 2
-to flee. If the user selects to fight, <code>state.state_type</code> is assigned
+IR remote. In particular, the user should select button <code>1</code> to fight or button
+<code>2</code> to flee. If the user selects to fight, <code>state.state_type</code> is assigned
 <code>STATE_FIGHT_PAGE</code>. Otherwise, <code>state.state_type</code> is set to
 <code>STATE_LANDING_PAGE</code>. The next iteration of the game loop will redirect the user
 to the appropriate page based on their input.</p>
-<h2 id="fight-mini-game">Fight mini game<a class="headerlink" href="#fight-mini-game" title="Permanent link">&para;</a></h2>
-<p>When the user selects to fight the Pokémon on the "fight or flee" page, we
+<h2 id="fight-mini-game">Fight mini-game<a class="headerlink" href="#fight-mini-game" title="Permanent link">&para;</a></h2>
+<p>When the user selects to fight the Pokémon on the fight-or-flee page, we
 render the fight page on the OLED. The fight page displays bitmap images of
 hearts to represent the health of the user and the enemy. Both the user and the
 enemy start with four hearts each. Below the heart images, we render
