@@ -46,8 +46,6 @@
       
     
     
-      <link rel="stylesheet" href="../stylesheets/extra.css">
-    
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -711,7 +709,7 @@ transmitting data (TX) and another for receiving data (RX). As an asynchronous
 protocol, the sender and receiver agree on a baud rate to indicate how often
 each device should sample from their own local clocks. The sender initiates
 transmission by sending a predetermined start symbol, which informs the receiver
-to begin sampling data by the baud rate. After transmission of an $n$-symbol
+to begin sampling data by the baud rate. After transmission of an <span class="arithmatex">\(n\)</span>-symbol
 data frame, the sender sends a stop symbol to end communication. We make the
 distinction here between symbol and bit because baud rate describes sampled
 symbols per second, not necessarily binary bits per second. However, most
@@ -822,6 +820,10 @@ LaunchPad with the database. </p>
     
     
       <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

@@ -46,8 +46,6 @@
       
     
     
-      <link rel="stylesheet" href="../stylesheets/extra.css">
-    
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -388,11 +386,11 @@
         <li class="md-nav__item">
   <a href="#gps-driver-code" class="md-nav__link">
     <span class="md-ellipsis">
-      GPS Driver Code
+      GPS driver code
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="GPS Driver Code">
+    <nav class="md-nav" aria-label="GPS driver code">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -445,6 +443,144 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#ir-sensor" class="md-nav__link">
+    <span class="md-ellipsis">
+      IR sensor
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#react-map-page" class="md-nav__link">
+    <span class="md-ellipsis">
+      React map page
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#game-business-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      Game business logic
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Game business logic">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#global-state-and-state-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Global state and state types
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multi-thread-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      "Multi-thread" logic
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dynamodb-database" class="md-nav__link">
+    <span class="md-ellipsis">
+      DynamoDB database
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#expressjs-game-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      Express.JS game server
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Express.JS game server">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-user" class="md-nav__link">
+    <span class="md-ellipsis">
+      Get user
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-nearby-pokemon" class="md-nav__link">
+    <span class="md-ellipsis">
+      Get nearby Pokémon
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#capture-pokemon" class="md-nav__link">
+    <span class="md-ellipsis">
+      Capture Pokémon
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-pokemon" class="md-nav__link">
+    <span class="md-ellipsis">
+      Delete Pokémon
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fight-or-flee" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fight or flee
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fight-mini-game" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fight mini game
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#graphics-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Graphics API
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -492,7 +628,7 @@
 
 
 <h1 id="implementation">Implementation<a class="headerlink" href="#implementation" title="Permanent link">&para;</a></h1>
-<h2 id="gps-driver-code">GPS Driver Code<a class="headerlink" href="#gps-driver-code" title="Permanent link">&para;</a></h2>
+<h2 id="gps-driver-code">GPS driver code<a class="headerlink" href="#gps-driver-code" title="Permanent link">&para;</a></h2>
 <h3 id="configure-uart-interrupts">Configure UART interrupts<a class="headerlink" href="#configure-uart-interrupts" title="Permanent link">&para;</a></h3>
 <p>The GPS module uses the UART protocol to transmit data. To set up communication
 between the CC3200 LaunchPad and GPS module, we enable UART1 on SysConfig and
@@ -510,7 +646,8 @@ is generated for every 8 bytes written to the receive FIFO buffer.</p>
 <p>For every 8 bytes written to the receive FIFO butter, the UART interrupt handler
 is executed. This interrupt service routine is responsible for reading the
 NMEA-0183 sentences. When a sentence of type "GNGGA" is read, it parses the
-latitude and longitude to assign to the game state. <a href="https://openrtk.readthedocs.io/en/latest/communication_port/nmea.html">Aceinna OpenRTK Developer manual</a>
+latitude and longitude to assign to the game state.
+<a href="https://openrtk.readthedocs.io/en/latest/communication_port/nmea.html">Aceinna OpenRTK Developer manual</a>
 provides an example of a "GNGGA" sentence from the NMEA-0183 standard. We
 include that example for reference below. It is a comma-delimited sentence that
 starts with <code>$</code> and ends with <code>\r\n</code>.</p>
@@ -536,14 +673,14 @@ of latitude – and sixth field – direction of longitude – are "N" (i.e., no
 and "W" (i.e., west), respectively. We also confirm that the latitude and
 longitude are not empty fields, which can occur when the GPS failed at finding a
 fix.</p>
-<p>According to <a href="https://receiverhelp.trimble.com/alloy-gnss/en-us/NMEA-0183messages_CommonMessageElements.html#:~:text=NMEA%20Message%20values&amp;text=Latitude%20is%20represented%20as%20ddmm,dd%20or%20ddd%20is%20degrees">Trimble's guide on NMEA-0183 messages</a>, an NMEA-0183 sentence formats the latitude as
-"ddmm.mmmm" and longitude as "dddmm.mmmm", where "dd" and "ddd" represent
-degrees while "mm.mmmm" denote minutes. We reference this
-<a href="https://stackoverflow.com/questions/36254363/how-to-convert-latitude-and-longitude-of-nmea-format-data-to-decimal">StackOverflow answer</a> to convert
-the values to decimal degrees – a common way to express
-latitude and longitude values. After converting the strings to floats, we divide
-the minutes by 60 and add this quotient to the degrees. Since North America is
-located in the western hemisphere, we negate the latitude. </p>
+<p>According to <a href="https://receiverhelp.trimble.com/alloy-gnss/en-us/NMEA-0183messages_CommonMessageElements.html#:~:text=NMEA%20Message%20values&amp;text=Latitude%20is%20represented%20as%20ddmm,dd%20or%20ddd%20is%20degrees">Trimble's guide on NMEA-0183 messages</a>,
+an NMEA-0183 sentence formats the latitude as "ddmm.mmmm" and longitude as
+"dddmm.mmmm", where "dd" and "ddd" represent degrees while "mm.mmmm" denote
+minutes. We reference this <a href="https://stackoverflow.com/questions/36254363/how-to-convert-latitude-and-longitude-of-nmea-format-data-to-decimal">StackOverflow answer</a>
+to convert the values to decimal degrees – a common way to express latitude and
+longitude values. After converting the strings to floats, we divide the minutes
+by 60 and add this quotient to the degrees. Since North America is located in
+the western hemisphere, we negate the latitude. </p>
 <h3 id="set-baudrate">Set baudrate<a class="headerlink" href="#set-baudrate" title="Permanent link">&para;</a></h3>
 <p>By connecting the LaunchPad's UART1 TX pin to the GPS module's RX pin, we can
 write commands to the GPS module for configuration. By default, our GPS module
@@ -569,7 +706,7 @@ which specifies sending a UART message to the RX pin of the UBlox chip with
 header <code>$PUBX,41,1</code>. Then, as shown in the following screenshot from the
 documentation, we append the fields <code>,0007,0003</code> to update UART baudrate
 specifically. </p>
-<p><img alt="Landing Page" src="../assets/set-baud-rate.png" /></p>
+<p><img alt="Set Baud Rate" src="../assets/set-baud-rate.png" /></p>
 <p>Then, we append <code>,57600</code> to specify the new baudrate. Next, we append <code>,0</code> as
 the default option for "autobauding," which we do not concern ourselves with.
 Finally, we must calculate and append a checksum value beginning with an
@@ -607,25 +744,25 @@ GPS module's onboard non-volatile memory.</p>
 <p>In particular, we reference the following <a href="https://content.u-blox.com/sites/default/files/products/documents/u-blox6_ReceiverDescrProtSpec_%28GPS.G6-SW-10018%29_Public.pdf">UBlox protocol section 31.2.1</a>
 which instructs transmitting a UART message to the UBlox chip RX pin with header
 bytes <code>0xB5 0x62 0x06 0x09</code>. </p>
-<p><img alt="Landing Page" src="../assets/ublox-cfg-cfg.png" /></p>
+<p><img alt="UBLOX CFG CFG" src="../assets/ublox-cfg-cfg.png" /></p>
 <p>Then, we append the byte <code>13</code> in decimal to indicate a payload length of 13
 bytes. Finally, we append the payload of 32 <code>0</code> bits for the <code>clearMask</code> and
 <code>loadMask</code> values, and then bytes <code>0xFF 0xFF 0x00 0x00</code> for the <code>saveMask</code>.
 According to the following screenshot from section 31.2.1, setting the lower two
 bytes to all ones will cause all of the GPS module's current configuration to be
 saved: </p>
-<p><img alt="Landing Page" src="../assets/ublox-cfg-save.png" /></p>
+<p><img alt="UBLOX CFG Save" src="../assets/ublox-cfg-save.png" /></p>
 <p>Then, according to the bottom of section 31.2.1, we set the 13th bit of the
 payload to <code>0xF</code> to flash the configuration to all the available memory sources,
 importantly including the non-volatile sources: </p>
-<p><img alt="Landing Page" src="../assets/ublox-cfg-device.png" /></p>
+<p><img alt="UBLOX CFG Device" src="../assets/ublox-cfg-device.png" /></p>
 <p>Finally, this command takes two separate checksum values. The two checksums are
 likely because the command is critical to receive correctly; a corrupt saved
 configuration would essentially brick the GPS module unless the user is
 successfully able to reverse engineer and then communicate with the corrupted
 configuration.</p>
 <p>The two checksums <code>CK_A</code> and <code>CK_B</code> are computed as follows:</p>
-<p><img alt="Landing Page" src="../assets/ublox_cksum.png" /></p>
+<p><img alt="UBLOX Checksum" src="../assets/ublox_cksum.png" /></p>
 <p>CK_A and CK_B are appended to the payload.</p>
 <p>Finally, this entire message is written at once to the UBlox chip over UART. We
 remove power from the GPS module for 10 seconds and then re-attach power to
@@ -649,6 +786,555 @@ the UART1 RX buffer is disabled again. This strategy allows the board to sample
 the GPS NMEA sentences at a much slower rate that is acceptable, allowing other
 program processes to have enough time to execute successfully at their own
 respective rates.</p>
+<h2 id="ir-sensor">IR sensor<a class="headerlink" href="#ir-sensor" title="Permanent link">&para;</a></h2>
+<p>To decode the AT\&amp;T IR remote transmissions, we copy over our solution from Lab
+3 ("IR Remote Control Texting Over a UART Link"). In particular, we use an AT&amp;T
+S3 Universal Remote configured with TV code <code>1005</code>. This remote with the given
+TV code generates binary pulse-width modulated signals that uniquely identify
+each button press. The duty cycle is near 100% as can be seen in the following
+example transmission: </p>
+<p><img alt="UBLOX CFG Device" src="../assets/example_button_6.png" /></p>
+<p>We use the CC3200 Timer API to implement an interrupt-based system for measuring
+the pulse-width of each transmitted symbol. In particular, we configure GPIO
+interrupts to run on both the rising and falling edges of GPIO pin 62. We
+configure the first hardware timer <code>PRCM_TIMERA0</code> to reset on each rising edge,
+and then on the next falling edge we record the elapsed time. We consider a
+short pulse-width (less than 300 microseconds) to be a <code>0</code> bit, and a long
+pulse-width (over 3 milliseconds) to be a <code>1</code> bit. The AT&amp;T remote sends a
+unique 16-bit code for each button. We only need to use the number keys, so we
+collect the unique codes for each number key and then define constants for these
+16-bit codes. As shown, numeric button 1 corresponds to code <code>0x5DAE</code>, which
+gets mapped to navigation into the landing page and to the fight button in the
+Fight-or-Flee page. Numeric button 2 corresponds to code <code>0x5DB5</code>, which gets
+mapped to navigation into the collection page and to the flee button in the
+Fight-or-Flee page.</p>
+<p><img alt="UBLOX CFG Device" src="../assets/page-numbers.png" /></p>
+<p>Then, we define the <code>PRCM_TIMERA0</code> expiry interrupt at 20 milliseconds. We have
+the handler reset the read IR bits. This way, we can reset partially-completed
+transmissions or transmissions with errors after the completion of an IR remote
+transmission but before the beginning of the next transmission.</p>
+<p>After all 16 bits from a particular IR remote transmission have been read, then
+the two bytes are written to a volatile integer value named <code>encoding</code>, and then
+a volatile boolean variable <code>transmission_complete</code> is set to true to indicate
+that a button press has been fully received and parsed. Procedures from the
+active state in the main game loop read the <code>encoding</code> variable once, then set
+<code>transmission_complete</code> to true, and then finally reset <code>transmission_complete</code>
+back to false.</p>
+<h2 id="react-map-page">React map page<a class="headerlink" href="#react-map-page" title="Permanent link">&para;</a></h2>
+<p>The map page for the website is implemented in TypeScript using the React.JS web
+component framework and the Vite packager with <code>SWC</code> (Speedy Web Compiler)
+optimizations. Specifically we use the following <code>npm</code> command to create the
+project:</p>
+<pre><code>npm create vite@latest pokemini-website --\
+  --template react-swc-ts
+</code></pre>
+<p>In this application, we use the <code>react-router@7</code> npm package to implement
+handling the different pages on the website. For simplicity sake, we simply
+define a single route with a <code>HashRouter</code>, thus meaning that we render our <code>&lt;Map/&gt;</code>
+component to the URL</p>
+<pre><code>https://server.nicbk.com/#/map
+</code></pre>
+<p>Thus, our main page layout looks as follows:</p>
+<pre><code>&lt;HashRouter&gt;
+  &lt;Routes&gt;
+    &lt;Route path=&quot;/map&quot; element={&lt;Map /&gt;} /&gt;
+  &lt;/Routes&gt;
+&lt;/HashRouter&gt;
+</code></pre>
+<p>As such, we define our map page using the <code>&lt;Map /&gt;</code> component. We set the global
+CSS style on the body element to have properties</p>
+<pre><code>body {
+  margin: 0;
+  padding: 0;
+}
+</code></pre>
+<p>to ensure that the map fluidly takes up exactly the whole browser viewport.</p>
+<p>Then, we import the <code>@vis.gl/react-google-maps@1.5.2</code> npm package, which
+provides React hooks and components to easily render Google Maps visualizations
+onto the React virtual-DOM (Document-Object Model). Using this library, we add a
+Google Maps interface into the Map page that takes up the whole viewport size.
+Then, we set the center view of the map to be at GPS coordinates</p>
+<pre><code>lat: 38.538496,
+lng: -121.757724
+</code></pre>
+<p>which is approximately at the center of UC Davis campus.</p>
+<p>Then, we add an <code>&lt;AdvancedMarker /&gt;</code> component, to the user's GPS coordinates,
+which drops a pin onto the map at the specified coordinates.</p>
+<p>Using the <code>@aws-sdk/client-dynamodb</code> and <code>@aws-sdk/lib-dynamodb</code> libraries, we
+retrieve all Pokemon from the DynamoDB Pokemon collection and render each Pokemon
+onto the map using <code>&lt;AdvancedMarker /&gt;</code> components at their respective GPS
+coordinates. Finally, we download transparent images for each of the five
+supported Pokemon types (Pikachu, Eevee, Lickitung, Piplup, Jigglypuff) and we
+set the <code>&lt;AdvancedMarker /&gt;</code> icon for these Pokemon to be their respective
+images.</p>
+<p>All of the <code>&lt;AdvancedMarker /&gt;</code> components (both the user pin and all the
+Pokemon pins from DynamoDB) are set to update every 5 seconds.</p>
+<h2 id="game-business-logic">Game business logic<a class="headerlink" href="#game-business-logic" title="Permanent link">&para;</a></h2>
+<h3 id="global-state-and-state-types">Global state and state types<a class="headerlink" href="#global-state-and-state-types" title="Permanent link">&para;</a></h3>
+<p>When we begin our program, we initialize the following fields in our global
+state.</p>
+<ol>
+<li><code>state_type</code>: the current page state our game is in. (INIT to STATE_LANDING_PAGE)</li>
+<li><code>socket_id</code>: the socket ID returned by <code>sl_Connect</code>. (INIT to 0)</li>
+<li><code>mcu_latitude</code>: the latitude read from the GPS sensor in decimal degrees. (INIT to 0)</li>
+<li><code>mcu_longitude</code>: the longitude read from the GPS sensor in decimal degrees. (INIT to 0)</li>
+<li><code>mcu_id</code>: the MAC address of the LaunchPad. (INIT to 0; the MAC address is retrieved in the <code>SetupNetwork()</code> call)</li>
+<li><code>enemy_uuid</code>: the UUID of the nearest Pokémon. (INIT to 0)</li>
+<li><code>enemy_type</code>: the type of the nearest Pokémon. (INIT to 0)</li>
+<li><code>enemy_longitude</code>: the longitude of the nearest Pokémon in decimal degrees. (INIT to 0)</li>
+<li><code>enemy_latitude</code>: the latitude of the nearest Pokémon in decimal degrees. (INIT to 0)</li>
+<li><code>should_fight</code>: true if the user is within the 10-meter activation radius of the Pokémon; false otherwise. (INIT to false)</li>
+<li><code>local_hearts</code>: the number of hearts the current user has. (INIT to 4)</li>
+<li><code>enemy_hearts</code>: the number of hearts the nearest Pokémon has. (INIT to 4)</li>
+<li><code>collection</code>: an array of Pokémon the user has collected; each Pokémon is represented as a struct that stores the Pokémon UUID and type. (INIT to 0)</li>
+<li><code>collection_length</code>: the number of Pokémon in the user's collection. (INIT to 0)</li>
+</ol>
+<p>In regards to <code>state.state_type</code>, there are four possible states in which
+our game can be: the home state, collection state, fight-or-flee state, or fight
+state. In our code, we define these states as the following:</p>
+<pre><code>enum StateType {
+    STATE_LANDING_PAGE,
+    STATE_FIGHT_OR_FLEE_PAGE,
+    STATE_FIGHT_PAGE,
+    STATE_COLLECTION_PAGE,
+};
+</code></pre>
+<p>When a new state has been assigned to <code>state.state_type</code>, we set
+<code>state.first_run</code> to true. <code>state.first_run</code> is used to check whether
+we should draw the page on the OLED. After iterating through the game loop once
+and rendering the new state, we set <code>state.first_run</code> to false, so we can
+avoid re-rendering a static page on the OLED each time state in that page
+updates.
+According to our game loop below, the game state determines which page to render
+and logic to perform.</p>
+<pre><code>void GameLoop(void)
+{
+    while (true) {
+        switch (state.state_type) {
+        case STATE_LANDING_PAGE:
+            LandingState();
+            break;
+        case STATE_FIGHT_OR_FLEE_PAGE:
+            FightOrFleeState();
+            break;
+        case STATE_FIGHT_PAGE:
+            FightState();
+            break;
+        case STATE_COLLECTION_PAGE:
+            CollectionState();
+            break;
+        }
+        ...
+    }
+}
+</code></pre>
+<p>If we are in <code>STATE_LANDING_PAGE</code>, the function <code>LandingState()</code> is
+executed. This function checks if <code>state.first_run</code> is true. If so, it
+draws the static images for the home page on the OLED. While there are no nearby
+Pokémon to trigger the "fight or flee" page, the user will remain on the landing
+page unless they switch to the collection page, and <code>LandingState()</code> keeps
+executing for every iteration of the game loop. This function also reads
+<code>state.mcu_latitude</code> and <code>state.mcu_longitude</code>, and writes these
+values to the display if any digits have changed. These <code>mcu</code> state
+variables represent the GPS coordinates of the launchpad. As is discussed in the
+earlier GPS module description, after every 60000 iterations of the game loop we
+enable the GPS UART interrupt to update <code>state.mcu_latitude</code> and
+<code>state.mcu_longitude</code>. For each call to <code>LandingState()</code>, we read the
+boolean variable <code>transmission_complete</code>, which indicates whether the IR
+decoder has read a valid signal from the remote. If <code>transmission_complete</code>
+is true and the encoding maps to button 1, then the user has switched from the
+landing page to the collection page. Therefore, we update
+<code>state.state_type</code> to <code>STATE_COLLECTION_PAGE</code> and set
+<code>state.first_run</code> to true. The next iteration of the game loop will render
+the collection page on the OLED.</p>
+<p>When we render the collection page, we iterate through the array
+<code>state.collection</code> of type <code>struct PokemonCollectionItem</code>.</p>
+<pre><code>struct PokemonCollectionItem {
+    char id[64];
+    enum PokemonType type;
+};
+</code></pre>
+<p>As we iterate through the collection, we read <code>type</code> to determine which
+character sprite to draw onto the OLED. There are five possible Pokémon types:
+<code>POKEMON_JIGGLYPUFF</code>, <code>POKEMON_PIKACHU</code>, <code>POKEMON_PIPLUP</code>,
+<code>POKEMON_LICKITUNG</code>, <code>POKEMON_EEVEE</code>. Using logic similar to the
+landing page, we keep executing <code>CollectionState()</code> for every iteration of
+the game loop. At the end of each function call, we check if
+<code>transmission_complete</code> is true and if the IR button <code>encoding</code>
+variable maps to button 2. If true, then the user has switched from the
+collection page to the landing page. Therefore, we update
+<code>state.state_type</code> to <code>STATE_LANDING_PAGE</code> and set
+<code>state.first_run</code> to true. The next iteration of the game loop will render
+the landing page on the OLED.</p>
+<p>When in either <code>STATE_LANDING_PAGE</code> or the <code>STATE_COLLECTION_PAGE</code>,
+the main game loop will execute the function <code>http_get_nearby_pokemon()</code>.
+After every 100,000 iterations of the main game loop, this function will make an
+HTTP GET request to our Express.JS server at address <code>http://server.nicbk.com:42812/pokemon/nearby</code>.</p>
+<p>Then, the <code>getNearbyProcessMessage()</code> function will update the
+<code>state.enemy_latitude</code>, <code>state.enemy_longitude</code>, and <code>state.should_fight</code>
+fields of the global state after parsing the received data. This retrieval
+period of 100,000 iterations of the main game loop is hand-tuned to be
+approximately a 5 second interval.</p>
+<h3 id="multi-thread-logic">"Multi-thread" logic<a class="headerlink" href="#multi-thread-logic" title="Permanent link">&para;</a></h3>
+<p>We implement a crude system of co-operative multitasking by simply having a main
+game loop named <code>GameLoop()</code> that is iterated through in an infinite loop.
+Specifically, our loop is defined as follows:</p>
+<pre><code>void GameLoop(void)
+{
+    while (true) {
+        switch (state.state_type) {
+        case STATE_LANDING_PAGE:
+            LandingState();
+            break;
+        case STATE_FIGHT_OR_FLEE_PAGE:
+            FightOrFleeState();
+            break;
+        case STATE_FIGHT_PAGE:
+            FightState();
+            break;
+        case STATE_COLLECTION_PAGE:
+            CollectionState();
+            break;
+        }
+
+        PollEnableGPS();
+
+        if (state.socket_id) {
+            http_get_nearby_pokemon(state.socket_id);
+        }
+
+        if (timeout &lt; 10000) {
+            ++timeout;
+            continue;
+        }
+        timeout = 0;
+
+        if (state.should_fight) {
+            state.state_type = STATE_FIGHT_OR_FLEE_PAGE;
+        }
+    }
+}
+</code></pre>
+<p>To recall, for each of the functions called in <code>GameLoop()</code>, we implement
+timers that count iterations up to some pre-defined threshold before the actual
+respective behavior for that function is actually executed. In this way, we
+implement a system where each procedure only performs its intended action after
+some pre-defined interval period, where in the meantime it simply just
+increments a counter and then yields control back to <code>GameLoop()</code>.
+First, we first enter the function corresponding to handling logic specific to
+the currently active page state. As is discussed earlier, we have a boolean
+variable <code>state.first_run</code> that is initially set to false right before
+transitioning to a new state, and which is then set to true after the first
+iteration of that particular state function completes. In this way we make the
+initial state logic, including rendering to the OLED, only execute once for a
+particular state. Then, after the logic for a single iteration of that state
+function is finished, control is returned back up to the <code>GameLoop()</code>.</p>
+<p>The next procedure to be run is <code>PollEnableGPS()</code>.
+As is discussed earlier, this function only enables the GPS UART data handler
+after 60,000 main loop iterations. What will happen is that
+<code>PollEnableGPS()</code> will immediately yield control back to <code>GameLoop()</code>
+unless the counter <code>gpg_read_timeout</code> reaches 60,000. Then, when
+<code>gpg_read_timeout</code> reaches 60,000, then <code>PollEnableGPS()</code> will enable
+the UART1 GPS RX interrupt handler, allowing the Launchpad to process an NMEA
+GNGGA sentence before then disabling the UART1 GPS RX interrupt handler again,
+and thus yielding time back to other interrupt handlers and other synchronous
+logic.</p>
+<p>Then, the next function in the main loop is the call to <code>http_get_nearby_pokemon()</code>.</p>
+<p>This function is only called if the <code>SetupNetwork()</code> function is <code>setup.c</code> has
+successfully executed, ensuring that we have a valid socket initialized. As is
+discussed earlier, we immediately yield control back to the game loop unless
+100,000 iterations of the game loop have passed. Then, we make an HTTP GET
+request to retrieve the information for the nearest Pokemon.</p>
+<p>Finally, we add the if statement to "asynchronously" switch into the
+Fight-or-Flee page into the bottom of the game loop. This check is triggered
+after every 10,000 iterations of the game loop, which also helps to increase
+efficiency by yielding to other procedures when necessary. As is discussed
+earlier, the <code>state.state_type</code> field is only read for transition if in the
+<code>STATE_LANDING_PAGE</code> or the <code>STATE_COLLECTION_PAGE</code>.</p>
+<p>Finally, we delegate the remaining two pages: the fight-or-flee page and
+the fight page to their own respective sub-sections in <strong>Implementation</strong> after
+these following sections. This is because they have more complicated
+functionality that requires more space to describe.</p>
+<h2 id="dynamodb-database">DynamoDB database<a class="headerlink" href="#dynamodb-database" title="Permanent link">&para;</a></h2>
+<p>DynamoDB is the AWS offering of a NoSQL database.
+That is, the database stores collections of "documents", which are independent pieces of JSON data that can be uploaded, queried, mutated, and deleted.
+We implement two collections (also known as "tables") in our DynamoDB database: a "Users" collection of which we give the identifier <code>UserTable</code> and a "Pokemon" collection of which we give the identifier <code>PokemonTable</code>.</p>
+<p>For consistency, we implement a document schema that documents inserted into either table adheres to.
+For the <code>UserTable</code>, documents must have the following JSON format:</p>
+<pre><code>{
+  id (partition key): &lt;string&gt;,
+  pokemonCollection: (array) [
+    { (UserTable pokemon item)
+      id: &lt;string&gt;
+      type: &lt;string&gt;
+    }
+    ...
+  ]
+}
+</code></pre>
+<p>An example user document might look as follows:</p>
+<pre><code>{
+  id: &quot;a810876e2c7f&quot;,
+  pokemonCollection: [
+    {
+      id: &quot;be6e50de-b07e-4a78-a490-b2e51956cafa&quot;
+      type: &quot;jigglypuff&quot;
+    },
+    {
+      id: &quot;6a592984-d471-497b-b9da-d433eb1d92d9&quot;,
+      type: &quot;eevee&quot;
+    }
+  ]
+}
+</code></pre>
+<p>For the <code>PokemonTable</code>, documents must have the following JSON format:</p>
+<pre><code>{
+  id (partition key): &lt;string&gt;,
+  location: (gps coordinates) {
+    latitude: &lt;number&gt;,
+    longitude: &lt;number&gt;
+  },
+  type: &lt;string&gt;
+}
+</code></pre>
+<p>An example Pokemon document might look as follows:</p>
+<pre><code>{
+  id: &quot;b8f691e8-0681-4c8f-bcb3-179253a1e7df&quot;,
+  location: {
+    latitude: -121.754973,
+    longitude: 38.53739
+  },
+  type: &quot;pikachu&quot;
+}
+</code></pre>
+<p>For Pokemon <code>id</code> fields, we generate random UUIDv4 identifiers.
+For user ID fields, we construct the ID using the MAC address of the Launchpad WiFi chip serialized to a 12-digit hexadecimal string.</p>
+<h2 id="expressjs-game-server">Express.JS game server<a class="headerlink" href="#expressjs-game-server" title="Permanent link">&para;</a></h2>
+<p>On our Express.JS server, we create API handlers for four different HTTP requests: getting user data, getting the nearest Pokémon, adding a Pokémon to the user's collection, and deleting a Pokémon. Although JSON is the most common payload data format for structuring HTTP responses, we decide to separate fields in our HTTP response with simple newlines and no JSON formatting to make it easier to parse the response data in C.</p>
+<h3 id="get-user">Get user<a class="headerlink" href="#get-user" title="Permanent link">&para;</a></h3>
+<p>When the application is executed, the LaunchPad will immediately attempt to connect to the access point and server. If a connection has been established, we use <code>sl_NetCfgGet()</code> to retrieve the MAC address of the LaunchPad. The MAC address serves as a unique identifier to differentiate users. Afterwards, we make a HTTP GET request to retrieve user data from the following API route, using the MAC address as a path parameter to define the user ID. </p>
+<pre><code>/users/:userId
+</code></pre>
+<p>In our API handler, we check whether there is an existing user with that MAC address identifier. If there is not yet an existing user for that MAC address, we first create a new entry in <code>UserTable</code>, and their <code>userCollection</code> array is initialized to be empty.
+Then, we return the user document in the space-separated format as shown below:</p>
+<p>We include an example of the returning payload when we retrieve user data for ID "a810876e2c3f". This user has seven Pokémon in their collection. In addition to the user's ID, the UUID and type of each Pokémon in their collection are returned.</p>
+<pre><code>a810876e2c3f
+09b81895-3403-4ec8-8871-2869d1610e52
+piplup
+5804c146-0c24-4d78-9f50-22791dc1ff2a
+eevee
+89756069-860f-4840-a9db-7bf11cf5e4d7
+jigglypuff
+7b171c47-479b-4eac-8db2-c79f67b254ed
+pikachu
+e6f13120-50a7-4b6d-bef5-6ad217a3339b
+pikachu
+3bb0052b-be9c-43da-b280-65be82637c6c
+eevee
+f430aa6b-3856-4573-bff4-698644a9efb8
+piplup
+</code></pre>
+<p>In the above example response, the initial line is the ID of the requesting user.
+Then, every Pokemon in the collection is 2 lines long, consisting of the Pokemon
+ID and the Pokemon type. Since we can easily detect end-of-buffer in the HTTP
+response handler, we don't need to explicitly specify the number of returned pokemon.</p>
+<h3 id="get-nearby-pokemon">Get nearby Pokémon<a class="headerlink" href="#get-nearby-pokemon" title="Permanent link">&para;</a></h3>
+<p>While the user is on the landing page or collection page, we periodically make HTTP GET requests to retrieve the coordinates of the nearest Pokémon. If there are not enough Pokémon within a 100-meter radius of the user, the server adds more nearby Pokémon to the database. Furthermore, if the user is within a 10-meter radius of the nearest Pokémon, a Fight-or-Flee page should be rendered. On our Express server, this resource is located at the following API route, where latitude and longitude are passed as query parameters. The API expects the latitude and longitude to be in the format of decimal degrees.</p>
+<pre><code>/pokemon/nearby?latitude=&lt;latitude in decimal degrees&gt;&amp;longitude=&lt;longitude in decimal degrees&gt;
+</code></pre>
+<p>An example request would look as follows:</p>
+<pre><code>http://&lt;server_address/pokemon/nearby?latitude=37.123456&amp;longitude=-121.123456
+</code></pre>
+<p>The API handler will first iterate through all Pokémon in the database and count
+the number of nearby Pokémon. For each Pokémon, we use the Pythagorean distance
+formula to calculate the Euclidean distance for how far that Pokémon is from our
+board's current <code>latitude</code> and <code>longitude</code>.</p>
+<div class="arithmatex">\[
+\begin{align*}
+pLatitude &amp;= pokemon.location.latitude \\
+pLongitude &amp;= pokemon.location.longitude \\
+diff\_x &amp;= |pLatitude - latitude| \\
+diff\_y &amp;= |pLongitude - longitude| \\
+dist &amp;= \sqrt{diff\_x^2 + diff\_y^2} \\
+\end{align*}
+\]</div>
+<p>If <code>dist</code> is less than the <code>POKEMON_RADIUS</code> of 100-meters, we increment our
+count of nearby Pokémon. We require at least 6 Pokémon to be located within the
+user's 100-meter radius. Until the count reaches this threshold, we spawn more
+Pokémon within the user's radius. </p>
+<p>To add a nearby Pokémon, we spawn it is within a 100-meter radius to the user
+but outside an <code>ACTIVATION_RADIUS</code> of 10-meters. By spawning the Pokémon outside
+the <code>ACTIVATION_RADIUS</code>, we require the user to walk to the nearest Pokémon.
+Otherwise, the "fight or flee" page can trigger without physical movement from
+the user. To account for GPS inaccuracies and prevent Pokémon from spawning
+right at the 10-meter activation boundary, we create another constant
+<code>ACTIVATE_RAD_WITH_MARGIN</code> and set it to 3 * <code>ACTIVATION_RADIUS</code>, which we use
+to spawn new Pokémon at least 30-meters away from the user.</p>
+<p>For our calculations, we generate a random radius between
+<code>ACTIVATE_RAD_WITH_MARGIN</code> and <code>POKEMON_RADIUS</code> at which the Pokémon will spawn
+from the user. Next, we generate a random angle between 0 to <span class="arithmatex">\(2\pi\)</span> radians,
+which defines the direction from the user at which the Pokémon will spawn. This
+defines the polar coordinates of the new Pokémon with respect to the user's
+location.</p>
+<div class="arithmatex">\[
+\begin{align*}
+randRadius &amp;= ACTIVATE\_RAD\_WITH\_MARGIN + Math.random() * \\
+&amp;\quad (POKEMON\_RADIUS - ACTIVATE\_RAD\_WITH\_ \\
+&amp;\quad MARGIN) \\
+randAngle &amp;= Math.random() * 2 * \pi
+\end{align*}
+\]</div>
+<p>To calculate the latitude and longitude of the new Pokémon, we convert its
+location from polar to cartesian coordinates. By using the formulas <span class="arithmatex">\(x = r *
+\cos{\theta}\)</span> and <span class="arithmatex">\(y = r * \sin{\theta}\)</span>, we calculate the change in <span class="arithmatex">\(x\)</span> and <span class="arithmatex">\(y\)</span>
+between the user and Pokémon. This change in <span class="arithmatex">\(x\)</span> is added to the user's
+latitude, and the resulting sum is the latitude of the new Pokémon. Similarly,
+the new Pokémon's longitude is calculated by adding the change in <span class="arithmatex">\(y\)</span> with the
+user's longitude.</p>
+<div class="arithmatex">\[
+\begin{align*}
+xOffset &amp;= randRadius * cos(randAngle) \\
+yOffset &amp;= randRadius * sin(randAngle) \\
+newX &amp;= latitude + xOffset \\
+newY &amp;= longitude + yOffset \\
+\end{align*} \]</div>
+<p>We define the array <code>POKEMON_TYPES</code> to specify the 5 possible characters that
+can spawn: a Pikachu, Jigglypuff, Piplup, Eevee, and Lickitung. We generate a
+random number between 0 to 4, which is used to index into <code>POKEMON_TYPES</code> and
+assign a type to the new Pokémon. After generating a UUIDv4 with the <code>crypto</code>
+library, we use the newly calculated latitude, longitude, and type to add the
+new Pokémon to <code>PokemonTable</code> in AWS DynamoDB.</p>
+<p>Once the minimum threshold for nearby Pokémon has been satisfied, we iterate
+through all Pokémon once more and use the Pythagorean distance formula to
+calculate the Pokémon's distance from the user. As we scan through the Pokémon,
+we keep track of the nearest Pokémon and construct an array of Pokémon that are
+within the user's 10-meter activation radius. Besides the nearest Pokémon, we
+delete all other Pokémon that are within the user's 10-meter activation radius.
+By doing so, we prevent multiple "fight or flee" pages from immediately
+rendering one after another while the user remains stationary. The API handler
+returns a payload that contains the nearest Pokémon's data and whether a "fight
+or flight" page should activate.</p>
+<p>When we request for the nearest Pokémon at latitude 38.537293 and longitude
+-121.754578, we get the following response. According to the payload, the
+<code>false</code> indicates that this Pokémon is not within the user's 10-meter radius, so
+the "fight or flee" page should <em>not</em> be triggered. The following lines include
+the nearest Pokémon's UUID, type, latitude, and longitude.</p>
+<pre><code>false
+b5caa020-dd5f-432c-a8b4-cd9227c89e97
+jigglypuff
+38.537607926723126
+-121.75439370435284
+</code></pre>
+<h3 id="capture-pokemon">Capture Pokémon<a class="headerlink" href="#capture-pokemon" title="Permanent link">&para;</a></h3>
+<p>If the user has won the mini-game on the fight page, the Pokémon that had
+activated the "fight or flee" page is appended to the user's collection. As a
+result, we make a HTTP POST request to the following route. The user's MAC
+address is passed as a path parameter for <code>:userId</code>. <code>state.enemy_uuid</code> – the
+UUID of the nearest Pokémon that had activated the "fight or flee" page – is
+used for <code>:pokemonId</code>.</p>
+<pre><code>/users/:userId/pokemon/:pokemonId
+</code></pre>
+<h3 id="delete-pokemon">Delete Pokémon<a class="headerlink" href="#delete-pokemon" title="Permanent link">&para;</a></h3>
+<p>In addition to capturing a Pokémon, there are two other cases where a Pokémon
+should be deleted: the user chose to flee on the "flight or flee" page, or the
+user has lost the fight mini-game. For both cases, we make a HTTP DELETE request
+to remove the Pokémon from the <code>PokemonTable</code> database. This resource is defined
+at the following route, where the Pokémon's UUID is used as a path parameter to
+define the Pokémon ID.</p>
+<pre><code>/pokemon/:pokemonId
+</code></pre>
+<p>This operation is performed on the nearest Pokémon that had activated the "fight
+or flee" page. We store this Pokémon's UUID in <code>state.enemy_uuid</code>.</p>
+<h2 id="fight-or-flee">Fight or flee<a class="headerlink" href="#fight-or-flee" title="Permanent link">&para;</a></h2>
+<p>When we make HTTP GET requests for the nearest Pokémon, the response includes a
+boolean that indicates whether that Pokémon is within the 10-meter activation
+radius of the user. After parsing the response, the boolean is stored in
+<code>state.should_fight</code>. While the user is on the landing page or collection page,
+each iteration of our game loop checks whether this variable is set to true. If
+so, <code>state.state_type</code> is changed to <code>STATE_FIGHT_OR_FLEE_PAGE</code>. As a result,
+the next iteration of the game loop will render the "fight or flee" page, where
+the user is informed that a nearby Pokémon has been detected. While the user is
+on this page, the program keeps looping until it gets valid user input from the
+IR remote. In particular, the user should select button 1 to fight or button 2
+to flee. If the user selects to fight, <code>state.state_type</code> is assigned
+<code>STATE_FIGHT_PAGE</code>. Otherwise, <code>state.state_type</code> is set to
+<code>STATE_LANDING_PAGE</code>. The next iteration of the game loop will redirect the user
+to the appropriate page based on their input.</p>
+<h2 id="fight-mini-game">Fight mini game<a class="headerlink" href="#fight-mini-game" title="Permanent link">&para;</a></h2>
+<p>When the user selects to fight the Pokémon on the "fight or flee" page, we
+render the fight page on the OLED. The fight page displays bitmap images of
+hearts to represent the health of the user and the enemy. Both the user and the
+enemy start with four hearts each. Below the heart images, we render
+instructions and fight results to guide the user through the game. Essentially,
+the user utilizes the IR remote to select among buttons 0 to 9, and each button
+press harms either the user or the enemy. Each digit button is mapped to one of
+the following <code>GameButtonStates</code> states: <code>USER_BUTTON</code>, <code>ENEMY_BUTTON</code>, and
+<code>TAKEN</code>. Pressing a button of state <code>USER_BUTTON</code> means that the user will win
+the round, and the enemy will lose a heart. Similarly, pressing a button of
+state <code>ENEMY_BUTTON</code> means that the enemy will win the round, and the user will
+lose a heart. After an enemy or user selects a button, it is assigned the <code>TAKEN</code>
+state.</p>
+<p>When we initialize the fight, we iterate through the array
+<code>enum GameButtonState game_buttons[10]</code> to randomly assign half of it with the
+<code>USER_BUTTON</code> state and the other half with the <code>ENEMY_BUTTON</code> state. Then, we
+render the instructions. When the user is done reading the rules, they can
+select any digit button to start the game. Random numbers are generated using
+the C standard library psuedorandom number generator <code>srand()</code>.</p>
+<p>The user and the enemy take turns choosing a button until one of them reaches
+zero hearts. The user makes the first move in the game. If the user chooses any
+button other than 0 to 9, a message is displayed that an invalid button has been
+pressed, and the user must choose from only buttons 0 to 9. If the user chooses
+a button of state <code>TAKEN</code>, the OLED displays a message to choose an available
+button, and it lists all the digit buttons that have been assigned <code>TAKEN</code>.</p>
+<p>When it is the enemy's turn to make a move, the program keeps selecting a random
+button from 0 to 9 until it finds a button that is <em>not</em> of state <code>TAKEN</code>. The
+enemy uses this button as their move.</p>
+<p>After the enemy or user makes a valid move, the OLED shows a message that states
+which button has been selected, and whether that player has won or lost. When a
+player loses a round, their heart count is decremented, and a bitmap image of a
+broken heart replaces one of their full hearts.</p>
+<p>If the user is the first player to lose all four hearts, a message is displayed
+that the Pokémon has escaped. We assign <code>state.state_type</code> to
+<code>STATE_LANDING_PAGE</code> to redirect the user to the landing page. Furthermore, we
+make an HTTP DELETE request to remove the Pokémon from the database. The user
+can select any button from 0 to 9 to exit the fight page.</p>
+<p>If the enemy is the first to lose all their hearts, a message informs the user
+that they have successfully collected the Pokémon. We set <code>state.state_type</code> to
+<code>STATE_COLLECTION_PAGE</code> to redirect the user to the collection page, where they
+can view the new Pokémon that has been added to their collection. We also make a
+HTTP POST request to add the Pokémon to the user's collection. As previously
+mentioned, this API will not only update the user's collection but also delete
+the Pokémon from <code>PokemonTable</code> – the database of available characters to be
+captured. We append the new Pokémon to <code>state.collection</code> and increment
+<code>state.collection_length</code>.</p>
+<h2 id="graphics-api">Graphics API<a class="headerlink" href="#graphics-api" title="Permanent link">&para;</a></h2>
+<p>To include images and typography on the OLED, we render bitmaps that use the
+16-bit RGB format. We used Google to find images of characters and icons, and
+utilized a <a href="https://notisrac.github.io/FileToCArray/">file to C style array converter</a>
+to resize and convert a colored image into an array of <code>unsigned int</code>. We
+include a sample output of converting an image to an array below.</p>
+<pre><code>#define PIKACHU_BALLOON_HEIGHT 16
+#define PIKACHU_BALLOON_WIDTH 15
+
+// array size is 480
+const unsigned int pikachu_balloon[]  = {
+  0x961b, 0x961b, 0x961b, 0x8dda, 0x857a, ...
+  0x961b, 0x961b, 0x859a, 0xae5c, 0xae5c, ...
+  0x961b, 0x961b, 0x7d3a, 0x855b, 0x855b, ...
+  0x961b, 0x961b, 0x6434, 0x6c76, 0x855b, ...
+  0x961b, 0x8dda, 0x6c11, 0xa4ea, 0x6478, ...
+  0x961b, 0x855a, 0xb618, 0xe689, 0x84b0, ...
+  ...
+};
+</code></pre>
+<p>To display text in a Pokemon-esque format on the OLED, we used the site
+<a href="https://textcraft.net/style/Textcraft/pokemon">Textcraft</a> to generate png
+images of text. Afterwards, we converted these images to bitmaps using the file
+to C style array converter.</p>
+<p>To display a bitmap, we defined an x-offset and y-offset in pixels to render the
+image at a specific location on the OLED screen. Using the offsets as well as
+the height and width of the bitmap, we applied <code>drawPixel(int x, int y, unsigned int color)</code>
+from <code>Adafruit_GFX.h</code> while iterating through the bitmap array.</p>
 
 
 
@@ -701,6 +1387,10 @@ respective rates.</p>
     
     
       <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>
