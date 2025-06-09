@@ -1,0 +1,21 @@
+@font-face {
+    font-family: "Pokemon-Solid";
+    src: url(../fonts/Pokemon-Solid.ttf) format("truetype");
+}
+
+.md-grid {
+    height: 100%;
+    /* font-family: sans-serif; */
+}
+
+.md-header__title {
+    font-family: "Pokemon-Solid";
+    color: rgb(255, 234, 0);
+}
+
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4 {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}

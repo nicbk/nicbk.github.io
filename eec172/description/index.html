@@ -1,0 +1,828 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../challenges/">
+      
+      
+        <link rel="next" href="../design/">
+      
+      
+      <link rel="icon" href="../assets/pokeball.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Description - Pokémini Go</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#description" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Pokémini Go" class="md-header__button md-logo" aria-label="Pokémini Go" data-md-component="logo">
+      
+  <img src="../assets/pokeball.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Pokémini Go
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Description
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Pokémini Go" class="md-nav__button md-logo" aria-label="Pokémini Go" data-md-component="logo">
+      
+  <img src="../assets/pokeball.png" alt="logo">
+
+    </a>
+    Pokémini Go
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bill-of-materials/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Bill of Materials
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../challenges/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Challenges
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Description
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Description
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Features
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Features">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#frontend" class="md-nav__link">
+    <span class="md-ellipsis">
+      Frontend
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backend" class="md-nav__link">
+    <span class="md-ellipsis">
+      Backend
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hardware" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hardware
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Hardware">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ir-receiver" class="md-nav__link">
+    <span class="md-ellipsis">
+      IR receiver
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gps-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      GPS module
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#protocols" class="md-nav__link">
+    <span class="md-ellipsis">
+      Protocols
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Protocols">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#serial-periphal-interface-spi" class="md-nav__link">
+    <span class="md-ellipsis">
+      Serial Periphal Interface (SPI)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#universal-asynchronous-receivertransmitter-uart" class="md-nav__link">
+    <span class="md-ellipsis">
+      Universal Asynchronous Receiver/Transmitter (UART)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#software" class="md-nav__link">
+    <span class="md-ellipsis">
+      Software
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Software">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#code-composer-studio-and-cc3200-sdk" class="md-nav__link">
+    <span class="md-ellipsis">
+      Code Composer Studio and CC3200 SDK
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cc3200tool" class="md-nav__link">
+    <span class="md-ellipsis">
+      cc3200tool
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aws-dynamodb" class="md-nav__link">
+    <span class="md-ellipsis">
+      AWS DynamoDB
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rest-apis-and-express" class="md-nav__link">
+    <span class="md-ellipsis">
+      REST APIs and Express
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Design
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../future-work/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Future Work
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../implementation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Implementation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Map
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h1>
+<p>To showcase the knowledge we gained from the course EEC 172 – Embedded Systems,
+we exercise the skills taught in labs to design and implement a final project
+with increased complexity and creativity. Our project is titled Pokémini Go, an
+application that is inspired by the popular game Pokémon Go. For context,
+Pokémon Go is a mobile application that uses augmented reality and the phone's
+GPS sensor to spawn collectible characters, called Pokémon, on a real-world map.
+To capture Pokémon, users must physically walk to real-world locations where the
+characters have spawned. As the user physically moves, their real-time location
+is updated on a map displayed in the application. When the user reaches close
+proximity to that Pokémon, they can attempt to catch it and add it to their
+collection. Our project Pokémini Go is a simplified version of Pokémon Go.
+Pokémini Go implements the core functionality of Pokémon Go by spawning Pokémon
+characters at real-world coordinates. Users must walk to these coordinates to
+battle the Pokémon and add it to their collection.</p>
+<h2 id="features">Features<a class="headerlink" href="#features" title="Permanent link">&para;</a></h2>
+<h3 id="frontend">Frontend<a class="headerlink" href="#frontend" title="Permanent link">&para;</a></h3>
+<p>The user interface to Pokémini Go is a 128x128 OLED display. We implement four
+different OLED pages – a landing page, collection page, fight or flee page, and
+fight page. We describe these pages in greater detail below.</p>
+<ol>
+<li>When the program starts finishes setup, the user is navigated to the landing
+   page. The landing page displays the board's real-time location in latitude
+   and longitude. Furthermore, the coordinates of the Pokémon closest to the
+   user are displayed. This informs the user of the nearest location they can
+   physically approach to fight a Pokémon. The nearest Pokémon is calculated on
+   the server, and the client periodically requests that data.</li>
+<li>To view all the Pokémon that the user has collected, they can navigate to a
+   collection page that displays character sprites for each Pokémon in their
+   collection. </li>
+<li>When the user enters a 10-meter radius of a Pokémon, a "fight or flee" page
+   is rendered. The user is informed that a Pokémon nearby has been detected.
+   The user utilizes an IR remote to input whether they will flee or fight the
+   Pokémon. If the user flees, they are redirected to the landing page.
+   Otherwise, the user is redirected to a fight page, where they engage in a
+   game to collect that Pokémon.</li>
+<li>When the user is redirected to the fight page, they participate in a
+   turn-based attack mini-game, where they use the IR remote to provide user
+   input. Pressing a button from 0 to 9 on the IR remote will randomly harm
+   either the user or the enemy. Both the user and the enemy start with four
+   hearts. If the enemy is the first to lose all their hearts, the user wins and
+   collects the Pokémon that had activated the fight. The user is redirected to
+   the collection page, where they can view the new Pokémon in their collection.
+   Otherwise, if the user is the first to lose all their hearts, the Pokémon
+   "escapes", and the user loses the opportunity to collect that Pokémon. They
+   are subsequently redirected to the landing page.</li>
+</ol>
+<p>We also deploy a web application that displays a real-time map of all Pokémon in
+our database. In addition to the coordinates displayed on the OLED landing page,
+the map serves as another interface to determine the locations at which a user
+can battle a Pokémon. The map also displays a location marker for the device on
+which the user has accessed the website. As the user physically moves, their
+real-time location is updated on the map. </p>
+<h3 id="backend">Backend<a class="headerlink" href="#backend" title="Permanent link">&para;</a></h3>
+<p>We implement REST APIs on an Express server that is hosted on a VPS (Virtual
+Private Server), and use AWS DynamoDB to store Pokémon and user data. We provide
+the following description as a brief overview of the high-level functionality
+that our backend offers. When a LaunchPad runs our application, its MAC address
+is obtained to check whether this is a new or existing user. If this is a new
+LaunchPad that runs our application, the server creates a unique user on AWS
+DynamoDB, and the new user starts with an empty collection. Otherwise, if an
+existing LaunchPad has already run our application, their collection of Pokémon
+is retrieved from the database when the program is initialized. The user's
+collection of Pokémon will be rendered on the collection page. As the user
+physically moves, the LaunchPad periodically makes HTTP GET requests for the
+Pokémon closest to them. When the server makes these distance calculations, it
+performs additional calculations to ensure that enough Pokémon have spawned
+around the user. In particular, the server will calculate if there are at least
+6 existing Pokémon in a 100 meter radius of the user; if this threshold is not
+met, the server generates more Pokémon in the user's 100 meter radius. If the
+user is within a 10-meter radius of a Pokémon, the server informs the LaunchPad
+that a fight can be activated. The "fight or flee" page is rendered on the OLED,
+and the user has the choice to flee from the Pokémon or fight via a turn-based
+attack mini-game. If the user fights the Pokémon and wins, the Pokémon is added
+to the user's collection. Both a fight and flee will result in the Pokémon being
+deleted from the database of available characters to be battled.</p>
+<h2 id="hardware">Hardware<a class="headerlink" href="#hardware" title="Permanent link">&para;</a></h2>
+<p>We use two sensing devices in our implementation of Pokémini Go – an IR receiver
+and GPS module.</p>
+<h3 id="ir-receiver">IR receiver<a class="headerlink" href="#ir-receiver" title="Permanent link">&para;</a></h3>
+<p>An AT\&amp;T IR universal remote control is used to send signals to an IR receiver.
+We incorporate code from Lab 3 ("IR Remote Control Texting Over a UART Link") to
+decode signals for identifying specific button presses. To reduce the noise from
+the power source, the IR receiver is connected to a low-pass filter composed of
+a 100 micro-farad capacitor and 100 ohm resistor. We press buttons on the IR
+remote to get user input for the following functionalities: choosing to fight or
+flee, switching between the landing page and collection page, and playing the
+turn-based attack mini-game on the fight page.</p>
+<h3 id="gps-module">GPS module<a class="headerlink" href="#gps-module" title="Permanent link">&para;</a></h3>
+<p>We utilize a GPS module to get the user's location in latitude and longitude.
+The module reads radio signals emitted by satellites, requiring at least three
+satellites to calculate a position by trilateration. After the GPS successfully
+finds a fix, the module transmits data using the NMEA-0183 format. Each
+NMEA-0183 sentence begins with the character "$" followed by the talker
+identifier and the sentence type. For our project, we parse data from the
+"GNGGA" sentence. The talker identifier "GN" indicates that multiple satellite
+systems, particularly from several constellations of the Global Navigation
+Satellite Systems (GNSS), are used to produce data (footnote). "GGA" denotes the
+sentence type as Global Positioning System Fix Data, which consists of 16
+fields. The third and fifth fields are latitude and longitude, respectively.</p>
+<h2 id="protocols">Protocols<a class="headerlink" href="#protocols" title="Permanent link">&para;</a></h2>
+<p>Two hardware communication protocols are used to transmit information between
+the MCU and peripheral devices. We use Serial Peripheral Interface (SPI) to
+communicate between the CC3200 LaunchPad and OLED display. Furthermore, we use
+UART to read data from the GPS module and debug to a local console.</p>
+<h3 id="serial-periphal-interface-spi">Serial Periphal Interface (SPI)<a class="headerlink" href="#serial-periphal-interface-spi" title="Permanent link">&para;</a></h3>
+<p>Serial Peripheral Interface (SPI) is a full-duplex synchronous communication
+protocol, which is used to transmit data between the CC3200 LaunchPad and OLED
+display. The protocol implements a master-slave interface, where the master
+(i.e. MCU) initiates communication and the slave (i.e., OLED display) responds
+to these requests. SPI data transmissions do not follow a standardized format
+but comply with device specifications. The protocol uses four point-to-point
+unidirectional wires as described below.</p>
+<ol>
+<li>Serial Clock (SCK): A master-to-slave wire that transmits a master-generated
+   clock signal.</li>
+<li>Slave Select (SS): A master-to-slave wire that selects the specific slave
+   device to enable communication with.</li>
+<li>Master-Out Slave-In (MOSI): A master-to-slave wire that transmits data from
+   the master to a slave device.</li>
+<li>Master-In Slave-Out (MISO): A slave-to-master wire that transmits data from a
+   slave device to the master.</li>
+</ol>
+<h2 id="universal-asynchronous-receivertransmitter-uart">Universal Asynchronous Receiver/Transmitter (UART)<a class="headerlink" href="#universal-asynchronous-receivertransmitter-uart" title="Permanent link">&para;</a></h2>
+<p>Universal Asynchronous Receiver/Transmitter (UART) is an asynchronous serial
+communication protocol that uses two one-way wires, a connection for
+transmitting data (TX) and another for receiving data (RX). As an asynchronous
+protocol, the sender and receiver agree on a baud rate to indicate how often
+each device should sample from their own local clocks. The sender initiates
+transmission by sending a predetermined start symbol, which informs the receiver
+to begin sampling data by the baud rate. After transmission of an $n$-symbol
+data frame, the sender sends a stop symbol to end communication. We make the
+distinction here between symbol and bit because baud rate describes sampled
+symbols per second, not necessarily binary bits per second. However, most
+electrical standards used in implementing UART use binary voltage symbols.</p>
+<h2 id="software">Software<a class="headerlink" href="#software" title="Permanent link">&para;</a></h2>
+<h3 id="code-composer-studio-and-cc3200-sdk">Code Composer Studio and CC3200 SDK<a class="headerlink" href="#code-composer-studio-and-cc3200-sdk" title="Permanent link">&para;</a></h3>
+<p>Our project is implemented in the C programming language, which we compile and
+load onto the CC3200 via the Code Composer Studio IDE. We build on top of the
+starter code provided in lab 4 ("Introduction to AWS and RESTful APIs") and
+import code from lab 2 ("Serial Interfacing with SPI and I2C") and lab 3 ("IR
+Remote Control Texting Over a UART Link"). In particular, lab 2 provides the
+OLED driver code, and our implementation of writing commands and data to the
+display. Our lab 3 code contains the logic for decoding IR remote signals to
+determine which button has been pressed. Furthermore, it implements UART
+interrupts for communicating with another peripheral device. We extend the
+application <code>aws-rest-api-ssl-demo</code> from lab 4, which contains the driver code
+for Texas Instruments SimpleLink CC3200 SoC, and is what we use to network with
+the internet using a WLAN adapter.</p>
+<h3 id="cc3200tool">cc3200tool<a class="headerlink" href="#cc3200tool" title="Permanent link">&para;</a></h3>
+<p>The <code>cc3200tool</code> is a serial flash utility that allows us to program flash
+memory and open a pyserial terminal for UART communication between the CC3200
+SoC and our local machine. The command-line utility can be installed from this
+<a href="https://github.com/toniebox-reverse-engineering/cc3200tool">repository</a>.
+To open a serial port on our local machine, we execute the following commands
+and specify our baud rate as 115200.</p>
+<pre><code>conda activate cc3200
+cc3200tool term 115200
+</code></pre>
+<p>We also use the <code>cc3200tool</code> to write to flash memory, ensuring that our project
+is stand-alone. As mentioned in Lab 1 ("Development Tools Tutorial and Lab
+Introduction"), we run the following command to write <code>pokemon-go.bin</code> to
+<code>/sys/mcuimg.bin</code>. After the program has been written to non-volatile memory,
+the application will run once the LaunchPad is connected to power. Pressing the
+"Reset" button will restart the application. </p>
+<pre><code>conda activate cc3200
+cc3200tool --sop2 \~dtr --reset prompt \
+    format_flash --size 1M \
+    write_file pokemon-go.bin /sys/mcuimg.bin
+</code></pre>
+<h3 id="aws-dynamodb">AWS DynamoDB<a class="headerlink" href="#aws-dynamodb" title="Permanent link">&para;</a></h3>
+<p>AWS DynamoDB is used to store Pokémon and user data on the cloud. With this
+NoSQL serverless database, we create two tables – <code>PokemonTable</code> and
+<code>UserTable</code>. <code>PokemonTable</code> consists of entries for each Pokémon that has
+spawned and is available to be captured. <code>UserTable</code> contains an entry for every
+unique LaunchPad that has run our application and tracks all Pokémon that each
+user has collected. </p>
+<h3 id="rest-apis-and-express">REST APIs and Express<a class="headerlink" href="#rest-apis-and-express" title="Permanent link">&para;</a></h3>
+<p>REST (Representational State Transfer) is a common set of guidelines for writing
+Web APIs. Specifically, all REST APIs have stateless calls at the API level.
+This means that a single call transfers some state either from the server or
+from the client, and without the value dependent on the status of any other
+call. Furthermore, REST APIs are conventionally implemented using HTTP with
+semantically meaningful verbs and query parameters, and with JSON being the most
+common payload data format for transmitting structured or relational data.</p>
+<p>We use Node.js and TypeScript to create an Express server, where we implement
+REST APIs to handle HTTP requests. To retrieve, delete, update, and perform
+calculations on data within AWS DynamoDB, we write REST APIs to interface the
+LaunchPad with the database. </p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.sections", "toc.integrate"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  </body>
+</html>

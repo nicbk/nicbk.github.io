@@ -1,0 +1,707 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../future-work/">
+      
+      
+        <link rel="next" href="../map/">
+      
+      
+      <link rel="icon" href="../assets/pokeball.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Implementation - Pokémini Go</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#implementation" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Pokémini Go" class="md-header__button md-logo" aria-label="Pokémini Go" data-md-component="logo">
+      
+  <img src="../assets/pokeball.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Pokémini Go
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Implementation
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Pokémini Go" class="md-nav__button md-logo" aria-label="Pokémini Go" data-md-component="logo">
+      
+  <img src="../assets/pokeball.png" alt="logo">
+
+    </a>
+    Pokémini Go
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bill-of-materials/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Bill of Materials
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../challenges/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Challenges
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../description/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Description
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Design
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../future-work/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Future Work
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Implementation
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Implementation
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#gps-driver-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      GPS Driver Code
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="GPS Driver Code">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configure-uart-interrupts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configure UART interrupts
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uart-interrupt-handler" class="md-nav__link">
+    <span class="md-ellipsis">
+      UART interrupt handler
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parse-rx_buffer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parse rx_buffer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-baudrate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Set baudrate
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disable-and-re-enable-interrupts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Disable and re-enable interrupts
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Map
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="implementation">Implementation<a class="headerlink" href="#implementation" title="Permanent link">&para;</a></h1>
+<h2 id="gps-driver-code">GPS Driver Code<a class="headerlink" href="#gps-driver-code" title="Permanent link">&para;</a></h2>
+<h3 id="configure-uart-interrupts">Configure UART interrupts<a class="headerlink" href="#configure-uart-interrupts" title="Permanent link">&para;</a></h3>
+<p>The GPS module uses the UART protocol to transmit data. To set up communication
+between the CC3200 LaunchPad and GPS module, we enable UART1 on SysConfig and
+configure GPIO 11 (Pin 02) as the RX pin and GPIO 03 (Pin 58) as the TX pin. In
+our circuit, we connect UART1 RX and TX pins on the LaunchPad to the TX and RX
+pins of the GPS module, respectively. To implement UART interrupts, we closely
+reference our implementation from Lab 3 ("IR Remote Control Texting Over a UART
+Link") and the <a href="https://software-dl.ti.com/ecs/cc31xx/APIs/public/cc32xx_peripherals/latest/html/group___u_a_r_t__api.html">UART API</a>.
+For UART data transmissions, the CC3200 utilizes a 16-byte receive FIFO buffer.
+When GPS data is written to the RX pin of UART1, each byte is appended to the
+FIFO buffer, from which we read the data. We use <code>UARTFIFOLevelSet</code> to assign
+the receive FIFO interrupt level as <code>UART_FIFO_RX4_8</code>. As a result, an interrupt
+is generated for every 8 bytes written to the receive FIFO buffer.</p>
+<h3 id="uart-interrupt-handler">UART interrupt handler<a class="headerlink" href="#uart-interrupt-handler" title="Permanent link">&para;</a></h3>
+<p>For every 8 bytes written to the receive FIFO butter, the UART interrupt handler
+is executed. This interrupt service routine is responsible for reading the
+NMEA-0183 sentences. When a sentence of type "GNGGA" is read, it parses the
+latitude and longitude to assign to the game state. <a href="https://openrtk.readthedocs.io/en/latest/communication_port/nmea.html">Aceinna OpenRTK Developer manual</a>
+provides an example of a "GNGGA" sentence from the NMEA-0183 standard. We
+include that example for reference below. It is a comma-delimited sentence that
+starts with <code>$</code> and ends with <code>\r\n</code>.</p>
+<pre><code>$GNGGA,072446.00,3130.5226316,N,12024.0937010,E,4,27,0.5,31.924,M,0.000,M,2.0,*44 
+</code></pre>
+<p>For each byte in the receive FIFO buffer, <code>UARTCharGet</code> is used to read the
+character and remove it from the buffer. We declare a <code>volatile</code> array of <code>char</code>
+named <code>rx_buffer</code> that is large enough to store a single NMEA-0183 sentence. We
+also declare <code>rx_buffer_idx</code> – a variable to store the current length of the
+NMEA-0183 sentence that we are reading. When we read <code>$</code>, we also write the
+following bytes to a second <code>volatile</code> buffer, named <code>sentence_type</code>, until we
+reach the first comma delimiter.</p>
+<p>Reading <code>\n</code> indicates that we have finished reading an entire NMEA-0183
+sentence to <code>rx_buffer</code>. We check if <code>sentence_type</code> stores the string <code>GNGGA</code>.
+If so, we parse <code>rx_buffer</code> to obtain the latitude and longitude. Afterwards, we
+reset <code>rx_buffer_idx</code> to zero, so we can read a new NMEA-0183 sentence to
+<code>rx_buffer</code>.</p>
+<h3 id="parse-rx_buffer">Parse <code>rx_buffer</code><a class="headerlink" href="#parse-rx_buffer" title="Permanent link">&para;</a></h3>
+<p>When an entire "GNGGA" sentence has been read to <code>rx_buffer</code>, we use <code>strtok</code> to
+parse the comma-delimited string into an array of <code>tokens</code>. To check if this is
+a valid GPS reading in North America, we confirm that fourth field – direction
+of latitude – and sixth field – direction of longitude – are "N" (i.e., north)
+and "W" (i.e., west), respectively. We also confirm that the latitude and
+longitude are not empty fields, which can occur when the GPS failed at finding a
+fix.</p>
+<p>According to <a href="https://receiverhelp.trimble.com/alloy-gnss/en-us/NMEA-0183messages_CommonMessageElements.html#:~:text=NMEA%20Message%20values&amp;text=Latitude%20is%20represented%20as%20ddmm,dd%20or%20ddd%20is%20degrees">Trimble's guide on NMEA-0183 messages</a>, an NMEA-0183 sentence formats the latitude as
+"ddmm.mmmm" and longitude as "dddmm.mmmm", where "dd" and "ddd" represent
+degrees while "mm.mmmm" denote minutes. We reference this
+<a href="https://stackoverflow.com/questions/36254363/how-to-convert-latitude-and-longitude-of-nmea-format-data-to-decimal">StackOverflow answer</a> to convert
+the values to decimal degrees – a common way to express
+latitude and longitude values. After converting the strings to floats, we divide
+the minutes by 60 and add this quotient to the degrees. Since North America is
+located in the western hemisphere, we negate the latitude. </p>
+<h3 id="set-baudrate">Set baudrate<a class="headerlink" href="#set-baudrate" title="Permanent link">&para;</a></h3>
+<p>By connecting the LaunchPad's UART1 TX pin to the GPS module's RX pin, we can
+write commands to the GPS module for configuration. By default, our GPS module
+communicates at a baud rate of 115200. Initially when we attempted sending the
+GPS module's generated NMEA sentences to the LaunchPad using the default 115200
+baud, we noticed that the messages were being received incomplete. Notably,
+sentences would be received cut-off such as in the following example:
+<code>$GNGGA,072446.00</code>. Here, only the timestamp of the GNGGA sentence is being
+received, but otherwise the 16 character FIFO buffer is filled up and unable to
+receive the rest of the message before the LaunchPad code is fast enough to read
+the buffer. By halving the baud to 57600, we were able to slow the message
+transmission enough to allow the LaunchPad to read the message faster than it is
+transmitted.</p>
+<p>Changing the baud is an involved process. Firstly, the specific GPS module that
+we use is the <a href="https://www.hglrc.com/products/m100-5883-gps?srsltid=AfmBOor17IWhtMt4P6nsx0QI5u1bGGEDSzH--SjuEkOcAcFVDiZUdRY5">HGLRC M100-5883</a>. 
+This package specifically uses the <a href="https://content.u-blox.com/sites/default/files/MAX-M10S_DataSheet_UBX-20035208.pdf">UBlox M10 series baseband GPS chip</a>.
+That chip uses the <a href="https://content.u-blox.com/sites/default/files/products/documents/u-blox6_ReceiverDescrProtSpec_%28GPS.G6-SW-10018%29_Public.pdf">UBlox Protocol</a>
+which specifies the supported NMEA output as well as the format for configuring
+the chip itself.</p>
+<p>For configuring the baud rate on the UBlox chip, first we reference section
+21.12 of the <a href="https://content.u-blox.com/sites/default/files/products/documents/u-blox6_ReceiverDescrProtSpec_%28GPS.G6-SW-10018%29_Public.pdf">UBlox protocol specification</a> 
+which specifies sending a UART message to the RX pin of the UBlox chip with
+header <code>$PUBX,41,1</code>. Then, as shown in the following screenshot from the
+documentation, we append the fields <code>,0007,0003</code> to update UART baudrate
+specifically. </p>
+<p><img alt="Landing Page" src="../assets/set-baud-rate.png" /></p>
+<p>Then, we append <code>,57600</code> to specify the new baudrate. Next, we append <code>,0</code> as
+the default option for "autobauding," which we do not concern ourselves with.
+Finally, we must calculate and append a checksum value beginning with an
+asterisk and then followed by the one-byte checksum value in hexadecimal format.</p>
+<p>In this case, the command string is:</p>
+<pre><code>$PUBX,41,1,0007,0003,57600,0
+</code></pre>
+<p>For the UBlox checksum, we calculate the XOR8 checksum. The XOR8 checksum simply
+takes each byte of the message and then computes the bitwise exclusive-or
+operation on each successive byte, returning a final checksum byte. We use
+<a href="https://www.convertcase.com/hashing/xor-checksum">this online tool</a>
+to calculate the checksum for <code>PUBX,41,1,0007,0003,57600,0</code> which is the same
+command string as above except without the leading $ character.</p>
+<p>Thus, the resulting checksum in hexadecimal is <code>2b</code>. Finally, this is appended
+to the original message to result in a final command message of
+<code>$PUBX,41,1,0007,0003,57600,0*2b</code>.</p>
+<p>After this command is sent to reconfigure the baudrate of the GPS module, we
+then change the UART controller configuration for the UART1 interface to use
+57600 baud by calling the <code>UARTConfigSetExpClk()</code> function as follows:</p>
+<pre><code>MAP_UARTConfigSetExpClk(
+    UARTA1_BASE,
+    MAP_PRCMPeripheralClockGet(PRCM_UARTA1),
+    57600,
+    (UART_CONFIG_WLEN_8 | UART_CONFIG_STOP_ONE |
+     UART_CONFIG_PAR_NONE)
+);
+</code></pre>
+<p>After updating the baudrate value, we restart the program, but while keeping the
+LaunchPad and thus the GPS module powered throughout, ensuring not to lose the
+temporarily updated baudrate.</p>
+<p>We then attach a Saelee logic analyzer to the RX pin of the GPS module and
+capture a sample NMEA sentence to ensure that the baudrate remains at 57600.</p>
+<p>Next, we construct a command to save the configuration of the GPS module to the
+GPS module's onboard non-volatile memory.</p>
+<p>In particular, we reference the following <a href="https://content.u-blox.com/sites/default/files/products/documents/u-blox6_ReceiverDescrProtSpec_%28GPS.G6-SW-10018%29_Public.pdf">UBlox protocol section 31.2.1</a>
+which instructs transmitting a UART message to the UBlox chip RX pin with header
+bytes <code>0xB5 0x62 0x06 0x09</code>. </p>
+<p><img alt="Landing Page" src="../assets/ublox-cfg-cfg.png" /></p>
+<p>Then, we append the byte <code>13</code> in decimal to indicate a payload length of 13
+bytes. Finally, we append the payload of 32 <code>0</code> bits for the <code>clearMask</code> and
+<code>loadMask</code> values, and then bytes <code>0xFF 0xFF 0x00 0x00</code> for the <code>saveMask</code>.
+According to the following screenshot from section 31.2.1, setting the lower two
+bytes to all ones will cause all of the GPS module's current configuration to be
+saved: </p>
+<p><img alt="Landing Page" src="../assets/ublox-cfg-save.png" /></p>
+<p>Then, according to the bottom of section 31.2.1, we set the 13th bit of the
+payload to <code>0xF</code> to flash the configuration to all the available memory sources,
+importantly including the non-volatile sources: </p>
+<p><img alt="Landing Page" src="../assets/ublox-cfg-device.png" /></p>
+<p>Finally, this command takes two separate checksum values. The two checksums are
+likely because the command is critical to receive correctly; a corrupt saved
+configuration would essentially brick the GPS module unless the user is
+successfully able to reverse engineer and then communicate with the corrupted
+configuration.</p>
+<p>The two checksums <code>CK_A</code> and <code>CK_B</code> are computed as follows:</p>
+<p><img alt="Landing Page" src="../assets/ublox_cksum.png" /></p>
+<p>CK_A and CK_B are appended to the payload.</p>
+<p>Finally, this entire message is written at once to the UBlox chip over UART. We
+remove power from the GPS module for 10 seconds and then re-attach power to
+ensure that the new baudrate is permanently stored in non-volatile memory.</p>
+<h3 id="disable-and-re-enable-interrupts">Disable and re-enable interrupts<a class="headerlink" href="#disable-and-re-enable-interrupts" title="Permanent link">&para;</a></h3>
+<p>The HGLRC UBlox GPS module sends approximately 15 NMEA sentences, each 10 times
+per second. Each NMEA sentence is around 50 characters. Approximately 7500 bytes
+per second of constantly interrupting the LaunchPad causes a resource hogging
+problem where other program behavior, such as network requests and OLED screen
+updates, either don't run predictably or stop working for long periods of time.</p>
+<p>To fix this, we implement a solution where the UART1 RX buffer interrupt handler
+is initially disabled, and then remains disabled until approximately 2 seconds
+pass. We hand-tune this interval, eventually settling on a constant in our
+<code>gpg.c</code> file that we define as <code>const int GPG_READ_LIMIT = 60000</code>. How this
+works is that on every iteration of our main game loop in <code>game.c</code>, a function
+<code>PollEnableGPS()</code> is called which will increment a counter <code>gpg_read_timeout</code>.
+Then, when <code>gpg_read_timeout</code> reaches <code>GPG_READ_LIMIT</code> the UART1 RX buffer
+interrupt handler is re-enabled, allowing the board to respond to and process
+the influx of GPS NMEA sentences. Then, when the GPGGA sentence is fully parsed,
+the UART1 RX buffer is disabled again. This strategy allows the board to sample
+the GPS NMEA sentences at a much slower rate that is acceptable, allowing other
+program processes to have enough time to execute successfully at their own
+respective rates.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.sections", "toc.integrate"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  </body>
+</html>

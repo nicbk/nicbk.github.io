@@ -1,0 +1,752 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../description/">
+      
+      
+        <link rel="next" href="../future-work/">
+      
+      
+      <link rel="icon" href="../assets/pokeball.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Design - Pokémini Go</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#design" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Pokémini Go" class="md-header__button md-logo" aria-label="Pokémini Go" data-md-component="logo">
+      
+  <img src="../assets/pokeball.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Pokémini Go
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Design
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Pokémini Go" class="md-nav__button md-logo" aria-label="Pokémini Go" data-md-component="logo">
+      
+  <img src="../assets/pokeball.png" alt="logo">
+
+    </a>
+    Pokémini Go
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bill-of-materials/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Bill of Materials
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../challenges/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Challenges
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../description/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Description
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Design
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Design
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#functional-specification" class="md-nav__link">
+    <span class="md-ellipsis">
+      Functional Specification
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Functional Specification">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#launchpad-functional-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      LaunchPad Functional Description
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expressjs-server-functional-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Express.JS Server Functional Description
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#website-functional-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Website Functional Description
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      System Architecture
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../future-work/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Future Work
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../implementation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Implementation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Map
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="design">Design<a class="headerlink" href="#design" title="Permanent link">&para;</a></h1>
+<h2 id="functional-specification">Functional Specification<a class="headerlink" href="#functional-specification" title="Permanent link">&para;</a></h2>
+<h3 id="launchpad-functional-description">LaunchPad Functional Description<a class="headerlink" href="#launchpad-functional-description" title="Permanent link">&para;</a></h3>
+<p><img alt="LaunchPad Diagram" src="../assets/launchpad-functional-diagram.png" /></p>
+<p>As specified in the <strong>Description</strong> section, a state machine transitioning
+between 4 different pages is implemented. These four pages are the landing page,
+the collection page, the fight-or-flee page, and the fight page.</p>
+<p>To begin with, when the board is powered on, the system does not transition to
+one of the 4 pages just yet, but instead enters a loop to attempt connecting to
+the pre-configured WiFi network. In this loop, the text <code>Connecting to Wifi...</code>
+is printed on the top of the OLED screen. Then, when the LaunchPad is finally
+able to connect to the specified network, then the state transitions into the
+initial landing page.</p>
+<p>In the landing page, we display the title "Pokemini Go" in a custom font, with a
+picture of a Pikachu Pokémon in the bottom right. Then, we also show the user's
+GPS coordinates and the enemy's GPS coordinates on the left of the screen. On
+the bottom of the screen, we show an indication that pressing the number button
+<code>1</code> on the IR remote will switch pages to the collection page.</p>
+<p><img alt="Landing Page" src="../assets/landing-page.png" /></p>
+<p>In the collection page, we show a grid of Pokémon icons corresponding to all of
+the Pokémon that the user has collected. These Pokémon are stored in the
+DynamoDB document corresponding to the current LaunchPad. Upon accessing the
+collection page, an HTTP GET request to route <code>/users/&lt;string:userId&gt;</code> is sent
+to the Express.JS server to retrieve all of the Pokémon in the user's
+collection. The <code>userId</code> is uniquely given by the MAC address of the LaunchPad's
+WiFi chip, serialized into a hexadecimal string. From the collection page, the
+user can navigate back to the landing page by pressing the number button <code>2</code> on
+the IR remote.</p>
+<p><img alt="Collection Page" src="../assets/collection-page.png" /></p>
+<p>In either the landing page or the collection page, a loop is run in the
+background where approximately every 5 seconds, the nearby Pokémon are queried
+from the Express.JS server. This query is executed by making an HTTP GET request
+to the route <code>/pokemon/nearby</code> on the Express.JS server.</p>
+<p>The response from the server includes the GPS coordinates of the nearest Pokémon
+to the LaunchPad, the ID of the Pokémon, and also a boolean flag named
+<code>shouldActivate</code> indicating whether that Pokémon is near enough to the LaunchPad
+to trigger a "fight-or-flee" activation. The new enemy's GPS coordinates are
+applied to the landing page state. Then, if <code>shouldActivate</code> is true, a state
+transition is triggered to enter the fight-or-flee page.</p>
+<p><img alt="Fight or Flee Page" src="../assets/fight-or-flee-page.png" /></p>
+<p>In the fight-or-flee page, we render text "Pokemon Detected Nearby" in a custom
+font in the center of the screen. Then right below, we indicate that the user
+can press the numeric button <code>1</code> on the IR remote to fight the Pokémon, or that
+they can press the numeric button <code>2</code> on the IR remote to flee the Pokémon.</p>
+<p>While in the fight-or-flee page, the background loop of querying for nearby
+Pokémon is halted. This way, the LaunchPad does not receive a duplicate
+notification to fight another Pokémon. The fight-or-flee page will stay active
+until the user takes an action to navigate away from it.</p>
+<p>If the user presses <code>2</code> to flee the Pokémon, then an HTTP DELETE request is sent
+to the route <code>/pokemon/&lt;string:pokemonId&gt;</code> with the given ID of the nearest
+Pokémon that triggered the fight-or-flee page. This will cause the Pokémon to be
+deleted from the DynamoDB store and thus from the map. Then, the LaunchPad state
+will transition back to the landing page.</p>
+<p>If the user presses <code>1</code> to fight the Pokemon, then the LaunchPad state
+transitions to the fight page.</p>
+<p>In the fight page, we render four hearts on the top of the screen representing
+the user's health, and four hearts on the bottom of the screen representing the
+enemy's health.</p>
+<p>Then, we randomly assign the 10 numeric buttons on the IR remote to either
+trigger the user's health to decrease by one, or the enemy's health to decrease
+by one. To ensure that a win or loss is guaranteed without ties, we ensure that
+5 of the buttons are assigned to decrease a user heart and that the other 5
+buttons are assigned to decrease an enemy heart. Given the four hearts for each
+user, each user starts with a health value of 4. By pressing a button, either
+the user's health will randomly go down by 1, or the enemy's health will
+randomly go down by 1. The IR remote's number button actions are set at random
+whenever the fight state is entered. Then, when a number button is pressed, the
+press is recorded. A number cannot be re-pressed within the fight page. Thus,
+the user must exhaust all the number buttons until either the user loses all of
+their hearts or the enemy loses all of their hearts.</p>
+<p>While in the fight page, the background process for querying the server for
+nearby Pokémon is halted. This way, the user will not be prompted to attack
+another Pokémon while they are still battling the current Pokémon.</p>
+<p><img alt="Fight Page Starting State" src="../assets/fight-page-start.png" /></p>
+<p>If the user loses all of their hearts, then the resulting behavior is similar to
+that of if the user decided to flee in the fight-or-flee page.</p>
+<p>That is, an HTTP DELETE request will be made to the route
+<code>/pokemon/&lt;string:pokemonId&gt;</code> on the Express.JS server to delete the Pokémon
+from the DynamoDB Pokémon collection, representing the Pokémon fleeing. Then,
+the LaunchPad state will transition back to the landing page.</p>
+<p>If the enemy loses all of their hearts, then an HTTP POST request will be made
+to the route:</p>
+<pre><code>/users/&lt;string:userId&gt;/pokemon/&lt;string:pokemonId&gt;
+</code></pre>
+<p>This will cause the Pokémon to be removed from the DynamoDB Pokémon collection
+and thus be removed from the map, but the Pokémon will then also be added to the
+user's Pokémon collection, signifying that the user has collected that Pokémon.
+Then, the LaunchPad state will transition to the collection page to show the
+newly collected Pokémon.</p>
+<p>Here, we show an image of what the fight page looks like immediately after the
+enemy loses all of their hearts, indicating a user win:</p>
+<p><img alt="Fight Page Win State" src="../assets/fight-page-win.png" /></p>
+<h3 id="expressjs-server-functional-description">Express.JS Server Functional Description<a class="headerlink" href="#expressjs-server-functional-description" title="Permanent link">&para;</a></h3>
+<p><img alt="Express Functional Diagram" src="../assets/express-functional-diagram.png" /></p>
+<p>The REST API server endpoint that processes the LaunchPad's network requests is
+written in Express.JS, a common Node.JS framework for writing web server
+applications. Node.JS is a server runtime that allows writing JavaScript or
+TypeScript code in a server non-browser environment.</p>
+<p>In Express.JS, API behavior is written in a declarative and asynchronous format,
+where function handlers are given to each particular route that the server
+should implement. For our application, we implement four distinct routes.</p>
+<ol>
+<li><code>HTTP GET</code> request to the route <code>/pokemon/nearby</code> will return the nearest
+    Pokémon to the requesting user. We also include some lazy-loaded behavior
+    within this call to manage Pokémon map state, as will be discussed later.</li>
+<li><code>HTTP GET</code> request to the route <code>/users/&lt;string:userId&gt;</code> will return a list
+   of all Pokémon that are currently stored in the specified user's collection.</li>
+<li><code>HTTP DELETE</code> request to the route <code>/pokemon/&lt;string:pokemonId&gt;</code> will delete
+   the specified Pokémon from the DynamoDB Pokémon collection, thus removing the
+   Pokémon from the map.</li>
+<li><code>HTTP POST</code> request to the route
+   <code>/users/&lt;string:userId&gt;/pokemon/&lt;string:pokemonId&gt;</code> will cause the specified
+   Pokémon to be added to the specified user's collection, and for the Pokémon
+   to also be deleted from the Pokémon collection to remove it from the map.
+   This route is for "catching" the Pokémon.</li>
+</ol>
+<p>For the <code>HTTP GET</code> request to the route <code>/pokemon/nearby</code>, the server expects
+two URL query parameters included in the request: longitude and latitude numeric
+values that correspond to the GPS coordinates of the requesting user. As an
+example, a fully formatted call might have a URL that looks as follows:</p>
+<pre><code>http://&lt;server_address&gt;/pokemon/nearby?latitude=37.000000&amp;longitude=-121.000000
+</code></pre>
+<p>If the query parameters are not given, then the web server returns a <code>400 Bad
+Request</code> error.</p>
+<p>After parsing the user's coordinates, then the server queries DynamoDB for all
+Pokémon within a 100-meter radius of the user's GPS coordinates. If there are
+less than 6 Pokémon within the 100-meter radius of the user's coordinates, then
+the server requests for more Pokémon to be created such that the 6 Pokémon
+threshold quantity is met. These new Pokémon are created at a radius of at least
+30-meters away from the user, and within the 100-meter outer radius. The Pokémon
+are generated at least 30-meters away so that the user does not immediately
+trigger a fight with another Pokémon, where we force the user to walk in order
+to reach fighting radius of a newly generated Pokémon. In the server, we set the
+fight activation radius to be 10-meters. That is, if the server calculates that
+the user is within 10-meters of the closest Pokémon, then the flag
+<code>shouldActivate</code> is set to true in the response to indicate that the LaunchPad
+should transition to the fight-or-flee page.</p>
+<p>We set the spawning radius to be 30-meters instead of 10-meters away from the
+user's GPS coordinates to give a margin of 20-meters. This margin accounts for
+the imprecision of the GPS sensor on the LaunchPad, where the position slightly
+jumps around as the local coordinates are polled. This way, we can prevent an
+accidental immediate trigger of a Pokémon that is truly outside of the user's 10
+meter activation radius, but that otherwise may have been accidentally triggered
+due to the user's GPS coordinates being transiently reported as closer to the
+Pokémon than the user actually is.</p>
+<p>Finally, before returning the nearest Pokémon information, all of the additional
+Pokémon inside of the 30-meter margin-activation radius are removed from the
+DynamoDB Pokémon collection. That is, if there is a single Pokémon inside of the
+30-meter radius, then that Pokémon is returned and not deleted. If there is more
+than one Pokémon inside of the 30-meter radius, then the closest of those
+Pokémon is returned, and then the other Pokémon are deleted. If there are no
+Pokémon inside of the 30-meter radius, then trivially none of the Pokémon are
+deleted.</p>
+<p>The reason for this behavior is so that after the user fights or flees the
+nearest Pokémon inside of their 10-meter activation radius, then the user will
+not be immediately triggered to fight another Pokémon that is also within the
+margin-activation radius.</p>
+<p>Finally, the nearest Pokémon is then returned to the user.</p>
+<p>For the <code>HTTP GET</code> request to <code>/users/&lt;string:userId&gt;</code>, the server queries
+DynamoDB for the list of all Pokémon that are stored in the user's document.
+These Pokémon are then simply returned back to the user.</p>
+<p>For the <code>HTTP POST</code> request to
+<code>/users/&lt;string:userId&gt;/pokemon/&lt;string:pokemonId&gt;</code> the specified Pokémon is
+retrieved from the DynamoDB Pokémon collection, deleted from the Pokémon
+collection, and then re-inserted into the user's document.</p>
+<p>For the <code>HTTP DELETE</code> request to <code>/pokemon/&lt;string:pokemonId&gt;</code>, the specified
+Pokémon is directly deleted from the DynamoDB Pokémon collection.</p>
+<p>For each of the above calls, the lower-level details of the response format is
+discussed in the <strong>Implementation</strong> section.</p>
+<h3 id="website-functional-description">Website Functional Description<a class="headerlink" href="#website-functional-description" title="Permanent link">&para;</a></h3>
+<p><img alt="Website Functional Diagram" src="../assets/website-functional-diagram.png" /></p>
+<p>For the website that we implement, we use the React.JS website framework and
+Vite packaging system to implement a world-map interface that shows all of the
+Pokémon and their locations in close to realtime.</p>
+<p>In particular, we leverage the Google Maps API to render a React component for a
+Google Map that uses the full view-port of the browser window. Then, we render a
+pin for the user's current location onto the map, and then we render all of the
+Pokémon from the DynamoDB Pokémon collection onto the map, using downloaded
+images of the Pokémon and rendering those Pokémon to their respective GPS
+coordinates on the map.</p>
+<p>In a background loop, we update the user's shown location and the status of all
+Pokémon every 5 seconds. In the accompanying website report to this final report
+document, we embed our map into a page on that website.</p>
+<p>Below we show an example of what our map looks like:</p>
+<p><img alt="React Map" src="../assets/react-map.png" /></p>
+<h2 id="system-architecture">System Architecture<a class="headerlink" href="#system-architecture" title="Permanent link">&para;</a></h2>
+<p><img alt="System Architecture" src="../assets/system-architecture.png" /></p>
+<p>Zooming out from the specific implemented behavior, the high-level system
+architecture involves the peripheral I/O devices connected to the LaunchPad, the
+LaunchPad itself, the Express.JS server, the AWS DynamoDB schema, and the
+React.JS map page.</p>
+<p>To begin with, we consider both the IR sensor and the GPS module to be input
+peripherals. The IR sensor detects button presses from the AT&amp;T Universal IR
+Remote and sends those inputs to the LaunchPad where the game business logic
+then updates game state in response to those presses.</p>
+<p>The GPS module continuously samples the user's GPS coordinates by using
+satellite trilateration, and then sends these samples to the game business logic
+as well over UART.</p>
+<p>Next, the output peripheral on the LaunchPad is the OLED display. We preprocess
+downloaded images from the internet into RGB bitmaps that are stored in C
+arrays. Then, these images are rendered onto the screen depending on game state.</p>
+<p>As is described in the functionality section, we implement an Express.JS game
+server that communicates bidirectionally both with the LaunchPad and also with
+the AWS DynamoDB database.</p>
+<p>Then, we implement a data schema for our DynamoDB tables. In particular, we use
+two collections: a Users collection that stores one document per user, and a
+Pokémon collection that stores one document per each spawned Pokémon on the map.</p>
+<p>Finally, we implement a front-end map page using React.JS and the Google Maps
+API which reads the data stored in AWS DynamoDB to visualize the global state of
+the game on the map.</p>
+<p>The implementation details for each of these major components are discussed in
+the <strong>Implementation</strong> section.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.sections", "toc.integrate"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  </body>
+</html>
