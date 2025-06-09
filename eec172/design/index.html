@@ -12,7 +12,7 @@
         <link rel="prev" href="../description/">
       
       
-        <link rel="next" href="../future-work/">
+        <link rel="next" href="../implementation/">
       
       
       <link rel="icon" href="../assets/pokeball.png">
@@ -45,6 +45,8 @@
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
     
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -117,46 +119,6 @@
     
     
     
-      
-      
-        <label class="md-header__button md-icon" for="__search">
-          
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
-        </label>
-        <div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="__search"></label>
-  <div class="md-search__inner" role="search">
-    <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
-      <label class="md-search__icon md-icon" for="__search">
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
-      </label>
-      <nav class="md-search__options" aria-label="Search">
-        
-        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
-          
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
-        </button>
-      </nav>
-      
-    </form>
-    <div class="md-search__output">
-      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="search-result">
-          <div class="md-search-result__meta">
-            Initializing search
-          </div>
-          <ol class="md-search-result__list" role="presentation"></ol>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-      
-    
     
   </nav>
   
@@ -207,51 +169,7 @@
   
   
   <span class="md-ellipsis">
-    Home
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../bill-of-materials/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Bill of Materials
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../challenges/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Challenges
+    Introduction
     
   </span>
   
@@ -342,35 +260,35 @@
         <li class="md-nav__item">
   <a href="#functional-specification" class="md-nav__link">
     <span class="md-ellipsis">
-      Functional Specification
+      Functional specification
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Functional Specification">
+    <nav class="md-nav" aria-label="Functional specification">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#launchpad-functional-description" class="md-nav__link">
+  <a href="#launchpad" class="md-nav__link">
     <span class="md-ellipsis">
-      LaunchPad Functional Description
+      LaunchPad
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#expressjs-server-functional-description" class="md-nav__link">
+  <a href="#expressjs-server" class="md-nav__link">
     <span class="md-ellipsis">
-      Express.JS Server Functional Description
+      Express.JS server
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#website-functional-description" class="md-nav__link">
+  <a href="#website" class="md-nav__link">
     <span class="md-ellipsis">
-      Website Functional Description
+      Website
     </span>
   </a>
   
@@ -384,7 +302,7 @@
         <li class="md-nav__item">
   <a href="#system-architecture" class="md-nav__link">
     <span class="md-ellipsis">
-      System Architecture
+      System architecture
     </span>
   </a>
   
@@ -394,6 +312,50 @@
   
 </nav>
       
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../implementation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Implementation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../challenges/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Challenges
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -427,12 +389,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../implementation/" class="md-nav__link">
+      <a href="../bill-of-materials/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Implementation
+    Bill of Materials
     
   </span>
   
@@ -481,8 +443,8 @@
 
 
 <h1 id="design">Design<a class="headerlink" href="#design" title="Permanent link">&para;</a></h1>
-<h2 id="functional-specification">Functional Specification<a class="headerlink" href="#functional-specification" title="Permanent link">&para;</a></h2>
-<h3 id="launchpad-functional-description">LaunchPad Functional Description<a class="headerlink" href="#launchpad-functional-description" title="Permanent link">&para;</a></h3>
+<h2 id="functional-specification">Functional specification<a class="headerlink" href="#functional-specification" title="Permanent link">&para;</a></h2>
+<h3 id="launchpad">LaunchPad<a class="headerlink" href="#launchpad" title="Permanent link">&para;</a></h3>
 <p><img alt="LaunchPad Diagram" src="../assets/launchpad-functional-diagram.png" /></p>
 <p>As specified in the <strong>Description</strong> section, a state machine transitioning
 between 4 different pages is implemented. These four pages are the landing page,
@@ -491,13 +453,13 @@ the collection page, the fight-or-flee page, and the fight page.</p>
 one of the 4 pages just yet, but instead enters a loop to attempt connecting to
 the pre-configured WiFi network. In this loop, the text <code>Connecting to Wifi...</code>
 is printed on the top of the OLED screen. Then, when the LaunchPad is finally
-able to connect to the specified network, then the state transitions into the
-initial landing page.</p>
+able to connect to the specified network, the state transitions into the initial
+landing page.</p>
 <p>In the landing page, we display the title "Pokemini Go" in a custom font, with a
-picture of a Pikachu Pokémon in the bottom right. Then, we also show the user's
-GPS coordinates and the enemy's GPS coordinates on the left of the screen. On
-the bottom of the screen, we show an indication that pressing the number button
-<code>1</code> on the IR remote will switch pages to the collection page.</p>
+picture of a Pikachu Pokémon on the right. Then, we also show the user's GPS
+coordinates and the enemy's GPS coordinates on the left of the screen. On the
+bottom of the screen, we show an indication that pressing the number button <code>1</code>
+on the IR remote will switch pages to the collection page.</p>
 <p><img alt="Landing Page" src="../assets/landing-page.png" /></p>
 <p>In the collection page, we show a grid of Pokémon icons corresponding to all of
 the Pokémon that the user has collected. These Pokémon are stored in the
@@ -543,13 +505,13 @@ trigger the user's health to decrease by one, or the enemy's health to decrease
 by one. To ensure that a win or loss is guaranteed without ties, we ensure that
 5 of the buttons are assigned to decrease a user heart and that the other 5
 buttons are assigned to decrease an enemy heart. Given the four hearts for each
-user, each user starts with a health value of 4. By pressing a button, either
-the user's health will randomly go down by 1, or the enemy's health will
-randomly go down by 1. The IR remote's number button actions are set at random
-whenever the fight state is entered. Then, when a number button is pressed, the
-press is recorded. A number cannot be re-pressed within the fight page. Thus,
-the user must exhaust all the number buttons until either the user loses all of
-their hearts or the enemy loses all of their hearts.</p>
+player, the enemy and user both start with a health value of 4. By pressing a
+button, either the user's health will randomly go down by 1, or the enemy's
+health will randomly go down by 1. The IR remote's number button actions are
+set at random whenever the fight state is entered. Then, when a number button is
+pressed, the press is recorded. A number cannot be re-pressed within the fight
+page. Thus, the user must exhaust all the number buttons until either the user
+loses all of their hearts or the enemy loses all of their hearts.</p>
 <p>While in the fight page, the background process for querying the server for
 nearby Pokémon is halted. This way, the user will not be prompted to attack
 another Pokémon while they are still battling the current Pokémon.</p>
@@ -572,7 +534,7 @@ newly collected Pokémon.</p>
 <p>Here, we show an image of what the fight page looks like immediately after the
 enemy loses all of their hearts, indicating a user win:</p>
 <p><img alt="Fight Page Win State" src="../assets/fight-page-win.png" /></p>
-<h3 id="expressjs-server-functional-description">Express.JS Server Functional Description<a class="headerlink" href="#expressjs-server-functional-description" title="Permanent link">&para;</a></h3>
+<h3 id="expressjs-server">Express.JS server<a class="headerlink" href="#expressjs-server" title="Permanent link">&para;</a></h3>
 <p><img alt="Express Functional Diagram" src="../assets/express-functional-diagram.png" /></p>
 <p>The REST API server endpoint that processes the LaunchPad's network requests is
 written in Express.JS, a common Node.JS framework for writing web server
@@ -604,7 +566,7 @@ example, a fully formatted call might have a URL that looks as follows:</p>
 </code></pre>
 <p>If the query parameters are not given, then the web server returns a <code>400 Bad
 Request</code> error.</p>
-<p>After parsing the user's coordinates, then the server queries DynamoDB for all
+<p>After parsing the user's coordinates, the server queries DynamoDB for all
 Pokémon within a 100-meter radius of the user's GPS coordinates. If there are
 less than 6 Pokémon within the 100-meter radius of the user's coordinates, then
 the server requests for more Pokémon to be created such that the 6 Pokémon
@@ -630,9 +592,8 @@ Pokémon inside of the 30-meter margin-activation radius are removed from the
 DynamoDB Pokémon collection. That is, if there is a single Pokémon inside of the
 30-meter radius, then that Pokémon is returned and not deleted. If there is more
 than one Pokémon inside of the 30-meter radius, then the closest of those
-Pokémon is returned, and then the other Pokémon are deleted. If there are no
-Pokémon inside of the 30-meter radius, then trivially none of the Pokémon are
-deleted.</p>
+Pokémon is returned, and the other Pokémon are deleted. If there are no Pokémon
+inside of the 30-meter radius, then trivially none of the Pokémon are deleted.</p>
 <p>The reason for this behavior is so that after the user fights or flees the
 nearest Pokémon inside of their 10-meter activation radius, then the user will
 not be immediately triggered to fight another Pokémon that is also within the
@@ -642,30 +603,30 @@ margin-activation radius.</p>
 DynamoDB for the list of all Pokémon that are stored in the user's document.
 These Pokémon are then simply returned back to the user.</p>
 <p>For the <code>HTTP POST</code> request to
-<code>/users/&lt;string:userId&gt;/pokemon/&lt;string:pokemonId&gt;</code> the specified Pokémon is
+<code>/users/&lt;string:userId&gt;/pokemon/&lt;string:pokemonId&gt;</code>, the specified Pokémon is
 retrieved from the DynamoDB Pokémon collection, deleted from the Pokémon
 collection, and then re-inserted into the user's document.</p>
 <p>For the <code>HTTP DELETE</code> request to <code>/pokemon/&lt;string:pokemonId&gt;</code>, the specified
 Pokémon is directly deleted from the DynamoDB Pokémon collection.</p>
 <p>For each of the above calls, the lower-level details of the response format is
 discussed in the <strong>Implementation</strong> section.</p>
-<h3 id="website-functional-description">Website Functional Description<a class="headerlink" href="#website-functional-description" title="Permanent link">&para;</a></h3>
+<h3 id="website">Website<a class="headerlink" href="#website" title="Permanent link">&para;</a></h3>
 <p><img alt="Website Functional Diagram" src="../assets/website-functional-diagram.png" /></p>
 <p>For the website that we implement, we use the React.JS website framework and
 Vite packaging system to implement a world-map interface that shows all of the
 Pokémon and their locations in close to realtime.</p>
 <p>In particular, we leverage the Google Maps API to render a React component for a
 Google Map that uses the full view-port of the browser window. Then, we render a
-pin for the user's current location onto the map, and then we render all of the
+pin for the user's current location onto the map. We also render all of the
 Pokémon from the DynamoDB Pokémon collection onto the map, using downloaded
 images of the Pokémon and rendering those Pokémon to their respective GPS
-coordinates on the map.</p>
+coordinates.</p>
 <p>In a background loop, we update the user's shown location and the status of all
-Pokémon every 5 seconds. In the accompanying website report to this final report
-document, we embed our map into a page on that website.</p>
+Pokémon every 5 seconds. On this website we embed a link to the actual map,
+which is <a href="https://nicbk.com/eec172/map/">located here</a>.</p>
 <p>Below we show an example of what our map looks like:</p>
 <p><img alt="React Map" src="../assets/react-map.png" /></p>
-<h2 id="system-architecture">System Architecture<a class="headerlink" href="#system-architecture" title="Permanent link">&para;</a></h2>
+<h2 id="system-architecture">System architecture<a class="headerlink" href="#system-architecture" title="Permanent link">&para;</a></h2>
 <p><img alt="System Architecture" src="../assets/system-architecture.png" /></p>
 <p>Zooming out from the specific implemented behavior, the high-level system
 architecture involves the peripheral I/O devices connected to the LaunchPad, the
